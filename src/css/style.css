@@ -15,6 +15,16 @@ body {
 .container {
     width: 85%;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+p, h4 {
+    display:inline-block;
+}
+
+section {
+    padding-bottom: 120px;
 }
 
 /* Anim liens a */
@@ -27,8 +37,9 @@ a {
 a::after {
     content: "";
     width: 0%;
-    height: 3px;
+    height: 1px;
     background-color: white;
+    margin-top: 8px;
 }
 
 a:hover::after {
@@ -69,7 +80,6 @@ a:hover::after {
 .logo {
     height: 50px;
     width: 50px;
-    background-color: gray;
     border-radius: 8px;
 }
 
@@ -125,28 +135,56 @@ h1 {
 
 .homeContent a {
     font-size: 20px;
+    display: inline-block;
 }
 
 .homeBurger {
     position: absolute;
     right: 0;
-    top: 50%;
-    margin-right: 10%;
+    top: 50vh;
     transform: translateY(-50%);
     cursor: pointer;
-    padding: 10px;
 } 
+
+.burgerContainer{
+    display: flex;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px;
+}
+
+.burgerContainer::before {
+    content: "Coffe Shop";
+    position: absolute;
+    color: white;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    width: 80px;
+    opacity: 0%;
+    right: -20px;
+}
+
+.burgerContainer:hover::before {
+    content: "Coffe Shop";
+    right: 35px;
+    opacity: 100%;
+}
+
+.burgerContainer:hover .line1, .burgerContainer:hover .line3 {
+    width: 0;
+}
 
 .line {
     width: 30px;
     height: 1px;
     background-color: white;
     margin-top: 5px;
+    transition: all 0.3s ease;
 } 
 
 .carouselControls {
     position: absolute;
-    bottom: 10vh;
+    top: 85vh;
 }
 
 .carouselControlsContainer {
@@ -157,10 +195,11 @@ h1 {
 .carouselControlsContainer p {
     margin-right: 25px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .carouselControlsContainer p:first-child {
-    opacity: 30%;
+    opacity: 20%;
 }
 
 .sepa {
@@ -171,6 +210,7 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     opacity: 50%;
+    z-index: 1;
 }
 
 .scrollInfo {
@@ -200,16 +240,134 @@ h1 {
     animation: 4s ease infinite scrollInfo;
 }
 
+.socialContainer {
+    display: flex;
+    align-items: center;
+}
+
+.socialContainer p {
+    margin-right: 50px;
+    opacity: 20%;
+}
+
 .social {
     position: absolute;
     right: 0;
-    top: 90vh;
-    margin-right: 10%;
+    top: 85vh;
 }
 
 .social i {
     color: white;
     font-size: 20px;
-    margin-left: 25px;
+    margin: 20px;
 }
 
+/* Section coiffure */
+
+.coifContainer {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 100px;
+}
+
+.coifBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.coifBlock h4 {
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+.coifBlock p {
+    font-size: 16px;
+    color: #D0D0D0;
+    margin-top: 6px;
+}
+
+
+/* Slider tarifs */
+
+.tickerwrapper, .tickerwrapper2 {
+    /* the outer div */
+    position: relative;
+    top: 30px;
+    left:0%;
+    background: none;
+    width: 99.9%;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  ul.list, ul.list2 {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    padding:0;
+    margin:0;
+  }
+  
+  ul.list.cloned, ul.list2.cloned {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
+  ul.list li, ul.list2 li {
+    float: left;
+    padding-left: 20px;
+    color: white;
+    font-size: 100px;
+    text-transform: uppercase;
+  }
+
+  /* Section tarifs */
+
+
+  .tarifsController {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .tarifsController h3 {
+    color: white;
+    opacity: 40%;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tarifsController h3:hover {
+    opacity: 80%;
+  }
+
+  
+  .tarifsController .active {
+    color: white;
+    font-size: 30px;
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .tarifsController .active::after {
+    content: "";
+    margin-top: 15px;
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 100px;
+  }
+
+  .tarifsContent {
+      height: 600px;
+      width: 100%;
+      background-color: white;
+      opacity: 10%;
+      margin-top: 60px;
+  }
