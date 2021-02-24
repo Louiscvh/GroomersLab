@@ -1,15 +1,3 @@
-<?php
-
-require_once('../config/settings.php');
-
-if(isset($_GET['action']) && $_GET['action'] == 'deco'){
-    unset($_SESSION['admin']);
-    // header('location:' . $_SERVER['PHP_SELF']);
-    header('location:' . URL . 'src');
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
