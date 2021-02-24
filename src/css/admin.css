@@ -50,7 +50,6 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     background-color: white;
     margin-top: 50px;
     color: black!important;
-    padding-left: 0px!important;
     padding: 0!important;
 }
 

@@ -6,8 +6,8 @@ const scroll = new LocomotiveScroll({
 });
 
    //Slider Tarifs
-   var $tickerWrapper = $(".tickerwrapper");
-    var $list = $tickerWrapper.find("ul.list");
+   var $tickerWrapper = $(".slider__wrapper");
+    var $list = $tickerWrapper.find("ul");
     var $clonedList = $list.clone();
     var listWidth = 10;
     
@@ -38,8 +38,8 @@ const scroll = new LocomotiveScroll({
     
 
     //Slider équipe
-    var $tickerWrapper2 = $(".tickerwrapper2");
-    var $list2 = $tickerWrapper2.find("ul.list2");
+    var $tickerWrapper2 = $(".slider__wrapper2");
+    var $list2 = $tickerWrapper2.find("ul");
     var $clonedList2 = $list2.clone();
     var listWidth2 = 10;
     

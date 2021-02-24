@@ -1,5 +1,4 @@
 /* Général */
-
 * {
     padding: 0;
     margin: 0;
@@ -43,7 +42,7 @@ a::after {
 }
 
 a:hover::after {
-    animation: 0.6s ease animLien;
+    animation: 1s ease animLien;
     animation-iteration-count: 1;
 
 }
@@ -102,12 +101,17 @@ header ul {
     display: flex;
 }
 
+header p {
+    font-size: 1rem;
+}
+
 header a {
     padding: 30px;
 }
 
 header li {
-    font-size: 16px;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 
@@ -116,29 +120,29 @@ header li {
     height: 100vh;
 }
 
-.homeContent {
+.home__content {
     position: relative;
     top: 40vh;
     transform: translateY(-50%);
 }
 
 h1 {
-    font-size: 75px;
+    font-size: 5rem;
     width: 50%;
 }
 
-.homeContent p {
-    font-size: 20px;
+.home__content p {
+    font-size: 1.5rem;
     opacity: 50%;
     margin: 30px 0px;
 }
 
-.homeContent a {
-    font-size: 20px;
-    width: 70px;
+.home__content a {
+    font-size: 1.5em;
+    width: 80px;
 }
 
-.homeBurger {
+.burger__home {
     position: absolute;
     right: 0;
     top: 50vh;
@@ -146,31 +150,31 @@ h1 {
     cursor: pointer;
 } 
 
-.burgerContainer{
+.burger__container{
     display: flex;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
     position: relative;
     padding: 10px;
 }
 
-.burgerContainer::before {
+.burger__container::before {
     content: "Coffe Shop";
     position: absolute;
     color: white;
     margin-right: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
     width: 80px;
     opacity: 0%;
     right: -20px;
 }
 
-.burgerContainer:hover::before {
+.burger__container:hover::before {
     content: "Coffe Shop";
     right: 35px;
     opacity: 100%;
 }
 
-.burgerContainer:hover .line1, .burgerContainer:hover .line3 {
+.burger__container:hover .line:nth-child(1), .burger__container:hover .line:nth-child(3){
     width: 0;
 }
 
@@ -182,23 +186,23 @@ h1 {
     transition: all 0.3s ease;
 } 
 
-.carouselControls {
+.controls {
     position: absolute;
     top: 85vh;
 }
 
-.carouselControlsContainer {
+.controls__container {
     display: flex;
     align-items: center;
 }
 
-.carouselControlsContainer p {
+.controls__container p {
     margin-right: 25px;
-    font-size: 20px;
+    font-size: 1.3rem;
     cursor: pointer;
 }
 
-.carouselControlsContainer p:first-child {
+.controls__container p:first-child {
     opacity: 20%;
 }
 
@@ -213,14 +217,26 @@ h1 {
     z-index: 1;
 }
 
-.scrollInfo {
+.sepa:nth-child(1) {
+    left:25%;
+}
+
+.sepa:nth-child(2) {
+    left:50%;
+}
+
+.sepa:nth-child(3) {
+    left:75%;
+}
+
+.scroll__info {
     position: absolute;
     top: 85vh;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.scrollContainer {
+.scroll__container {
     margin-bottom: 50px;
     display: flex;
     justify-content: center;    
@@ -228,26 +244,17 @@ h1 {
     align-items: center;
 }
 
-.scrollContainer p {
+.scroll__container p {
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
-.scrollSepa {
+.scroll__sepa {
     height: 30px;
     width: 1px;
     background-color: white;
     animation: 4s ease infinite scrollInfo;
-}
-
-.socialContainer {
-    display: flex;
-    align-items: center;
-}
-
-.socialContainer p {
-    margin-right: 50px;
-    opacity: 20%;
 }
 
 .social {
@@ -256,15 +263,25 @@ h1 {
     top: 85vh;
 }
 
+.social__container {
+    display: flex;
+    align-items: center;
+}
+
+.social__container p {
+    margin-right: 50px;
+    opacity: 20%;
+}
+
 .social i {
     color: white;
-    font-size: 20px;
+    font-size: 1.5rem;
     margin: 20px;
 }
 
 /* Section coiffure */
 
-.coifContainer {
+.coif__container {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     justify-content: space-between;
@@ -272,19 +289,19 @@ h1 {
     grid-gap: 100px;
 }
 
-.coifBlock {
+.coif__block {
     display: flex;
     flex-direction: column;
 }
 
-.coifBlock h4 {
-    font-size: 25px;
+.coif__block h4 {
+    font-size: 2rem;
     text-transform: uppercase;
     margin-top: 25px;
 }
 
-.coifBlock p {
-    font-size: 16px;
+.coif__block p {
+    font-size: 1rem;
     color: #D0D0D0;
     margin-top: 6px;
 }
@@ -292,18 +309,18 @@ h1 {
 
 /* Slider tarifs */
 
-.tickerwrapper, .tickerwrapper2 {
+.slider__wrapper, .slider__wrapper2 {
     /* the outer div */
     position: relative;
     top: 30px;
     left:0%;
     background: none;
     width: 99.9%;
-    height: 100px;
+    height: 130px;
     overflow: hidden;
   }
   
-  ul.list, ul.list2 {
+  .slider__list, .slider__list2 {
     position: relative;
     display: inline-block;
     list-style: none;
@@ -311,29 +328,29 @@ h1 {
     margin:0;
   }
   
-  ul.list.cloned, ul.list2.cloned {
+  .slider__list.cloned, .slider__list2.cloned {
     position: absolute;
     top: 0px;
     left: 0px;
   }
   
-  ul.list li, ul.list2 li {
+  .slider__list li, .slider__list2 li {
     float: left;
     padding-left: 20px;
     color: white;
-    font-size: 100px;
+    font-size: 8rem;
     text-transform: uppercase;
   }
 
   /* Section tarifs */
 
 
-  .tarifsController {
+  .tarifs__controller {
     display: flex;
     justify-content: space-around;
   }
 
-  .tarifsController h3 {
+  .tarifs__controller h3 {
     color: white;
     opacity: 40%;
     font-size: 30px;
@@ -341,12 +358,12 @@ h1 {
     transition: all 0.3s ease;
   }
 
-  .tarifsController h3:hover {
+  .tarifs__controller h3:hover {
     opacity: 80%;
   }
 
   
-  .tarifsController .active {
+  .tarifs__controller .active {
     color: white;
     font-size: 30px;
     opacity: 100%;
@@ -355,7 +372,7 @@ h1 {
     flex-direction: column;
   }
 
-  .tarifsController .active::after {
+  .tarifs__controller .active::after {
     content: "";
     margin-top: 15px;
     height: 5px;
@@ -364,7 +381,7 @@ h1 {
     border-radius: 100px;
   }
 
-  .tarifsContent {
+  .tarifs__content {
       height: 600px;
       width: 100%;
       background-color: white;
