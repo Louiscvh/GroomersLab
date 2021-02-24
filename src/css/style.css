@@ -23,7 +23,7 @@ p, h4 {
 }
 
 section {
-    padding-bottom: 120px;
+    padding-bottom: 200px;
 }
 
 /* Anim liens a */
@@ -312,79 +312,168 @@ h1 {
 .slider__wrapper, .slider__wrapper2 {
     /* the outer div */
     position: relative;
-    top: 30px;
     left:0%;
     background: none;
     width: 99.9%;
     height: 130px;
     overflow: hidden;
-  }
-  
-  .slider__list, .slider__list2 {
+}
+
+.slider__list, .slider__list2 {
     position: relative;
     display: inline-block;
     list-style: none;
     padding:0;
     margin:0;
-  }
-  
-  .slider__list.cloned, .slider__list2.cloned {
+}
+
+.slider__list.cloned, .slider__list2.cloned {
     position: absolute;
     top: 0px;
     left: 0px;
-  }
-  
-  .slider__list li, .slider__list2 li {
+}
+
+.slider__list li, .slider__list2 li {
     float: left;
     padding-left: 20px;
     color: white;
     font-size: 8rem;
     text-transform: uppercase;
-  }
+}
 
-  /* Section tarifs */
+/* Section tarifs */
 
 
-  .tarifs__controller {
+.tarifs__controller {
     display: flex;
     justify-content: space-around;
-  }
+}
 
-  .tarifs__controller h3 {
+.tarifs__controller h3 {
     color: white;
     opacity: 40%;
     font-size: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
+}
 
-  .tarifs__controller h3:hover {
+.tarifs__controller h3:hover {
     opacity: 80%;
-  }
+}
 
-  
-  .tarifs__controller .active {
+
+.tarifs__controller .active {
     color: white;
     font-size: 30px;
     opacity: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
+}
 
-  .tarifs__controller .active::after {
+.tarifs__controller .active::after {
     content: "";
     margin-top: 15px;
     height: 5px;
     width: 5px;
     background-color: white;
     border-radius: 100px;
-  }
+}
 
-  .tarifs__content {
-      height: 600px;
-      width: 100%;
-      background-color: white;
-      opacity: 10%;
-      margin-top: 60px;
+.tarifs__content {
+    height: 600px;
+    width: 100%;
+    background-color: white;
+    opacity: 10%;
+    margin-top: 60px;
+}
+
+/* Section équipe */
+
+.container__slider {
+    width: 100%!important;
+}
+
+.slider {
+    width: 35%;
+    height: 2px;
+    background-color: white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 70px;
   }
+  
+.coiffeur__container {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+  
+::-webkit-scrollbar {
+      display: none;
+}
+  
+.coiffeurs {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(1);
+    will-change: transform;
+    user-select: none;
+    cursor: grab;
+}
+  
+.coiffeur {
+    margin-left: 300px;
+    margin-right: 260px;
+    transform: translateX(-50%);
+    transition: filter 0.3s ease-out;
+}
+
+.coiffeur:hover {
+    filter: brightness(0.5);
+}
+
+.coiffeur:hover .coiffeur__name, .coiffeur:hover .coiffeur__social{
+    opacity: 1;
+}
+  
+.coiffeur__cube {
+    background-size: cover;
+    height: 600px;
+    width: 600px;
+    transition: all ease-out 0.3s;
+    z-index: 1;
+    position: relative;
+}
+  
+.coiffeur__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+.coiffeur h3, .coiffeur h2 {
+    color: white;
+    text-transform: uppercase;
+    opacity: 0;
+}
+  
+.coiffeur h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease-out;
+}
+  
+.coiffeur h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    transition: opacity 0.3s ease-out;
+}
