@@ -1,3 +1,15 @@
+<?php
+
+require_once('../config/settings.php');
+
+if(isset($_GET['action']) && $_GET['action'] == 'deco'){
+    unset($_SESSION['admin']);
+    // header('location:' . $_SERVER['PHP_SELF']);
+    header('location:' . URL . 'src');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,15 +31,7 @@
     <div class="scroll" data-scroll-container>
         <div class="container">
             <section id="home" data-scroll-section>
-                <header data-aos="fade-down">
-                    <a style="padding: 0px;"href=""><img class="logo" src="img/logo_white.png" alt=""></a>
-                    <p>10AM_8PM</p>
-                    <ul>
-                        <a href="#"><li>Tarifs</li></a>
-                        <a href="#"><li>Rendez-vous</li></a>
-                        <a href="#"><li>Galerie</li></a>
-                    </ul>
-                </header>
+                <?php require_once('../public/includes/header.php'); ?>
                 <div class="home__content">
                     <h1>GROOMERS LAB BARBER SHOP</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
