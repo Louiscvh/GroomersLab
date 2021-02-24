@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
+    "locomotive-scroll": "^4.1.0",
     "three": "^0.124.0"
   },
   "devDependencies": {},

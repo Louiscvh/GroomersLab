@@ -135,7 +135,7 @@ h1 {
 
 .homeContent a {
     font-size: 20px;
-    display: inline-block;
+    width: 70px;
 }
 
 .homeBurger {

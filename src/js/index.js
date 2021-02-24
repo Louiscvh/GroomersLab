@@ -1,3 +1,10 @@
+
+const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    multiplier: 0.8
+});
+
    //Slider Tarifs
    var $tickerWrapper = $(".tickerwrapper");
     var $list = $tickerWrapper.find("ul.list");
