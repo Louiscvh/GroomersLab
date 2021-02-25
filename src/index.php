@@ -8,21 +8,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'deco'){
     header('location:' . URL . 'src');
     exit();
 }
+
+$title = 'Page d\'accueil'
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Groomers</title>
-    <!-- AOS Transition -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/locomotive-scroll.css">
-</head>
+<?php require_once('../public/includes/head.php')?>
 
 <body>
     <div class="sepa"></div>
@@ -72,38 +62,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'deco'){
                 </div>
             </section>
             <section data-scroll-section>
-            <div class="coif__container">
-                <div class="coif__block">
-                    <img src="img/coiffure_1.png" alt="">
-                    <h4>Coupe au bol</h4>
-                    <p>Made by MAT's Daddy</p>
-                </div>
-                <div class="coif__block">
-                    <img src="img/coiffure_2.png" alt="">
-                    <h4>Coupe au bol</h4>
-                    <p>Made by MAT's Daddy</p>
-                </div>
-                <div class="coif__block">
-                    <img src="img/coiffure_3.png" alt="">
-                    <h4>Coupe au bol</h4>
-                    <p>Made by MAT's Daddy</p>
-                </div>
-                <div class="coif__block">
-                    <img src="img/coiffure_4.png" alt="">
-                    <h4>Coupe au bol</h4>
-                    <p>Made by MAT's Daddy</p>
-                </div>
-                <div class="coif__block">
-                    <img src="img/coiffure_5.png" alt="">
-                    <h4>Coupe au bol</h4>
-                    <p>Made by MAT's Daddy</p>
-                </div>
-                <div class="coif__block">
-                    <img src="img/coiffure_6.png" alt="">
-                    <h4>Coupe au bol</h4>
-                    <p>Made by MAT's Daddy</p>
-                </div>  
-            </div>
+            
+                <?php require_once('../public/includes/galerie.php'); ?>
             </section>
         </div>
         <section data-scroll-section>
