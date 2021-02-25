@@ -23,12 +23,12 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
             <p>Made by <?= $value['author'] ?></p>
             <?php
             if(isset($_SESSION['admin'])){ ?>
-                <a href="updategalerie.php?haircutid=<?php echo $value['id']; ?>">Modifier</a>
+                <a href="../back/admin/galerie/updategalerie.php?haircutid=<?php echo $value['id']; ?>">Modifier</a>
             <?php } ?> 
         </div>
     <?php } ?>
 </div>
 <?php
 if(isset($_SESSION['admin'])){ ?>
-        <a href="../back/admin/addgalerie.php">Ajouter une photo</a>
+        <a href="../back/admin/galerie/addgalerie.php">Ajouter une photo</a>
 <?php } ?> 

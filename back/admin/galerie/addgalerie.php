@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../config/settings.php');
+require_once('../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
@@ -17,7 +17,7 @@ if(!isset($_SESSION['admin'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter une photo</title>
-    <link rel="stylesheet" href="../../src/css/admin.css">
+    <link rel="stylesheet" href="../../../src/css/admin.css">
 </head>
 <body>
     <div class="sepa__block">
@@ -28,7 +28,7 @@ if(!isset($_SESSION['admin'])){
     <div class="container">
         <img class="logo" src="" alt="">
         <h1>Ajouter une photo</h1>
-        <form method="post" action="../core/uploadgalerie.php" enctype="multipart/form-data">
+        <form method="post" action="../../core/uploadgalerie.php" enctype="multipart/form-data">
             <div>
                 <label for="fichier">Fichier</label>
                 <input type="file" class="form-control" id="fichier" name="fichier" required>
