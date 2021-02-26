@@ -4,10 +4,15 @@ require_once('../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être connecté pour ajouter une photo');
+	flash_in('error', 'Vous devez être connecté pour modifier un membre de la team Groomers');
 	header('Location: '.URL.'src');
 	exit();
 }
+
+$read = $pdo->prepare('SELECT * FROM haircut WHERE id = :i');
+$read->execute([':i' => $_GET['haircutid']]);
+
+$data = $read->fetch(PDO::FETCH_ASSOC); 
 
 ?>
 <!DOCTYPE html>
@@ -28,24 +33,29 @@ if(!isset($_SESSION['admin'])){
     <div class="container">
         <img class="logo" src="" alt="">
         <h1>Ajouter une photo</h1>
-        <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
+        <form method="post" action="../../core/effectif/updateeffectif.php" enctype="multipart/form-data">
+
+        <input type="hidden" name="id" value="<?= $data['id'] ?>">
+
             <div>
                 <label for="fichier">Fichier</label>
                 <input type="file" class="form-control" id="fichier" name="fichier" required>
             </div> 
             <div>
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" required>
+                <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>" required>
             </div> 
             <div>
                 <label for="titre">Titre</label>
-                <input type="text" class="form-control" id="titre" name="titre" required>
+                <input type="text" class="form-control" id="titre" name="titre" value="<?= $data['title'] ?>" required>
             </div> 
             <div>
                 <label for="auteur">Auteur</label>
-                <input type="text" class="form-control" id="auteur" name="auteur" >
-            </div> 
-            <button class="submit" type="submit" value="Se connecter">Envoyer</button>
+                <input type="text" class="form-control" id="auteur" name="auteur" value="<?= $data['author'] ?>" >
+            </div>
+            <img src="../../../public/data/<?= $data['file'] ?>" alt="<?= $data['description'] ?>">
+            <button type="submit" class="btn btn-primary">Modifier</button>
+            <a href="deletegalerie.php?haircutid=<?= $data['id']; ?>">Supprimer</a>
         </form>
     </div>
 </body>

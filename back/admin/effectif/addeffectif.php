@@ -4,7 +4,7 @@ require_once('../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être connecté pour ajouter une photo');
+	flash_in('error', 'Vous devez être connecté pour ajouter un membre de la team Groomers');
 	header('Location: '.URL.'src');
 	exit();
 }
@@ -16,7 +16,7 @@ if(!isset($_SESSION['admin'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter une photo</title>
+    <title>Ajouter un membre de la team Groomers</title>
     <link rel="stylesheet" href="../../../src/css/admin.css">
 </head>
 <body>
@@ -27,8 +27,8 @@ if(!isset($_SESSION['admin'])){
     </div>
     <div class="container">
         <img class="logo" src="" alt="">
-        <h1>Ajouter une photo</h1>
-        <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
+        <h1>Ajouter un membre</h1>
+        <form method="post" action="../../core/effectif/uploadeffectif.php" enctype="multipart/form-data">
             <div>
                 <label for="fichier">Fichier</label>
                 <input type="file" class="form-control" id="fichier" name="fichier" required>

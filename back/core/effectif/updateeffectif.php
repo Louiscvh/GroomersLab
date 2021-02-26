@@ -1,9 +1,9 @@
 <?php
 
 
-require_once('../../config/settings.php');
+require_once('../../../config/settings.php');
 
-require_once('imagesettings.php');
+require_once('../imagesettings.php');
 
 var_dump($_POST, $_FILES);
 
@@ -35,7 +35,7 @@ if($error){
 
 	$newName = 'pic-'.time().'.'.$extFile;
 	
-	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../public/data/'.$newName);
+	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../../public/data/'.$newName);
 
 	$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :i');
 	$add->execute([

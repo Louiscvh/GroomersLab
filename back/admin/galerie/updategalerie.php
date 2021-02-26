@@ -4,7 +4,7 @@ require_once('../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être connecté pour ajouter une image');
+	flash_in('error', 'Vous devez être connecté pour modifier une image');
 	header('Location: '.URL.'src');
 	exit();
 }
@@ -33,7 +33,7 @@ $data = $read->fetch(PDO::FETCH_ASSOC);
     <div class="container">
         <img class="logo" src="" alt="">
         <h1>Ajouter une photo</h1>
-        <form method="post" action="../../core/updategalerie.php" enctype="multipart/form-data">
+        <form method="post" action="../../core/galerie/updategalerie.php" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
 

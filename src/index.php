@@ -62,7 +62,6 @@ $title = 'Page d\'accueil'
                 </div>
             </section>
             <section data-scroll-section>
-            
                 <?php require_once('../public/includes/galerie.php'); ?>
             </section>
         </div>
