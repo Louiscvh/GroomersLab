@@ -9,8 +9,8 @@ if(!isset($_SESSION['admin'])){
 	exit();
 }
 
-$read = $pdo->prepare('SELECT * FROM haircut WHERE id = :i');
-$read->execute([':i' => $_GET['haircutid']]);
+$read = $pdo->prepare('SELECT * FROM team WHERE id = :i');
+$read->execute([':i' => $_GET['teamid']]);
 
 $data = $read->fetch(PDO::FETCH_ASSOC); 
 
@@ -21,7 +21,7 @@ $data = $read->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter une photo</title>
+    <title>Modifier un membre de la team</title>
     <link rel="stylesheet" href="../../../src/css/admin.css">
 </head>
 <body>
@@ -32,7 +32,7 @@ $data = $read->fetch(PDO::FETCH_ASSOC);
     </div>
     <div class="container">
         <img class="logo" src="" alt="">
-        <h1>Ajouter une photo</h1>
+        <h1>Modifier un membre de la team</h1>
         <form method="post" action="../../core/effectif/updateeffectif.php" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
@@ -46,16 +46,20 @@ $data = $read->fetch(PDO::FETCH_ASSOC);
                 <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>" required>
             </div> 
             <div>
-                <label for="titre">Titre</label>
-                <input type="text" class="form-control" id="titre" name="titre" value="<?= $data['title'] ?>" required>
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" value="<?= $data['name'] ?>"  required>
             </div> 
             <div>
-                <label for="auteur">Auteur</label>
-                <input type="text" class="form-control" id="auteur" name="auteur" value="<?= $data['author'] ?>" >
-            </div>
+                <label for="pseudo">Pseudo</label>
+                <input type="text" class="form-control" id="pseudo" name="pseudo" value="<?= $data['pseudo'] ?>"  required>
+            </div> 
+            <div>
+                <label for="lien">Lien</label>
+                <input type="text" class="form-control" id="lien" name="lien" value="<?= $data['link'] ?>" >
+            </div> 
             <img src="../../../public/data/<?= $data['file'] ?>" alt="<?= $data['description'] ?>">
             <button type="submit" class="btn btn-primary">Modifier</button>
-            <a href="deletegalerie.php?haircutid=<?= $data['id']; ?>">Supprimer</a>
+            <a href="deleteeffectif.php?teamid=<?= $data['id']; ?>">Supprimer</a>
         </form>
     </div>
 </body>

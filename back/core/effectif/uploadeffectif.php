@@ -5,6 +5,8 @@ require_once('../../../config/settings.php');
 
 require_once('../imagesettings.php');
 
+var_dump($_POST, $_FILES);
+
 if(empty($_POST) || !isset($_SESSION['admin'])){
 	
 	flash_in('error', 'Action impossible. Try again');
@@ -24,12 +26,13 @@ if($error){
 
 	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../../public/data/'.$newName);
 
-	$add = $pdo->prepare('INSERT INTO haircut (file, description, title, author) VALUES (:file, :description, :title, :author)');
+	$add = $pdo->prepare('INSERT INTO team (file, description, name, pseudo, link) VALUES (:file, :description, :name, :pseudo, :link)');
 	$add->execute([
 		':file' => $newName,
 		':description' => $_POST['description'],
-		':title' => $_POST['titre'],
-		':author' => $_POST['auteur']
+		':name' => $_POST['nom'],
+		':pseudo' => $_POST['pseudo'],
+		':link' => $_POST['lien']
 	]);
 
 	header('Location: '.URL.'src/index.php?success');

@@ -114,32 +114,7 @@ $title = 'Page d\'accueil'
         </section>
         <div class="container container__slider">
             <section data-scroll-section>
-                <main>
-                    <div class="coiffeur__container">
-                      <div class="coiffeurs">
-                        <div class="coiffeur" style="margin-left:50%;">
-                          <div class="coiffeur__cube" style="background-image: url(img/coiffeur_1.jpg);">
-                            <div class="coiffeur__title">
-                              <h3 class="coiffeur__name">Justin K.AK Mat</h3>
-                              <h2 class="coiffeur__social">@JustinK</h2>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="coiffeur">
-                            <div class="coiffeur__cube" style="background-image: url(img/coiffeur_2.jpg);">
-                              <div class="coiffeur__title">
-                                <h3 class="coiffeur__name">Justin K.AK Mat</h3>
-                                <h2 class="coiffeur__social">@JustinK</h2>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
-                    </div>            
-                      <div class="slider">
-                        <div class="slider__progress">
-                      </div>
-                    </div>
-                  </main>
+                <?php require_once('../public/includes/effectif.php'); ?>
             </section>
         </div>
     </div>

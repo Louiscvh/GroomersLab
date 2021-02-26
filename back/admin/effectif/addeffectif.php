@@ -38,12 +38,16 @@ if(!isset($_SESSION['admin'])){
                 <input type="text" class="form-control" id="description" name="description" required>
             </div> 
             <div>
-                <label for="titre">Titre</label>
-                <input type="text" class="form-control" id="titre" name="titre" required>
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
             </div> 
             <div>
-                <label for="auteur">Auteur</label>
-                <input type="text" class="form-control" id="auteur" name="auteur" >
+                <label for="pseudo">Pseudo</label>
+                <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+            </div> 
+            <div>
+                <label for="lien">Lien</label>
+                <input type="text" class="form-control" id="lien" name="lien">
             </div> 
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>
         </form>

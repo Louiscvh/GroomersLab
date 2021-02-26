@@ -26,24 +26,22 @@ if($error){
 	exit();
 }else {
 
-	if( empty($_POST['description']) ){
-		$_POST['description'] = null;
-	}
-	if( empty($_POST['auteur']) ){
-		$_POST['auteur'] = null;
+	if( empty($_POST['lien']) ){
+		$_POST['lien'] = null;
 	}
 
 	$newName = 'pic-'.time().'.'.$extFile;
 	
 	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../../public/data/'.$newName);
 
-	$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :i');
+	$add = $pdo->prepare('UPDATE team SET file = :file, description = :description, name = :name, pseudo = :pseudo, link = :link  WHERE id = :i');
 	$add->execute([
 		':i' => $_POST['id'],
 		':file' => $newName,
 		':description' => $_POST['description'],
-		':title' => $_POST['titre'],
-		':author' => $_POST['auteur']
+		':name' => $_POST['nom'],
+		':pseudo' => $_POST['pseudo'],
+		':link' => $_POST['lien']
 	]);
 
 	header('Location: '.URL.'src/index.php?success');
