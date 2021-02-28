@@ -14,17 +14,10 @@ $read->execute([':i' => $_GET['teamid']]);
 
 $data = $read->fetch(PDO::FETCH_ASSOC); 
 
+$path = "admin";
+$title = "Modifier effectif"
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier un membre de la team</title>
-    <link rel="stylesheet" href="../../../src/css/admin.css">
-</head>
-<body>
+<?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
         <div style="left:25%;" class="sepa --sepa1"></div>
         <div style="left:50%;" class="sepa --sepa2"></div>
@@ -32,7 +25,7 @@ $data = $read->fetch(PDO::FETCH_ASSOC);
     </div>
     <div class="container">
         <img class="logo" src="" alt="">
-        <h1>Modifier un membre de la team</h1>
+        <h1><?php echo $title?></h1>
         <form method="post" action="../../core/effectif/updateeffectif.php" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">

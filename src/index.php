@@ -9,12 +9,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'deco'){
     exit();
 }
 
-$title = 'Page d\'accueil'
+$title = 'Page d\'accueil';
+$path = 'style'
 ?>
 
 <?php require_once('../public/includes/head.php')?>
-
-<body>
     <div class="sepa"></div>
     <div class="sepa"></div>
     <div class="sepa"></div>

@@ -52,25 +52,18 @@ if ( !empty($_POST)){
         flash_in('error','Merci de renseigner votre adresse');
     }
 }
+
+$path="admin";
+$title="Réinitisaliser mot de passe";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrateur</title>
-    <link rel="stylesheet" href="../../src/css/admin.css">
-</head>
-<body>
+<?php require_once('../../public/includes/head.php')?>
     <div class="sepa__block">
         <div style="left:25%;" class="sepa --sepa1"></div>
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
     <div class="container">
-        <h1>Demande de réinitialisation de mot de passe</h1>
-        <hr>
+        <h1><?php echo $title?></h1>
         <p>Merci de renseigner l'adresse mail avec laquelle vous êtes inscrit(e) sur ce site</p>
         <?php echo flash_out() ?>
         <form method="post">

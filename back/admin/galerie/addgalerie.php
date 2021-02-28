@@ -8,18 +8,10 @@ if(!isset($_SESSION['admin'])){
 	header('Location: '.URL.'src');
 	exit();
 }
-
+$path = "admin";
+$title = "Ajouter une photo"
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter une photo</title>
-    <link rel="stylesheet" href="../../../src/css/admin.css">
-</head>
-<body>
+<?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
         <div style="left:25%;" class="sepa --sepa1"></div>
         <div style="left:50%;" class="sepa --sepa2"></div>
@@ -27,7 +19,7 @@ if(!isset($_SESSION['admin'])){
     </div>
     <div class="container">
         <img class="logo" src="" alt="">
-        <h1>Ajouter une photo</h1>
+        <h1><?php echo $title?></h1>
         <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
             <div>
                 <label for="fichier">Fichier</label>

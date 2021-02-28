@@ -37,17 +37,12 @@ if(!empty($_POST)){
     }
 
 }
+
+$path='admin';
+$title='Connexion'
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrateur</title>
-    <link rel="stylesheet" href="../src/css/admin.css">
-</head>
-<body>
+<?php require_once('../public/includes/head.php')?>
     <div class="sepa__block">
         <div style="left:25%;" class="sepa --sepa1"></div>
         <div style="left:50%;" class="sepa --sepa2"></div>
@@ -55,7 +50,7 @@ if(!empty($_POST)){
     </div>
     <div class="container">
         <img class="logo" src="" alt="">
-        <h1>Groomers Lab Admin</h1>
+        <h1><?php echo $title?></h1>
         <?php echo flash_out() ?>
         <form method="post">
             <div>
