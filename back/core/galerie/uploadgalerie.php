@@ -3,8 +3,6 @@
 
 require_once('../../../config/settings.php');
 
-require_once('../imagesettings.php');
-
 var_dump($_POST, $_FILES);
 
 if(empty($_POST) || !isset($_SESSION['admin'])){
@@ -25,7 +23,7 @@ if (!empty($_POST)) {
 
 	if ($errors == 0) {
 
-		include('../imagesettings.php');
+		require_once('../imagesettings.php');
 
 		if($errors == 0){
 				$add = $pdo->prepare('INSERT INTO haircut (file, description, title, author) VALUES (:file, :description, :title, :author)');
