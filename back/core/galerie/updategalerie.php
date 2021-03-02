@@ -36,8 +36,8 @@ if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 
 $errors = 0 ;
 if ($errors == 0) {
-	
-	require_once('../imagesettings.php');
+
+	include('../imagesettings.php');
 	
 
 	if( empty($_POST['description']) ){
