@@ -66,4 +66,5 @@ $title='Connexion'
         <a href="<?php echo URL ?>back/admin/reinitmdp.php">J'ai oublié mon mot de passe</a>
     </div>
 </body>
+
 </html>

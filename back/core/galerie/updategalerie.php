@@ -1,11 +1,7 @@
 <?php
 
-
 require_once('../../../config/settings.php');
 
-require_once('../imagesettings.php');
-
-var_dump($_POST, $_FILES);
 
 
 if(empty($_POST) || !isset($_SESSION['admin'])){
@@ -19,12 +15,30 @@ if(empty($_POST) || !isset($_SESSION['admin'])){
 $error = false;
 $_POST = array_map('trim', $_POST);
 
-if($error){
+if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 
-    header('Location: '.URL.'src/index.php?error');
+	
+	$modify = executeSQL("SELECT * FROM haircut WHERE id=:id", array('id' => $_POST['id']));
 
-	exit();
-}else {
+
+	if ($modify->rowCount() == 1) {
+
+		// Suppression de la photo
+		$infos = $modify->fetch();
+		$couverture = $infos['file'];
+		$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+		if (!empty($couverture) && file_exists($chemin . $couverture)) {
+			// Supprime le fichier
+			unlink($chemin . $couverture);
+		}
+	}
+}
+
+$errors = 0 ;
+if ($errors == 0) {
+	
+	require_once('../imagesettings.php');
+	
 
 	if( empty($_POST['description']) ){
 		$_POST['description'] = null;
@@ -32,20 +46,17 @@ if($error){
 	if( empty($_POST['auteur']) ){
 		$_POST['auteur'] = null;
 	}
+	if($errors == 0){
+		$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :id');
+		$add->execute([
+			':id' => $_POST['id'],
+			':file' => $nomfichier,
+			':description' => $_POST['description'],
+			':title' => $_POST['titre'],
+			':author' => $_POST['auteur']
+		]);
 
-	$newName = 'pic-'.time().'.'.$extFile;
-	
-	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../../public/data/'.$newName);
-
-	$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :i');
-	$add->execute([
-		':i' => $_POST['id'],
-		':file' => $newName,
-		':description' => $_POST['description'],
-		':title' => $_POST['titre'],
-		':author' => $_POST['auteur']
-	]);
-
-	header('Location: '.URL.'src/index.php?success');
-	exit();
+		header('Location: '.URL.'src/index.php?success');
+		exit();
+	}
 }

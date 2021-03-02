@@ -4,6 +4,41 @@ body {
     padding: 0;
 }
 
+.alert {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* Anim liens a */
+
+.lien {
+    text-decoration: none;
+    position: relative;
+}
+
+.lien::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in;
+}
+
+.lien:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 p, h1, h2, h3, h4, h5, h5, a, span, label {
     color: white;
 }
@@ -11,15 +46,23 @@ p, h1, h2, h3, h4, h5, h5, a, span, label {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     position: relative;
     z-index: 2;
+    width: 35%;
+    margin: 0 auto;
+    justify-content: center;
 }
+
+
 
 h1 {
     color: #396F53;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h2 {
+    font-size: 40px;
 }
 
 form {
@@ -28,13 +71,18 @@ form {
     align-items: center;
 }
 
+form div {
+    width: 100%;
+}
+
 input {
-    width: 300px;
+    width: 100%;
     height: 50px;
     border: none;
     background-color: #1f1f1f;
     color: white;
     padding-left: 20px;
+    font-size: 16px;
 }
 
 input:focus {
@@ -43,14 +91,19 @@ input:focus {
 
 input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
-    
 }
 
 .submit {
-    background-color: white;
+    background-color: #396F53;
     margin-top: 50px;
-    color: black!important;
+    color: white!important;
     padding: 0!important;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0px;
 }
 
 .sepa {
@@ -62,4 +115,19 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     transform: translateY(-50%);
     opacity: 50%;
     z-index: 1;
+}
+
+.resetPassword {
+    margin: 0 auto;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+/* Add Galerie */
+
+
+/* Update Galerie*/
+
+.addgalerie input , .updategalerie input, .updateeffectif input {
+    margin-bottom: 30px;
 }

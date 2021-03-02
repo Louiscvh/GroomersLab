@@ -1,22 +1,17 @@
 /* Général */
+
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
+    scroll-behavior: smooth;
+
 }
 
 body {
     background-color: black;
     position: relative;
-}
-
-.alert{
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
 }
 
 .alert-success{
@@ -46,41 +41,43 @@ section {
     padding-bottom: 200px;
 }
 
+.alert {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
 /* Anim liens a */
 
-a {
-    display: flex;
-    flex-direction: column;
+.lien {
+    text-decoration: none;
+    position: relative;
 }
 
-a::after {
+.lien::after {
     content: "";
-    width: 0%;
-    height: 1px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
     background-color: white;
-    margin-top: 8px;
+    bottom: -4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in;
 }
 
-a:hover::after {
-    animation: 1s ease animLien;
-    animation-iteration-count: 1;
-
+.lien:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Animations */
 
-
-@keyframes animLien {
-    0% { 
-        width: 0%; 
-    }
-    50%   { 
-        width: 100%; 
-    }
-    100% { 
-        width: 0%; 
-    }
-}
 
 @keyframes scrollInfo {
     0% { 
@@ -104,8 +101,8 @@ a:hover::after {
 
 /* Couleur typos */
 
-p, h1, h2, h3, h4, h5, h5, a, span {
-    color: white;
+p, h1, h2, h3, h4, h5, h5, a, span, i {
+    color: white!important;
 }
 
 /* Header */
@@ -126,7 +123,7 @@ header p {
 }
 
 header a {
-    padding: 30px;
+    margin: 0px 30px;
 }
 
 header li {
@@ -160,6 +157,18 @@ h1 {
 .home__content a {
     font-size: 1.5em;
     width: 80px;
+}
+
+.reserve {
+    padding: 10px 30px;
+    border: 0.8px solid white;
+    background-color: none;
+    transition: all 0.3s ease-in;
+}
+
+.reserve:hover {
+    color: black!important;
+    background-color: white;
 }
 
 .burger__home {
@@ -290,7 +299,16 @@ h1 {
 
 .social__container p {
     margin-right: 50px;
-    opacity: 20%;
+}
+
+.compteurSlide span:nth-child(1) {
+    color: white;
+    opacity: 1!important;
+}
+
+.compteurSlide span:nth-child(2) {
+    color: white;
+    opacity: 0.2!important;
 }
 
 .social i {
@@ -324,6 +342,15 @@ h1 {
     font-size: 1rem;
     color: #D0D0D0;
     margin-top: 6px;
+}
+
+.coif__block a {
+    display: inline-block;
+}
+
+.addGalery {
+    margin-top: 100px;
+    display: inline-block;
 }
 
 
@@ -446,8 +473,8 @@ h1 {
 }
   
 .coiffeur {
-    margin-left: 300px;
-    margin-right: 260px;
+    margin-left: 250px;
+    margin-right: 200px;
     transform: translateX(-50%);
     transition: filter 0.3s ease-out;
 }
@@ -478,6 +505,10 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.coiffeur:nth-child(1) {
+    margin-left: 50%;
 }
   
 .coiffeur h3, .coiffeur h2 {

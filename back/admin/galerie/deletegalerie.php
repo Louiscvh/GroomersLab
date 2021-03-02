@@ -10,12 +10,24 @@ if(!isset($_SESSION['admin'])){
 
 }
 
-$req = $pdo->prepare('DELETE FROM haircut WHERE id = :i');
 
-$req->execute([':i' => $_GET['haircutid']]);
+$req = executeSQL("SELECT * FROM haircut WHERE id=:id", array('id' => $_GET['haircutid']));
+if ($req->rowCount() == 1) {
 
-flash_in('success', 'Supprimé');
+	// Suppression de la photo
+	$infos = $req->fetch();
+	$couverture = $infos['file'];
+	$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+	if (!empty($couverture) && file_exists($chemin . $couverture)) {
+		// Supprime le fichier
+		unlink($chemin . $couverture);
+	}
+	// Suppression en BDD
+	executeSQL("DELETE FROM haircut WHERE id = :id", array('id' => $_GET['haircutid']));
+	flash_in('success', "La photo a été supprimé");
+} else {
+	flash_in('error', 'Photo inexistante');
+}
 
-header('Location: '.URL.'src/index.php?success');
-
+header('Location: '.URL.'src');
 exit();

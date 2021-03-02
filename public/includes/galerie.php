@@ -18,7 +18,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
 <div class="coif__container">
     <?php foreach ($tImages as $value) { ?>
         <div class="coif__block">
-            <img src="../public/data/<?= $value['file'] ?>" alt="<?= $value['description'] ?>">
+            <img src="<?php echo URL . 'public/data/' . $value['file'] ?>" alt="<?= $value['description'] ?>">
             <h4><?= $value['title'] ?></h4>
             <p>Made by <?= $value['author'] ?></p>
             <?php
