@@ -35,28 +35,38 @@ if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 }
 
 $errors = 0 ;
-if ($errors == 0) {
+if (!empty($_POST)) {
+    // J'ai soumis le formulaire
 
-	include('../imagesettings.php');
-	
+    // Assainissement (sanitize)
+    foreach ($_POST as $key => $value) {
+        $_POST[$key] = htmlspecialchars(trim($value));
+    }
 
-	if( empty($_POST['description']) ){
-		$_POST['description'] = null;
-	}
-	if( empty($_POST['auteur']) ){
-		$_POST['auteur'] = null;
-	}
-	if($errors == 0){
-		$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :id');
-		$add->execute([
-			':id' => $_POST['id'],
-			':file' => $nomfichier,
-			':description' => $_POST['description'],
-			':title' => $_POST['titre'],
-			':author' => $_POST['auteur']
-		]);
+	if ($errors == 0) {
 
-		header('Location: '.URL.'src/index.php?success');
-		exit();
+		require_once('../imagesettings.php');
+		
+
+		if( empty($_POST['description']) ){
+			$_POST['description'] = null;
+		}
+		if( empty($_POST['auteur']) ){
+			$_POST['auteur'] = null;
+		}
+		if ($errors == 0) {
+			
+			$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :id');
+			$add->execute([
+				':id' => $_POST['id'],
+				':file' => $nomfichier,
+				':description' => $_POST['description'],
+				':title' => $_POST['titre'],
+				':author' => $_POST['auteur']
+			]);
+		}
 	}
+
+	header('Location: '.URL.'src/index.php?success');
+	exit();
 }

@@ -23,10 +23,17 @@ $title = "Ajouter une photo"
         <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
             <div>
                 <label for="fichier"><img src="<?php
-                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($article_actuel['file']))) ?>" alt="couverture" id="preview" class="img-fluid border">
-                </label>
-                <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp" required>
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
+            
+                <?php
+                if (isset($data['file'])) {
+                ?>
+                    <input type="hidden" name="couverture_actuelle" value="<?php echo $data["file"] ?>">
+                <?php
+                }
+                ?>
             </div> 
             <div>
                 <label for="description">Description</label>
@@ -38,7 +45,7 @@ $title = "Ajouter une photo"
             </div> 
             <div>
                 <label for="auteur">Auteur</label>
-                <input type="text" class="form-control" id="auteur" name="auteur" >
+                <input type="text" class="form-control" id="auteur" name="auteur" required>
             </div> 
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>
         </form>

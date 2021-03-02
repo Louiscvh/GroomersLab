@@ -1,11 +1,7 @@
 <?php
 
-
 require_once('../../../config/settings.php');
 
-require_once('../imagesettings.php');
-
-var_dump($_POST, $_FILES);
 
 
 if(empty($_POST) || !isset($_SESSION['admin'])){
@@ -19,30 +15,51 @@ if(empty($_POST) || !isset($_SESSION['admin'])){
 $error = false;
 $_POST = array_map('trim', $_POST);
 
-if($error){
+if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 
-    header('Location: '.URL.'src/index.php?error');
-
-	exit();
-}else {
-
-	if( empty($_POST['lien']) ){
-		$_POST['lien'] = null;
-	}
-
-	$newName = 'pic-'.time().'.'.$extFile;
 	
-	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../../public/data/'.$newName);
+	$teammodify = executeSQL("SELECT * FROM team WHERE id=:id", array('id' => $_POST['id']));
 
-	$add = $pdo->prepare('UPDATE team SET file = :file, description = :description, name = :name, pseudo = :pseudo, link = :link  WHERE id = :i');
-	$add->execute([
-		':i' => $_POST['id'],
-		':file' => $newName,
-		':description' => $_POST['description'],
-		':name' => $_POST['nom'],
-		':pseudo' => $_POST['pseudo'],
-		':link' => $_POST['lien']
-	]);
+
+	if ($teammodify->rowCount() == 1) {
+
+		// Suppression de la photo
+		$infos = $teammodify->fetch();
+		$couverture = $infos['file'];
+		$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+		if (!empty($couverture) && file_exists($chemin . $couverture)) {
+			// Supprime le fichier
+			unlink($chemin . $couverture);
+		}
+	}
+}
+
+$errors = 0 ;
+if (!empty($_POST)) {
+    // J'ai soumis le formulaire
+
+    // Assainissement (sanitize)
+    foreach ($_POST as $key => $value) {
+        $_POST[$key] = htmlspecialchars(trim($value));
+    }
+
+	if ($errors == 0) {
+
+		require_once('../imagesettings.php');
+
+		if ($errors == 0) {
+			
+			$add = $pdo->prepare('UPDATE team SET file = :file, description = :description, name = :name, pseudo = :pseudo, link = :link  WHERE id = :i');
+			$add->execute([
+				':i' => $_POST['id'],
+				':file' => $nomfichier,
+				':description' => $_POST['description'],
+				':name' => $_POST['nom'],
+				':pseudo' => $_POST['pseudo'],
+				':link' => $_POST['lien']
+			]);
+		}
+	}
 
 	header('Location: '.URL.'src/index.php?success');
 	exit();
