@@ -1,0 +1,3 @@
+ErrorDocument 404 /GroomersLab/404.php
+ErrorDocument 403 /GroomersLab/403.php
+Options -Indexes
