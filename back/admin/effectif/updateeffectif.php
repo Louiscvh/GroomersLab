@@ -31,8 +31,18 @@ $title = "Modifier effectif"
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
 
             <div>
-                <label for="fichier">Fichier</label>
-                <input type="file" class="form-control" id="fichier" name="fichier" required>
+                <label for="fichier"><img src="<?php
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
+                <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
+            
+                <?php
+                if (isset($data['file'])) {
+                ?>
+                    <input type="hidden" name="couverture_actuelle" value="<?php echo $data["file"] ?>">
+                <?php
+                }
+                ?>
             </div> 
             <div>
                 <label for="description">Description</label>
@@ -55,5 +65,13 @@ $title = "Modifier effectif"
             <a href="deleteeffectif.php?teamid=<?= $data['id']; ?>">Supprimer</a>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="module" src="<?php echo URL ?>src/js/test.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

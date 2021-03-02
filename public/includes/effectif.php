@@ -22,7 +22,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
                     <div class="coiffeur__cube" alt="<?= $value['description'] ?>" style="background-image: url(../public/data/<?= $value['file'] ?>);">
                         <div class="coiffeur__title">
                             <h3 class="coiffeur__name"><?= $value['name'] ?></h3>
-                            <h2 class="coiffeur__social"><a href="<?= $value['link'] ?>" target="_blank"><?= $value['pseudo'] ?></a></h2>
+                            <h2 class="coiffeur__social"><a href="<?= $value['link'] ?>" target="_blank"><?php echo '@'.$value['pseudo'] ?></a></h2>
                         </div>
                     </div>
                     <?php
@@ -40,4 +40,4 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
     if(isset($_SESSION['admin'])){ ?>
         <a href="../back/admin/effectif/addeffectif.php">Ajouter un membre</a>
     <?php } ?> 
-</main>
+</main> 

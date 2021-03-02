@@ -3,8 +3,6 @@
 
 require_once('../../../config/settings.php');
 
-require_once('../imagesettings.php');
-
 var_dump($_POST, $_FILES);
 
 if(empty($_POST) || !isset($_SESSION['admin'])){
@@ -14,27 +12,30 @@ if(empty($_POST) || !isset($_SESSION['admin'])){
 	header('Location: '.URL.'src');
 	exit();
 }
+$errors = 0 ;
+if (!empty($_POST)) {
+    // J'ai soumis le formulaire
 
-if($error){
+    // Assainissement (sanitize)
+    foreach ($_POST as $key => $value) {
+        $_POST[$key] = htmlspecialchars(trim($value));
+    }
 
-	header('Location: '.URL.'src/index.php?error');
+	if ($errors == 0) {
 
-	exit();
-}else {
+		require_once('../imagesettings.php');
 
-	$newName = 'pic-'.time().'.'.$extFile;
-
-	move_uploaded_file($_FILES['fichier']['tmp_name'], '../../../public/data/'.$newName);
-
-	$add = $pdo->prepare('INSERT INTO team (file, description, name, pseudo, link) VALUES (:file, :description, :name, :pseudo, :link)');
-	$add->execute([
-		':file' => $newName,
-		':description' => $_POST['description'],
-		':name' => $_POST['nom'],
-		':pseudo' => $_POST['pseudo'],
-		':link' => $_POST['lien']
-	]);
-
-	header('Location: '.URL.'src/index.php?success');
+		if($errors == 0){
+			$add = $pdo->prepare('INSERT INTO team (file, description, name, pseudo, link) VALUES (:file, :description, :name, :pseudo, :link)');
+			$add->execute([
+				':file' => $nomfichier,
+				':description' => $_POST['description'],
+				':name' => $_POST['nom'],
+				':pseudo' => $_POST['pseudo'],
+				':link' => $_POST['lien']
+			]);
+		}
+	}
+	header('Location: '.URL.'src');
 	exit();
 }

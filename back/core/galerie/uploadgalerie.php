@@ -26,16 +26,13 @@ if (!empty($_POST)) {
 		require_once('../imagesettings.php');
 
 		if($errors == 0){
-				$add = $pdo->prepare('INSERT INTO haircut (file, description, title, author) VALUES (:file, :description, :title, :author)');
-				$add->execute([
-					':file' => $nomfichier,
-					':description' => $_POST['description'],
-					':title' => $_POST['titre'],
-					':author' => $_POST['auteur']
-				]);
-
-				header('Location: '.URL.'src/index.php?success');
-				exit();
+			$add = $pdo->prepare('INSERT INTO haircut (file, description, title, author) VALUES (:file, :description, :title, :author)');
+			$add->execute([
+				':file' => $nomfichier,
+				':description' => $_POST['description'],
+				':title' => $_POST['titre'],
+				':author' => $_POST['auteur']
+			]);
 		}
 	}
 	header('Location: '.URL.'src');
