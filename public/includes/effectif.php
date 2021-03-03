@@ -13,7 +13,6 @@ $images->execute();
 $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
 <main>
     <div class="coiffeur__container">
         <div class="coiffeurs">
