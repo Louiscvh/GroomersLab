@@ -18,12 +18,15 @@ $title = "Ajouter effectif"
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
-    <div class="container">
+    <a href=""><img class="logo" src="../../../src/img/logo_white.png" alt=""></a>
+
+    <div class="admin__container">
         <h1><?php echo $title?></h1>
         <form method="post" action="../../core/effectif/uploadeffectif.php" enctype="multipart/form-data">
             <div>
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <label for="">Photo</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             

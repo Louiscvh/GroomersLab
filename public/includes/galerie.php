@@ -30,5 +30,5 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
 </div>
 <?php
 if(isset($_SESSION['admin'])){ ?>
-        <a href="../back/admin/galerie/addgalerie.php">Ajouter une photo</a>
+        <a class="lien add"href="../back/admin/galerie/addgalerie.php">Ajouter une photo</a>
 <?php } ?> 

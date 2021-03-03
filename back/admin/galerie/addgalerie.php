@@ -17,8 +17,9 @@ $title = "Ajouter une photo"
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
-    <div class="container">
-        <img class="logo" src="" alt="">
+    <a href=""><img class="logo" src="../../../src/img/logo_white.png" alt=""></a>
+
+    <div class="admin__container">
         <h1><?php echo $title?></h1>
         <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
             <div>

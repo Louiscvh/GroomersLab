@@ -1,17 +1,73 @@
+:root {
+    --noirMoyen: #1d1d1d;
+    --vertSecondaire: #396F53;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+
+}
+
 body {
     background-color: black;
     margin: 0;
     padding: 0;
+    position: relative;
 }
+
+html, body{ 
+    min-height: 100vh;
+}
+
 
 .alert {
     position: absolute;
-    left: 0;
-    top: 0;
+    width: 200px;
+    text-align: center;
+    left: 0%;
+    bottom: 0;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
     margin: 20px;
+    margin-top: 30px;
+    font-family: avenirregular, arial, cursive;
+    z-index: 2;
+}
+
+#poper {
+    background-image: none!important;
+    background-color: #1d1d1d!important;
+}
+
+/* Typographies */
+
+@font-face {
+    font-family: 'avenirregular';
+    src: url('../font/avenir_roman-webfont.eot');
+    src: url('../font/avenir_roman-webfont.eot') format('embedded-opentype'),
+         url('../font/avenir_roman-webfont.woff2') format('woff2'),
+         url('../font/avenir_roman-webfont.woff') format('woff'),
+         url('../font/avenir_roman-webfont.ttf') format('truetype'),
+         url('../font/avenir_roman-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'quakiezdisplay';
+    src: url('../font/quakiez-webfont.eot');
+    src: url('../font/quakiez-webfont.eot') format('embedded-opentype'),
+         url('../font/quakiez-webfont.woff2') format('woff2'),
+         url('../font/quakiez-webfont.woff') format('woff'),
+         url('../font/quakiez-webfont.ttf') format('truetype'),
+         url('../font/quakiez-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Anim liens a */
@@ -39,50 +95,100 @@ body {
     transform-origin: left;
 }
 
+/* Formulaire connexion */
+
+.resetPassword {
+    margin: 0 auto;
+    margin-top: 50px;
+    text-decoration: none;
+    font-family: avenirregular, arial, cursive;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
 p, h1, h2, h3, h4, h5, h5, a, span, label {
     color: white;
 }
 
-.container {
+.admin__container {
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 2;
-    width: 35%;
+    width: 90%;
     margin: 0 auto;
-    justify-content: center;
+    align-items: center;
 }
-
 
 
 h1 {
     color: #396F53;
-    text-align: center;
-    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
+    font-size: 5rem;
+    margin-top: 50px;   
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 3rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%;
 }
 
 form div {
     width: 100%;
 }
 
+form img {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.form__controls {
+    display: flex;
+    align-items: center;
+    margin: 50px 0px;
+    font-family: avenirregular, arial, cursive;
+}
+
+.admin__container input {
+    margin-top: 15px!important;
+}
+
+.admin__container form div {
+    margin-top: 30px!important;
+}
+
+.admin__container form label {
+    font-family: avenirregular, arial, cursive;
+}
+
 input {
     width: 100%;
-    height: 50px;
+    height: 60px;
     border: none;
     background-color: #1f1f1f;
     color: white;
     padding-left: 20px;
     font-size: 16px;
+    font-family: avenirregular, arial, cursive;
+    margin-top: 30px;
+
 }
 
 input:focus {
@@ -93,17 +199,36 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
 }
 
+.modif .submit {
+    width: 100px!important;
+    margin-top: 0px!important;
+    margin-right: 30px;
+    
+}
+
 .submit {
     background-color: #396F53;
-    margin-top: 50px;
     color: white!important;
     padding: 0!important;
     width: 100%;
     height: 50px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     border-width: 0px;
+    font-family: avenirregular, arial, cursive;
+    margin-top: 50px!important;
+    font-size: 1rem;
+    transition: all 0.3s ease-in;
+    border: 0.8px solid var(--vertSecondaire);
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: transparent!important;
+}
+
+.sepa__block {
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
 
 .sepa {
@@ -117,11 +242,23 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     z-index: 1;
 }
 
-.resetPassword {
-    margin: 0 auto;
-    margin-top: 50px;
-    text-decoration: none;
+.sepa:nth-child(1) {
+    left:25%;
 }
+
+.sepa:nth-child(2) {
+    left:50%;
+}
+
+.sepa:nth-child(3) {
+    left:75%;
+}
+
+
+.deletegalerie {
+    margin: 30px 0px;
+}
+
 
 /* Add Galerie */
 

@@ -14,9 +14,19 @@ $path = 'style'
 ?>
 
 <?php require_once('../public/includes/head.php')?>
-    <div class="sepa"></div>
-    <div class="sepa"></div>
-    <div class="sepa"></div>
+
+    <div class="loading__page">
+        <div class="counter">
+            <p>0%</p>
+            <h2>GROOMERS LAB</h2>
+        </div>
+    </div>
+
+    <div class="sepa__Block">
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+    </div>
     <div class="scroll" data-scroll-container>
         <div class="container">
             <section id="home" data-scroll-section>
@@ -25,7 +35,7 @@ $path = 'style'
                     <h1>GROOMERS LAB BARBER SHOP</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Amet, sit tincidunt aliquam in. </p><br>
-                    <a href="#">Réserver</a>
+                    <a class="reserve"href="#">Réserver</a>
                 </div>
                 <div class="absoelement">
                     <div data-aos="fade-left" class="burger__home">
@@ -39,8 +49,8 @@ $path = 'style'
                     </div>
                     <div data-aos="fade-up" class="controls">
                         <div class="controls__container">
-                            <p>Précédent</p>
-                            <p>Suivant</p>
+                            <p class="lien">Précédent</p>
+                            <p class="lien">Suivant</p>
                         </div> 
                     </div>
                     <div data-aos="fade-up" class="scroll__info">
@@ -51,8 +61,9 @@ $path = 'style'
                     </div>
                     <div data-aos="fade-up" class="social">
                         <div class="social__container">
-                            <div>
-                                <p>1 - 2</p>
+                            <div class="compteurSlide">
+                                <span>1</span>
+                                <span>- 2</span>
                             </div>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -111,7 +122,7 @@ $path = 'style'
                 </ul>
                 </div>
         </section>
-        <div class="container container__slider">
+        <div class="container">
             <section data-scroll-section>
                 <?php require_once('../public/includes/effectif.php'); ?>
             </section>
@@ -125,6 +136,9 @@ $path = 'style'
     <script>
         AOS.init();
     </script>
+    <script type="text/javascript">
+		
+	</script> 
 
 </body>
 

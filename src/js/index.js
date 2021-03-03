@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+  
 
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
@@ -130,6 +132,20 @@ slider.addEventListener('mousemove', (e) => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
-$(".coiffeur").hover(function(){
-    
+
+
+
+  var counter = 0;
+  var c = 0;
+  var i = setInterval(function () {
+    $(".loading__page .counter p").html(c + "%");
+    counter++;
+    c++;
+
+    if (counter == 101) {
+      clearInterval(i);
+      $(".loading__page").fadeOut("slow");
+    }
+  }, 10);
+  
 });

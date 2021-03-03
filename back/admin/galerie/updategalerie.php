@@ -19,19 +19,22 @@ $title = "Modifier une photo"
 ?>
 <?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
-        <div style="left:25%;" class="sepa --sepa1"></div>
-        <div style="left:50%;" class="sepa --sepa2"></div>
-        <div style="left:75%;" class="sepa --sepa3"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
     </div>
-    <div class="container">
-        <img class="logo" src="" alt="">
+    <a href=""><img class="logo" src="../../../src/img/logo_white.png" alt=""></a>
+
+    <div class="admin__container modif">
         <h1><?php echo $title?></h1>
         <form method="post" action="../../core/galerie/updategalerie.php" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <div>
-                <label for="fichier"><img src="<?php
+            <div style="display: flex;
+    flex-direction: column;">
+               <img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <label for="">Photo</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -55,9 +58,10 @@ $title = "Modifier une photo"
                 <label for="auteur">Auteur</label>
                 <input type="text" class="form-control" id="auteur" name="auteur" value="<?= $data['author'] ?>" >
             </div>
-            <img src="../../../public/data/<?= $data['file'] ?>" alt="<?= $data['description'] ?>">
-            <button type="submit" class="btn btn-primary">Modifier</button>
-            <a href="deletegalerie.php?haircutid=<?= $data['id']; ?>">Supprimer</a>
+            <div class="form__controls">
+                <button type="submit" class="btn btn-primary submit">Modifier</button>
+                <a class="deletegalerie lien" href="deletegalerie.php?haircutid=<?= $data['id']; ?>">Supprimer</a>
+            </div>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>

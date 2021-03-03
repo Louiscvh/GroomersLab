@@ -1,3 +1,8 @@
+:root {
+    --noirMoyen: #1d1d1d;
+    --vertSecondaire: #396F53;
+}
+
 /* Général */
 
 * {
@@ -11,7 +16,6 @@
 
 body {
     background-color: black;
-    position: relative;
 }
 
 .alert-success{
@@ -43,12 +47,54 @@ section {
 
 .alert {
     position: absolute;
-    left: 0;
-    top: 0;
+    width: 200px;
+    text-align: center;
+    left: 0%;
+    top: 10vh;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
     margin: 20px;
+    margin-top: 50px;
+    font-family: avenirregular, arial, cursive;
+    z-index: 2;
+}
+
+#poper {
+    background-image: none!important;
+    background-color: #1d1d1d!important;
+}
+
+/* Typographies */
+
+@font-face {
+    font-family: 'avenirregular';
+    src: url('../font/avenir_roman-webfont.eot');
+    src: url('../font/avenir_roman-webfont.eot') format('embedded-opentype'),
+         url('../font/avenir_roman-webfont.woff2') format('woff2'),
+         url('../font/avenir_roman-webfont.woff') format('woff'),
+         url('../font/avenir_roman-webfont.ttf') format('truetype'),
+         url('../font/avenir_roman-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'quakiezdisplay';
+    src: url('../font/quakiez-webfont.eot');
+    src: url('../font/quakiez-webfont.eot') format('embedded-opentype'),
+         url('../font/quakiez-webfont.woff2') format('woff2'),
+         url('../font/quakiez-webfont.woff') format('woff'),
+         url('../font/quakiez-webfont.ttf') format('truetype'),
+         url('../font/quakiez-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Couleurs typos */
+
+p, h1, h2, h3, h4, h5, h5, a, span, i {
+    color: white!important;
 }
 
 /* Anim liens a */
@@ -93,17 +139,44 @@ section {
 
 /* Temporaires */
 
-.logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 8px;
-}
+.loading__page {
+    background-color: #0d0d0d;
+    z-index: 100;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-/* Couleur typos */
+  .loading__page .counter {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-p, h1, h2, h3, h4, h5, h5, a, span, i {
-    color: white!important;
-}
+  .loading__page .counter p {
+    color: white;
+    font-size: 200px;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
+    opacity: 0.2;
+  }
+
+  .loading__page .counter {
+    position: relative;
+  }
+
+  .loading__page .counter h2 {
+    font-size: 5rem;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
+    margin-top: 30px;
+  }
 
 /* Header */
 
@@ -114,12 +187,21 @@ header {
     padding-top: 50px;
 }
 
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 8px;
+}
+
 header ul {
     display: flex;
 }
 
 header p {
     font-size: 1rem;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 100;
 }
 
 header a {
@@ -128,7 +210,7 @@ header a {
 
 header li {
     font-size: 1rem;
-    text-transform: uppercase;
+    font-family: avenirregular, arial, cursive;
 }
 
 
@@ -146,29 +228,36 @@ header li {
 h1 {
     font-size: 5rem;
     width: 50%;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
 }
 
 .home__content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     opacity: 50%;
-    margin: 30px 0px;
+    margin: 50px 0px;
+    font-family: avenirregular, arial, cursive;
+    font-weight: 200;
+
 }
 
 .home__content a {
     font-size: 1.5em;
     width: 80px;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .reserve {
     padding: 10px 30px;
-    border: 0.8px solid white;
-    background-color: none;
+    border: 0.8px solid var(--vertSecondaire);
+    background-color: var(--vertSecondaire);
     transition: all 0.3s ease-in;
 }
 
 .reserve:hover {
-    color: black!important;
-    background-color: white;
+    background-color: transparent!important;
 }
 
 .burger__home {
@@ -201,6 +290,9 @@ h1 {
     content: "Coffe Shop";
     right: 35px;
     opacity: 100%;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .burger__container:hover .line:nth-child(1), .burger__container:hover .line:nth-child(3){
@@ -229,6 +321,9 @@ h1 {
     margin-right: 25px;
     font-size: 1.3rem;
     cursor: pointer;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .controls__container p:first-child {
@@ -276,7 +371,9 @@ h1 {
 .scroll__container p {
     margin-bottom: 20px;
     font-size: 1rem;
-    text-transform: uppercase;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .scroll__sepa {
@@ -299,6 +396,14 @@ h1 {
 
 .social__container p {
     margin-right: 50px;
+    
+}
+
+.compteurSlide {
+    margin-right: 30px;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .compteurSlide span:nth-child(1) {
@@ -336,21 +441,31 @@ h1 {
     font-size: 2rem;
     text-transform: uppercase;
     margin-top: 25px;
+    font-family: essonnes-display, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .coif__block p {
     font-size: 1rem;
     color: #D0D0D0;
-    margin-top: 6px;
+    margin: 6px 0px;
+    opacity: 0.3;
+    font-family: avenirregular, arial, cursive;
+    font-weight: 200;
 }
 
 .coif__block a {
     display: inline-block;
+    font-family: avenirregular, arial, cursive;
+    font-weight: 200;
 }
 
-.addGalery {
+.add {
     margin-top: 100px;
     display: inline-block;
+    font-family: avenirregular, arial, cursive;
+    font-weight: 200;
 }
 
 
@@ -399,9 +514,11 @@ h1 {
 .tarifs__controller h3 {
     color: white;
     opacity: 40%;
-    font-size: 30px;
+    font-size: 3rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
 }
 
 .tarifs__controller h3:hover {

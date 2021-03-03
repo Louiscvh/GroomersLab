@@ -37,6 +37,6 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <?php
     if(isset($_SESSION['admin'])){ ?>
-        <a href="../back/admin/effectif/addeffectif.php">Ajouter un membre</a>
+        <a class="lien add"href="../back/admin/effectif/addeffectif.php">Ajouter un membre</a>
     <?php } ?> 
 </main> 
