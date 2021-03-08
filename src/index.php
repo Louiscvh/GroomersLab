@@ -24,13 +24,14 @@ $path = 'style'
 
     
     <div class="scroll" data-scroll-container>
-        <div class="container">
             <div class="sepa__Block">
                 <div class="sepa"></div>
                 <div class="sepa"></div>
                 <div class="sepa"></div>
             </div>
-            <section id="home" data-scroll-section>
+        <div class="container" data-scroll-section>
+            
+            <section id="home" >
                 <div class="carouselData">
                     <img class="carousel carousel1" src="img/carousel1.jpeg" alt="">
                     <img class="carousel carousel2" src="img/carousel2.jpeg" alt="">
@@ -82,13 +83,16 @@ $path = 'style'
                     </div>
                 </div>
             </section>
-            <section data-scroll-section>
+            <section>
                 <?php require_once('../public/includes/galerie.php'); ?>
             </section>
         </div>
         <section data-scroll-section>
             <div class="slider__wrapper">
                 <ul class='slider__list'>
+                    <li class='listitem'>
+                        <span>Nos tarifs</span>
+                    </li>
                     <li class='listitem'>
                         <span>Nos tarifs</span>
                     </li>
@@ -130,14 +134,44 @@ $path = 'style'
                     <li class='listitem'>
                     <span>la team groomers lab</span>
                     </li>
+                    <li class='listitem'>
+                    <span>la team groomers lab</span>
+                    </li>
                 </ul>
                 </div>
         </section>
-        <div class="container">
-            <section data-scroll-section>
+        <div class="container" data-scroll-section>
+            <section >
                 <?php require_once('../public/includes/effectif.php'); ?>
             </section>
         </div>
+        <section id="footer" class="endSection" data-scroll-section>
+            <footer>
+                <div class="footer__left">
+                    <h2>Grommers Lab</h2>
+                    <div class="footer__infos">
+                        <div class="footer__infosLeft">
+                            <h3>Contact</h3>
+                            <p>22 RUE SAINT SAUVEUR, 75002, PARIS</p>
+                        </div>
+                        <div class="footer__infosRight">
+                            <h3>HORAIRES D’OUVERTURE</h3>
+                            <p>DU MARDI AU SAMEDI DE 11h à 20h</p>
+                        </div>
+                    </div>
+                    <a href="tel:0142335894" class="footer__numTel lien">01 42 33 58 94</a>
+
+                </div>
+                <div class="footer__right">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1aTO95hLGZyIQwmGpsc4A2Tal0FkloMiR" width="100%" height="300"></iframe>
+                </div>
+            </footer>
+            <div class="mentions">
+                <h4 class="lien">Politique de confidentialité</h4>
+                <h4>© 2021 Groomers Lab</h4>
+                <h4 class="lien">Mentions légales</h4>
+            </div>
+        </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

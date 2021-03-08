@@ -1,13 +1,13 @@
 $( document ).ready(function() {
   
+  // Déclaration du scroll de Locomotive Scroll
+  const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      multiplier: 0.8
+  });
 
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    multiplier: 0.8
-});
-
-   //Slider Tarifs
+   // Animation du Slider Tarifs
    var $tickerWrapper = $(".slider__wrapper");
     var $list = $tickerWrapper.find("ul");
     var $clonedList = $list.clone();
@@ -25,7 +25,7 @@ const scroll = new LocomotiveScroll({
     
     $clonedList.addClass("cloned").appendTo($tickerWrapper);
     
-    //TimelineMax
+    //Branchement de la lib TimelineMax pour avoir le slider infini
     var infinite = new TimelineMax({repeat: -1, paused: true});
     var time = 30;
     
@@ -39,7 +39,7 @@ const scroll = new LocomotiveScroll({
       .play();
     
 
-    //Slider équipe
+    // Animation du Slider équipe
     var $tickerWrapper2 = $(".slider__wrapper2");
     var $list2 = $tickerWrapper2.find("ul");
     var $clonedList2 = $list2.clone();
@@ -54,10 +54,9 @@ const scroll = new LocomotiveScroll({
     $list2.add($clonedList2).css({
         "width" : listWidth2 + "px"
     });
-    
     $clonedList2.addClass("cloned").appendTo($tickerWrapper2);
     
-    //TimelineMax
+    //Branchement de la lib TimelineMax pour avoir le slider infini
     var infinite2 = new TimelineMax({repeat: -1, paused: true});
     var time2 = 55;
     
@@ -72,68 +71,66 @@ const scroll = new LocomotiveScroll({
     
    
  
-// Sélecteur tarifs 
+  // Sélecteur à puce des tarifs 
+  $( ".select1").click(function() {
+      $(".select1").addClass("active");
+      $(".select2").removeClass("active");
+      $(".select3").removeClass("active");
+      $(".select4").removeClass("active");
+  });
+
+  $( ".select2").click(function() {
+      $(".select1").removeClass("active");
+      $(".select2").addClass("active");
+      $(".select3").removeClass("active");
+      $(".select4").removeClass("active");
+  });
+
+  $( ".select3").click(function() {
+      $(".select1").removeClass("active");
+      $(".select2").removeClass("active");
+      $(".select3").addClass("active");
+      $(".select4").removeClass("active");
+  });
+
+  $( ".select4").click(function() {
+      $(".select1").removeClass("active");
+      $(".select2").removeClass("active");
+      $(".select3").removeClass("active");
+      $(".select4").addClass("active");
+  });
+
+  // Slider équipe
+  const slider = document.querySelector('.coiffeurs');
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 0.8; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+  });
 
 
-$( ".select1").click(function() {
-    $(".select1").addClass("active");
-    $(".select2").removeClass("active");
-    $(".select3").removeClass("active");
-    $(".select4").removeClass("active");
-});
-
-$( ".select2").click(function() {
-    $(".select1").removeClass("active");
-    $(".select2").addClass("active");
-    $(".select3").removeClass("active");
-    $(".select4").removeClass("active");
-});
-
-$( ".select3").click(function() {
-    $(".select1").removeClass("active");
-    $(".select2").removeClass("active");
-    $(".select3").addClass("active");
-    $(".select4").removeClass("active");
-});
-
-$( ".select4").click(function() {
-    $(".select1").removeClass("active");
-    $(".select2").removeClass("active");
-    $(".select3").removeClass("active");
-    $(".select4").addClass("active");
-});
-
-// Slider équipe
-const slider = document.querySelector('.coiffeurs');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', (e) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 0.8; //scroll-fast
-  slider.scrollLeft = scrollLeft - walk;
-});
-
-
-// Loader
+  // Le Loader (bien mettre les variables en anglais pour éviter la corruption avec le carousel)
   var counter = 0;
   var c = 0;
   var i = setInterval(function () {
@@ -156,7 +153,6 @@ slider.addEventListener('mousemove', (e) => {
   var hauteur = 0;
   var photo = document.querySelector(".carousel"+compteur);
 
-
   $( ".controls__container p:nth-child(2)" ).click(function() {
     compteur++;
     hauteur = hauteur - 23;
@@ -171,21 +167,17 @@ slider.addEventListener('mousemove', (e) => {
       $(".carousel2").fadeOut();
       $(".carousel3").fadeOut();
     }
-  
     if(compteur == 2) {
       $(".carousel"+compteur).fadeIn();
       $(".carousel1").fadeOut();
       $(".carousel3").fadeOut();
     }
-
     if(compteur == 3) {
       $(".carousel"+compteur).fadeIn();
       $(".carousel1").fadeOut();
       $(".carousel2").fadeOut();
     }
-
     photo = document.querySelector(".carousel"+compteur);
-
   });
 
   $( ".controls__container p:nth-child(1)" ).click(function() {
@@ -200,13 +192,11 @@ slider.addEventListener('mousemove', (e) => {
       $(".carousel2").fadeOut();
       $(".carousel3").fadeOut();
     }
-  
     if(compteur == 2) {
       $(".carousel"+compteur).fadeIn();
       $(".carousel1").fadeOut();
       $(".carousel3").fadeOut();
     }
-
     if(compteur == 3) {
       $(".carousel"+compteur).fadeIn();
       $(".carousel1").fadeOut();
@@ -214,34 +204,23 @@ slider.addEventListener('mousemove', (e) => {
     }
     hauteur = hauteur + 23;
     $( ".compteurNumber span" ).css("transform",`translateY(${hauteur}px)`);
-    
     photo = document.querySelector(".carousel"+compteur);
-
   });
-
   if(compteur == 1) {
     $(".carousel"+compteur).fadeIn();
     $(".carousel2").fadeOut();
     $(".carousel3").fadeOut();
   }
 
-  
-
-
-
-
   // Animation du carousel de la section Home
   var currentMousePos = {};
 
-  $( "#home" ).on( "mousemove", function( event ) {
+  $( "#home" ).on( "mousemove", function(event) {
           currentMousePos.x = event.pageX;
           currentMousePos.y = event.pageY;
 
           photo.style.left = ((window.innerWidth * 0.5*1)+-currentMousePos.x/7) + "px";
           photo.style.top = ((window.innerHeight * 0.5*1.1)+-currentMousePos.y/7) + "px";
   });
-
-
-  
 
 });
