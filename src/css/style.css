@@ -217,6 +217,7 @@ header li {
 /* Home */
 #home {
     height: 100vh;
+    position: relative;
 }
 
 .home__content {
@@ -247,6 +248,16 @@ h1 {
     font-family: essonnes-display, serif;
     font-style: normal;
     font-weight: 300;
+}
+
+.carousel {
+    position: absolute;
+    height: 500px;
+    z-index: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    cursor: pointer;
 }
 
 .reserve {
@@ -342,7 +353,7 @@ h1 {
 }
 
 .sepa:nth-child(1) {
-    left:25%;
+    left:15%;
 }
 
 .sepa:nth-child(2) {
@@ -350,7 +361,7 @@ h1 {
 }
 
 .sepa:nth-child(3) {
-    left:75%;
+    left:85%;
 }
 
 .scroll__info {
@@ -428,6 +439,10 @@ h1 {
     transition: all 0.3s;
 }
 
+.maxCompteur{
+    opacity: 0.5;
+}
+
 .controls__container p:hover:nth-child(2) .compteurNumber {
     transform: translateY(-25px);
 }
@@ -496,6 +511,8 @@ h1 {
     width: 99.9%;
     height: 130px;
     overflow: hidden;
+    font-family:quakiezdisplay, arial, cursive;
+
 }
 
 .slider__list, .slider__list2 {

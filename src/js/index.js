@@ -154,6 +154,8 @@ slider.addEventListener('mousemove', (e) => {
   var compteur = 1;
   var maxCompteur = 4;
   var hauteur = 0;
+  var photo = document.querySelector(".carousel"+compteur);
+
 
   $( ".controls__container p:nth-child(2)" ).click(function() {
     compteur++;
@@ -164,6 +166,26 @@ slider.addEventListener('mousemove', (e) => {
       compteur = 1;
       $( ".compteurNumber span" ).css("transform",`translateY(0px)`);
     }
+    if(compteur == 1) {
+      $(".carousel"+compteur).fadeIn();
+      $(".carousel2").fadeOut();
+      $(".carousel3").fadeOut();
+    }
+  
+    if(compteur == 2) {
+      $(".carousel"+compteur).fadeIn();
+      $(".carousel1").fadeOut();
+      $(".carousel3").fadeOut();
+    }
+
+    if(compteur == 3) {
+      $(".carousel"+compteur).fadeIn();
+      $(".carousel1").fadeOut();
+      $(".carousel2").fadeOut();
+    }
+
+    photo = document.querySelector(".carousel"+compteur);
+
   });
 
   $( ".controls__container p:nth-child(1)" ).click(function() {
@@ -173,12 +195,53 @@ slider.addEventListener('mousemove', (e) => {
       compteur = 1;
       fail;
     }
+    if(compteur == 1) {
+      $(".carousel"+compteur).fadeIn();
+      $(".carousel2").fadeOut();
+      $(".carousel3").fadeOut();
+    }
+  
+    if(compteur == 2) {
+      $(".carousel"+compteur).fadeIn();
+      $(".carousel1").fadeOut();
+      $(".carousel3").fadeOut();
+    }
+
+    if(compteur == 3) {
+      $(".carousel"+compteur).fadeIn();
+      $(".carousel1").fadeOut();
+      $(".carousel2").fadeOut();
+    }
     hauteur = hauteur + 23;
     $( ".compteurNumber span" ).css("transform",`translateY(${hauteur}px)`);
     
+    photo = document.querySelector(".carousel"+compteur);
+
+  });
+
+  if(compteur == 1) {
+    $(".carousel"+compteur).fadeIn();
+    $(".carousel2").fadeOut();
+    $(".carousel3").fadeOut();
+  }
+
+  
+
+
+
+
+  // Animation du carousel de la section Home
+  var currentMousePos = {};
+
+  $( "#home" ).on( "mousemove", function( event ) {
+          currentMousePos.x = event.pageX;
+          currentMousePos.y = event.pageY;
+
+          photo.style.left = ((window.innerWidth * 0.5*1)+-currentMousePos.x/7) + "px";
+          photo.style.top = ((window.innerHeight * 0.5*1.1)+-currentMousePos.y/7) + "px";
   });
 
 
   
-  
+
 });

@@ -22,14 +22,21 @@ $path = 'style'
         </div>
     </div>
 
-    <div class="sepa__Block">
-        <div class="sepa"></div>
-        <div class="sepa"></div>
-        <div class="sepa"></div>
-    </div>
+    
     <div class="scroll" data-scroll-container>
         <div class="container">
+            <div class="sepa__Block">
+                <div class="sepa"></div>
+                <div class="sepa"></div>
+                <div class="sepa"></div>
+            </div>
             <section id="home" data-scroll-section>
+                <div class="carouselData">
+                    <img class="carousel carousel1" src="img/carousel1.jpeg" alt="">
+                    <img class="carousel carousel2" src="img/carousel2.jpeg" alt="">
+                    <img class="carousel carousel3" src="img/carousel3.jpeg" alt="">
+                </div>
+
                 <?php require_once('../public/includes/header.php'); ?>
                 <div class="home__content">
                     <h1>GROOMERS LAB BARBER SHOP</h1>
@@ -67,7 +74,7 @@ $path = 'style'
                                 <span>2</span>
                                 <span>3</span>
                             </div>
-                            <span> - 3</span>
+                            <span class="maxCompteur"> - 3</span>
                             </div>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
