@@ -62,8 +62,12 @@ $path = 'style'
                     <div data-aos="fade-up" class="social">
                         <div class="social__container">
                             <div class="compteurSlide">
+                            <div class="compteurNumber">
                                 <span>1</span>
-                                <span>- 2</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <span> - 3</span>
                             </div>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>

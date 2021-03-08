@@ -133,8 +133,7 @@ slider.addEventListener('mousemove', (e) => {
 });
 
 
-
-
+// Loader
   var counter = 0;
   var c = 0;
   var i = setInterval(function () {
@@ -147,5 +146,39 @@ slider.addEventListener('mousemove', (e) => {
       $(".loading__page").fadeOut("slow");
     }
   }, 10);
+
+
+
+  // Compteur Slide
+
+  var compteur = 1;
+  var maxCompteur = 4;
+  var hauteur = 0;
+
+  $( ".controls__container p:nth-child(2)" ).click(function() {
+    compteur++;
+    hauteur = hauteur - 23;
+    $( ".compteurNumber span" ).css("transform",`translateY(${hauteur}px)`);
+    if(compteur == maxCompteur) {
+      hauteur = 0;
+      compteur = 1;
+      $( ".compteurNumber span" ).css("transform",`translateY(0px)`);
+    }
+  });
+
+  $( ".controls__container p:nth-child(1)" ).click(function() {
+    compteur--;
+    if(compteur < 1) {
+      $( ".compteurNumber span" ).css("transform",`translateY(0px)`);
+      compteur = 1;
+      fail;
+    }
+    hauteur = hauteur + 23;
+    $( ".compteurNumber span" ).css("transform",`translateY(${hauteur}px)`);
+    
+  });
+
+
+  
   
 });
