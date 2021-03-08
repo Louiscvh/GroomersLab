@@ -82,7 +82,7 @@ html, body{
     position: absolute;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: white;
     bottom: -4px;
     transform: scaleX(0);
@@ -267,4 +267,13 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 .addgalerie input , .updategalerie input, .updateeffectif input {
     margin-bottom: 30px;
+}
+
+
+/* Update Effectif*/
+
+.suppr {
+    margin: 20px 0px;
+    font-family: avenirregular, arial, cursive;
+
 }

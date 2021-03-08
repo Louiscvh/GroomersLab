@@ -18,7 +18,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
         <div class="coiffeurs">
             <?php foreach ($tImages as $value) { ?>
                 <div class="coiffeur">
-                    <div class="coiffeur__cube" alt="<?= $value['description'] ?>" style="background-image: url(../public/data/<?= $value['file'] ?>);">
+                    <div class="coiffeur__cube" alt="<?= $value['description'] ?>" style=" margin-bottom:20px;background-image: url(../public/data/<?= $value['file'] ?>);">
                         <div class="coiffeur__title">
                             <h3 class="coiffeur__name"><?= $value['name'] ?></h3>
                             <h2 class="coiffeur__social"><a href="<?= $value['link'] ?>" target="_blank"><?php echo '@'.$value['pseudo'] ?></a></h2>
@@ -26,7 +26,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <?php
                     if(isset($_SESSION['admin'])){ ?>
-                        <a href="../back/admin/effectif/updateeffectif.php?teamid=<?php echo $value['id']; ?>">Modifier</a>
+                        <a style="font-family: avenirregular, arial, cursive;"href="../back/admin/effectif/updateeffectif.php?teamid=<?php echo $value['id']; ?>">Modifier</a>
                     <?php } ?> 
                 </div>
             <?php } ?> 
@@ -37,6 +37,8 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <?php
     if(isset($_SESSION['admin'])){ ?>
+    <div class="container">
         <a class="lien add"href="../back/admin/effectif/addeffectif.php">Ajouter un membre</a>
+    </div>
     <?php } ?> 
 </main> 

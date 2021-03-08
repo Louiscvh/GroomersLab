@@ -140,7 +140,7 @@ $path = 'style'
                 </ul>
                 </div>
         </section>
-        <div class="container" data-scroll-section>
+        <div data-scroll-section>
             <section >
                 <?php require_once('../public/includes/effectif.php'); ?>
             </section>

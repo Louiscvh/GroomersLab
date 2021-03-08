@@ -31,9 +31,10 @@ $title = "Modifier effectif"
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
 
-            <div>
-                <label for="fichier">Photo</label><img src="<?php
+            <div style="display: flex;flex-direction: column;">
+                <img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <label for="fichier">Photo</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -61,9 +62,8 @@ $title = "Modifier effectif"
                 <label for="lien">Lien</label>
                 <input type="text" class="form-control" id="lien" name="lien" value="<?= $data['link'] ?>" >
             </div> 
-            <img src="../../../public/data/<?= $data['file'] ?>" alt="<?= $data['description'] ?>">
             <button class="submit"type="submit" class="btn btn-primary">Modifier</button>
-            <a href="deleteeffectif.php?teamid=<?= $data['id']; ?>">Supprimer</a>
+            <a class="lien suppr"href="deleteeffectif.php?teamid=<?= $data['id']; ?>">Supprimer</a>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>
