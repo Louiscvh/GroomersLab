@@ -2,8 +2,8 @@
 
 
 require_once('config/settings.php');
-$path = 'admin'
-
+$path = 'admin';
+$title="Erreur 403";
 
 ?>
 
