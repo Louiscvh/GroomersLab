@@ -15,8 +15,8 @@ $path = 'admin'
         <div class="sepa"></div>
         <div class="sepa"></div>
     </div>
-    <div class="container404">
-        <div class="container404__content">
+    <div class="container403">
+        <div class="container403__content">
             <h1>Erreur 403</h1>
             <h2>Ooops !</h2>
             <p>On s'est peut-être perdu</p>

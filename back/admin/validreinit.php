@@ -32,7 +32,6 @@ else{
 }
 
 //En plaçant le traitement du post ici, je profite des controles précèdents pour vérifier  que j'ai toujours affaire à un lien valide( email, token et expiration non atteinte)
-
 if(!empty($_POST)){
     if(!empty($_POST['newmdp']) && !empty($_POST['confirmation'])){
         if( $_POST['newmdp'] === $_POST['confirmation']){

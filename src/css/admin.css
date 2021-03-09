@@ -281,7 +281,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 /* Page 404 */
 
-.container404 {
+.container404, .container403 {
     font-family: avenirregular, arial, cursive;
     position: relative;
     width: 100%;
@@ -289,14 +289,14 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     text-align: center;
 }
 
-.container404__content {
+.container403__content {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
 }
 
-.container404__content p {
+.container403__content p {
     margin-bottom: 100px;
     opacity: 50%;
     margin-top: 10px;
