@@ -62,17 +62,19 @@ $title="Réinitisaliser mot de passe";
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
-    <div class="container">
+    <a href=""><img class="logo" src="../../src/img/logo_white.png" alt=""></a>
+
+    <div class="admin__container">
         <h1><?php echo $title?></h1>
-        <p>Merci de renseigner l'adresse mail avec laquelle vous êtes inscrit(e) sur ce site</p>
+        <p class="reinit__p">Merci de renseigner l'adresse mail avec laquelle vous êtes inscrit(e) sur ce site</p>
         <?php echo flash_out() ?>
         <form method="post">
             <div class="form-group">
                 <label for="email">Adresse mail</label>
                 <input type="email" class="form-control" id="email" name="email">
             </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-            <a href="<?php echo URL ?>back/admin.php" class="btn btn-warning">Retour</a>
+            <button type="submit" class="submit btn btn-primary">Envoyer</button>
+            <a href="<?php echo URL ?>back/admin.php" class="lien suppr btn btn-warning">Retour</a>
         </form>
     </div>
 </body>

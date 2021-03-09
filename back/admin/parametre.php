@@ -90,22 +90,26 @@ $path="admin";
 $title="Paramètres";
 ?>
 <?php require_once('../../public/includes/head.php')?>
-    <div class="container">
+<a href=""><img class="logo" src="../../src/img/logo_white.png" alt=""></a>
+
+    <div class="admin__container">
         <?php echo flash_out() ?>
         <h1><?php echo $title?></h1>
-        <a class="submit" href="?action=password">Changer de Mot de passe</a>
-        <a class="submit" href="?action=email">Changer d'email</a>
-        <a class="submit" href="?action=user">Changer de nom d'utilisateur</a>
+        <div class="param__categ">
+            <a class="lien" href="?action=password">Changer de Mot de passe</a>
+            <a class="lien" href="?action=email">Changer d'email</a>
+            <a class="lien" href="?action=user">Changer de nom d'utilisateur</a>
+        </div>
         <?php if(isset($_SESSION['admin'])) {
             if (isset($_GET['action'])){
                 if (isset($_GET['action']) && $_GET['action'] == 'email') { ?>
-                    <p>Login : <?php echo $_SESSION['admin']['login'] ?></p>
+                    <p class="param__login">Login : <?php echo $_SESSION['admin']['login'] ?></p>
                     <form method="post">
                         <div class="form-group">
                             <label for="email">Votre email</label>
                             <input type="email" class="form-control" id="email" name="email" value="<?php echo $_POST['email'] ?? $_SESSION['admin']['email'] ?>">
                         </div>
-                        <button type="submit" name="changemail" class="btn btn-primary">Modifier</button>
+                        <button type="submit" name="changemail" class="submit btn btn-primary">Modifier</button>
                     </form>
                 <?php } ?>
                 <?php if (isset($_GET['action']) && $_GET['action'] == 'password') { ?>
@@ -123,7 +127,7 @@ $title="Paramètres";
                             <label for="confirmationpassword">Confirmation</label> <i class="far fa-eye voirmdp"></i> 
                             <input type="password" class="form-control" id="confirmationpassword" name="confirmationpassword">
                         </div>
-                        <button type="submit" name="changemdp" class="btn btn-primary">Modifier</button>
+                        <button type="submit" name="changemdp" class="submit btn btn-primary">Modifier</button>
                     </form>
                 <?php } ?>
                 <?php if (isset($_GET['action']) && $_GET['action'] == 'user') { ?>
@@ -133,7 +137,7 @@ $title="Paramètres";
                             <label for="user">Nom d'utilisateur</label> <i class="far fa-eye voirmdp"></i> 
                             <input type="text" class="form-control" id="user" name="user" value="<?php echo $_POST['user'] ?? $_SESSION['admin']['login'] ?>">
                         </div>
-                        <button type="submit" name="changeuser" class="btn btn-primary">Modifier</button>
+                        <button type="submit" name="changeuser" class="submit btn btn-primary">Modifier</button>
                     </form>
                 <?php } ?>
             <?php } ?>
