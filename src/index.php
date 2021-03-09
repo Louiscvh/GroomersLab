@@ -84,7 +84,7 @@ $path = 'style'
                 </div>
             </section>
             <section>
-                <?php require_once('../public/includes/galerie.php'); ?>
+                <?php require_once('../public/includes/galeriesection.php'); ?>
             </section>
         </div>
         <section data-scroll-section>
@@ -142,7 +142,7 @@ $path = 'style'
         </section>
         <div data-scroll-section>
             <section >
-                <?php require_once('../public/includes/effectif.php'); ?>
+                <?php require_once('../public/includes/effectifsection.php'); ?>
             </section>
         </div>
         <section id="footer" class="endSection" data-scroll-section>

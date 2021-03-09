@@ -1,3 +1,7 @@
 ErrorDocument 404 /GroomersLab/404.php
 ErrorDocument 403 /GroomersLab/403.php
 Options -Indexes
+<FilesMatch "header\.php|head.php|effectifsection.php|galeriesection.php">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
