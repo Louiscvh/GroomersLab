@@ -62,7 +62,7 @@ $title = "Changer mot de passe";
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
-    <div class="container">
+    <div class="admin__container">
         <h1><?php echo $title?></h1>
         <?php echo flash_out() ?>
         <form method="post">
@@ -75,7 +75,7 @@ $title = "Changer mot de passe";
                 <label for="confirmation">Confirmation</label>
                 <input type="password" class="form-control" id="confirmation" name="confirmation">
             </div>
-            <button type="submit" class="btn btn-primary">Valider la modification du mot de passe</button> 
+            <button type="submit" class="submit btn btn-primary">Valider la modification du mot de passe</button> 
         </form>
     </div>
 </body>
