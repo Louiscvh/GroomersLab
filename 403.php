@@ -1,17 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur 403 - Groomers Lab</title>
-</head>
-<body>
+<?php 
 
-    <h1>Erreur 403</h1>
-    <h2>L'accès à cette page du site est interdit</h2>
-    <hr>
-    <a href="http://localhost/GroomersLab/src/">Revenir à l'accueil</a>
-    
+
+require_once('config/settings.php');
+$path = 'admin'
+
+
+?>
+
+
+<?php require_once('public/includes/head.php')?>
+
+    <div class="sepa__Block">
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+    </div>
+    <div class="container404">
+        <div class="container404__content">
+            <h1>Erreur 403</h1>
+            <h2>Ooops !</h2>
+            <p>On s'est peut-être perdu</p>
+            <a class="lien" href="http://localhost/GroomersLab/src/">Revenir à l'accueil</a>
+        </div>
+    </div>
 </body>
+
 </html>
