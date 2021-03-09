@@ -27,11 +27,13 @@ $title = "Modifier effectif"
 
     <div class="admin__container">
         <h1><?php echo $title?></h1>
+        <?php echo flash_out() ?>
         <form method="post" action="../../core/effectif/updateeffectif.php" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
 
             <div style="display: flex;flex-direction: column;">
+                <a href="<?php echo URL ?>src">< Retour</a>
                 <img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <label for="fichier">Photo</label>
@@ -48,15 +50,15 @@ $title = "Modifier effectif"
             </div> 
             <div>
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>" required>
+                <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>">
             </div> 
             <div>
                 <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" value="<?= $data['name'] ?>"  required>
-            </div> 
+                <input type="text" class="form-control" id="nom" name="nom" value="<?= $data['name'] ?>">
+            </div>
             <div>
                 <label for="pseudo">Pseudo</label>
-                <input type="text" class="form-control" id="pseudo" name="pseudo" value="<?= $data['pseudo'] ?>"  required>
+                <input type="text" class="form-control" id="pseudo" name="pseudo" value="<?= $data['pseudo'] ?>">
             </div> 
             <div>
                 <label for="lien">Lien</label>

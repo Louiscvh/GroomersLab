@@ -22,8 +22,10 @@ $title = "Ajouter effectif"
 
     <div class="admin__container">
         <h1><?php echo $title?></h1>
+        <?php echo flash_out() ?>
         <form method="post" action="../../core/effectif/uploadeffectif.php" enctype="multipart/form-data">
             <div>
+                <a href="<?php echo URL ?>src">< Retour</a>
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <label for="">Photo</label>
@@ -40,19 +42,19 @@ $title = "Ajouter effectif"
             </div> 
             <div>
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" required>
+                <input type="text" class="form-control" id="description" name="description">
             </div> 
             <div>
                 <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
+                <input type="text" class="form-control" id="nom" name="nom">
             </div> 
             <div>
                 <label for="pseudo">Pseudo</label>
-                <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+                <input type="text" class="form-control" id="pseudo" name="pseudo">
             </div> 
             <div>
                 <label for="lien">Lien</label>
-                <input type="text" class="form-control" id="lien" name="lien" required>
+                <input type="text" class="form-control" id="lien" name="lien">
             </div> 
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>
         </form>

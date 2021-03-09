@@ -2,9 +2,9 @@
 
 require_once('../../../config/settings.php');
 
+$_POST = array_map('trim', $_POST);
 
-
-if(empty($_POST) || !isset($_SESSION['admin'])){
+if(!isset($_SESSION['admin'])){
 
 	flash_in('error', 'Action impossible. Try again');
     
@@ -37,36 +37,33 @@ if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 $errors = 0 ;
 if (!empty($_POST)) {
     // J'ai soumis le formulaire
-
-    // Assainissement (sanitize)
-    foreach ($_POST as $key => $value) {
-        $_POST[$key] = htmlspecialchars(trim($value));
-    }
-
-	if ($errors == 0) {
-
-		require_once('../imagesettings.php');
-		
-
-		if( empty($_POST['description']) ){
-			$_POST['description'] = null;
+	if (empty(trim($_POST['description'])) || empty(trim($_POST['titre'])) || empty(trim($_POST['auteur']))) {
+        flash_in('error', 'Merci de remplir tous les champs');
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
+	}else{
+		// Assainissement (sanitize)
+		foreach ($_POST as $key => $value) {
+			$_POST[$key] = htmlspecialchars(trim($value));
 		}
-		if( empty($_POST['auteur']) ){
-			$_POST['auteur'] = null;
-		}
+
 		if ($errors == 0) {
-			
-			$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :id');
-			$add->execute([
-				':id' => $_POST['id'],
-				':file' => $nomfichier,
-				':description' => $_POST['description'],
-				':title' => $_POST['titre'],
-				':author' => $_POST['auteur']
-			]);
-		}
-	}
 
-	header('Location: '.URL.'src/index.php?success');
-	exit();
+			require_once('../imagesettings.php');
+		
+			if ($errors == 0) {
+				
+				$add = $pdo->prepare('UPDATE haircut SET file = :file, description = :description, title = :title, author = :author WHERE id = :id');
+				$add->execute([
+					':id' => $_POST['id'],
+					':file' => $nomfichier,
+					':description' => $_POST['description'],
+					':title' => $_POST['titre'],
+					':author' => $_POST['auteur']
+				]);
+			}
+		}
+		header('Location: '.URL.'src/index.php?success');
+		exit();
+	}
+	
 }

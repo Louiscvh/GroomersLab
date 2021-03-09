@@ -18,11 +18,12 @@ $title = "Ajouter une photo"
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
     <a href=""><img class="logo" src="../../../src/img/logo_white.png" alt=""></a>
-
     <div class="admin__container">
+        <?php echo flash_out() ?>
         <h1><?php echo $title?></h1>
         <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
             <div>
+                <a href="<?php echo URL ?>src">< Retour</a>
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
@@ -38,15 +39,15 @@ $title = "Ajouter une photo"
             </div> 
             <div>
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" required>
+                <input type="text" class="form-control" id="description" name="description">
             </div> 
             <div>
                 <label for="titre">Titre</label>
-                <input type="text" class="form-control" id="titre" name="titre" required>
+                <input type="text" class="form-control" id="titre" name="titre">
             </div> 
             <div>
                 <label for="auteur">Auteur</label>
-                <input type="text" class="form-control" id="auteur" name="auteur" required>
+                <input type="text" class="form-control" id="auteur" name="auteur">
             </div> 
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>
         </form>

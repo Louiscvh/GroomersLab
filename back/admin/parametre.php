@@ -93,6 +93,7 @@ $title="Paramètres";
     <div class="container">
         <?php echo flash_out() ?>
         <h1><?php echo $title?></h1>
+        <a href="<?php echo URL ?>src">< Retour</a>
         <a class="submit" href="?action=password">Changer de Mot de passe</a>
         <a class="submit" href="?action=email">Changer d'email</a>
         <a class="submit" href="?action=user">Changer de nom d'utilisateur</a>

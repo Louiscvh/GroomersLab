@@ -3,7 +3,6 @@
 require_once('../../../config/settings.php');
 
 
-
 if(empty($_POST) || !isset($_SESSION['admin'])){
 
 	flash_in('error', 'Action impossible. Try again');
@@ -12,7 +11,6 @@ if(empty($_POST) || !isset($_SESSION['admin'])){
 	exit();
 }
 
-$error = false;
 $_POST = array_map('trim', $_POST);
 
 if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
@@ -37,30 +35,34 @@ if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 $errors = 0 ;
 if (!empty($_POST)) {
     // J'ai soumis le formulaire
-
+	if (empty(trim($_POST['description'])) || empty(trim($_POST['nom'])) || empty(trim($_POST['pseudo']))) {
+        flash_in('error', 'Merci de remplir tous les champs');
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
+	}else{
     // Assainissement (sanitize)
-    foreach ($_POST as $key => $value) {
-        $_POST[$key] = htmlspecialchars(trim($value));
-    }
-
-	if ($errors == 0) {
-
-		require_once('../imagesettings.php');
+		foreach ($_POST as $key => $value) {
+			$_POST[$key] = htmlspecialchars(trim($value));
+		}
 
 		if ($errors == 0) {
-			
-			$add = $pdo->prepare('UPDATE team SET file = :file, description = :description, name = :name, pseudo = :pseudo, link = :link  WHERE id = :i');
-			$add->execute([
-				':i' => $_POST['id'],
-				':file' => $nomfichier,
-				':description' => $_POST['description'],
-				':name' => $_POST['nom'],
-				':pseudo' => $_POST['pseudo'],
-				':link' => $_POST['lien']
-			]);
-		}
-	}
 
-	header('Location: '.URL.'src/index.php?success');
-	exit();
+			require_once('../imagesettings.php');
+
+			if ($errors == 0) {
+				
+				$add = $pdo->prepare('UPDATE team SET file = :file, description = :description, name = :name, pseudo = :pseudo, link = :link  WHERE id = :i');
+				$add->execute([
+					':i' => $_POST['id'],
+					':file' => $nomfichier,
+					':description' => $_POST['description'],
+					':name' => $_POST['nom'],
+					':pseudo' => $_POST['pseudo'],
+					':link' => $_POST['lien']
+				]);
+			}
+		}
+
+		header('Location: '.URL.'src/index.php?success');
+		exit();
+	}
 }
