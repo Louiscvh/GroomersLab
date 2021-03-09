@@ -34,15 +34,20 @@ else{
 //En plaçant le traitement du post ici, je profite des controles précèdents pour vérifier  que j'ai toujours affaire à un lien valide( email, token et expiration non atteinte)
 if(!empty($_POST)){
     if(!empty($_POST['newmdp']) && !empty($_POST['confirmation'])){
+        
         if( $_POST['newmdp'] === $_POST['confirmation']){
-            //les deux champs sont remplis et identiques
-            executeSQL("UPDATE users SET password=:newmdp, token=NULL WHERE id_user=:id_user", array(
-                'newmdp' => password_hash($_POST['newmdp'],PASSWORD_DEFAULT),
-                'id_user' => $_POST['id_user']
-            ));
-            flash_in('success','le mot de passe a été changé avec succés');
-            header('Location:'.URL.'back/admin.php');
-            exit();
+            if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_\$\!\-\.\%])[\w\$\!\-\.\%]{8,20}$#', $_POST['newmdp'])) {
+                //les deux champs sont remplis et identiques
+                executeSQL("UPDATE users SET password=:newmdp, token=NULL WHERE id_user=:id_user", array(
+                    'newmdp' => password_hash($_POST['newmdp'],PASSWORD_DEFAULT),
+                    'id_user' => $_POST['id_user']
+                ));
+                flash_in('success','le mot de passe a été changé avec succés');
+                header('Location:'.URL.'back/admin.php');
+                exit();
+            } else {
+                flash_in('error', 'Le mot de passe doit comporter entre 8 et 20 caractères dont au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial (_$!-.%)');
+            }
         }   
         else{
             flash_in('error','Le nouveau mot de passe et la confirmation ne concordent pas');
