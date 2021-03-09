@@ -9,6 +9,7 @@
         <a class="lien"href="#"><li>Galerie</li></a>
         <?php
         if (isset($_SESSION['admin'])) { ?>
+            <a class="lien" href="<?php echo URL?>back/admin/parametre.php" class="btn btn-primary"><li>Admin</li></a>
             <a class="lien" href="?action=deco" class="btn btn-primary"><li>Se déconnecter</li></a>
         <?php } ?>
     </ul>
