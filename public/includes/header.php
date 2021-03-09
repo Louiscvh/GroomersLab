@@ -1,17 +1,19 @@
 <header  data-aos="fade-down">
-    <a style="padding: 0px;"href="">
+    <a style="padding: 0px;" href="">
     <img class="logo" src="img/logo_white.png" alt="">
 </a>
     <p>10AM_8PM</p>
-    <ul>
-        <a class="lien" href="#"><li>Tarifs</li></a>
-        <a class="lien" href="#"><li>Rendez-vous</li></a>
-        <a class="lien"href="#"><li>Galerie</li></a>
-        <?php
-        if (isset($_SESSION['admin'])) { ?>
-            <a class="lien" href="<?php echo URL?>back/admin/parametre.php" class="btn btn-primary"><li>Admin</li></a>
-            <a class="lien" href="?action=deco" class="btn btn-primary"><li>Se déconnecter</li></a>
-        <?php } ?>
-    </ul>
+    <nav>
+        <ul>
+            <li><a class="lien" href="#">Tarifs</a></li>
+            <li><a class="lien" href="#">Rendez-vous</a></li>
+            <li><a class="lien"href="#">Galerie</a></li>
+            <?php
+            if (isset($_SESSION['admin'])) { ?>
+                <li><a class="lien" href="<?php echo URL?>back/admin/parametre.php" class="btn btn-primary">Admin</a></li>
+                <li><a class="lien" href="?action=deco" class="btn btn-primary">Se déconnecter</a></li>
+            <?php } ?>
+        </ul>
+    </nav>
 </header>
 <?php echo flash_out() ?>

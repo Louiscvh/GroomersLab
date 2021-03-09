@@ -1,4 +1,21 @@
+'use strict';
+
 $( document ).ready(function() {
+
+  //Leaflet config
+  var map = L.map('map', {
+    center: [48.866350858938574, 2.3479970557850103],
+    zoom: 17,
+  });
+
+  L.tileLayer('https://api.maptiler.com/maps/ch-swisstopo-lbm-dark/{z}/{x}/{y}.png?key=z7VZjPjowDhkEFyKoLzj', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> © swisstopo <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> <a target="_blank" href="https://www.swisstopo.admin.ch/en/home.html">&copy; swisstopo</a>',
+      zoom: 13
+  }).addTo(map);
+  var marker = L.marker([48.866350858938574, 2.3479970557850103], {
+      title: 'GroomersLab',
+  }).addTo(map);
+
   
   // Déclaration du scroll de Locomotive Scroll
   const scroll = new LocomotiveScroll({
@@ -8,16 +25,16 @@ $( document ).ready(function() {
   });
 
   // Animation du Slider Tarifs
-  var $tickerWrapper = $(".slider__wrapper");
-  var $list = $tickerWrapper.find("ul");
-  var $clonedList = $list.clone();
-  var listWidth = 10;
+  let $tickerWrapper = $(".slider__wrapper");
+  let $list = $tickerWrapper.find("ul");
+  let $clonedList = $list.clone();
+  let listWidth = 10;
   
   $list.find("li").each(function (i) {
               listWidth += $(this, i).outerWidth(true);
   });
   
-  var endPos = $tickerWrapper.width() - listWidth;
+  let endPos = $tickerWrapper.width() - listWidth;
   
   $list.add($clonedList).css({
       "width" : listWidth + "px"
@@ -26,8 +43,8 @@ $( document ).ready(function() {
   $clonedList.addClass("cloned").appendTo($tickerWrapper);
   
   //Branchement de la lib TimelineMax pour avoir le slider infini
-  var infinite = new TimelineMax({repeat: -1, paused: true});
-  var time = 30;
+  let infinite = new TimelineMax({repeat: -1, paused: true});
+  let time = 30;
   
   infinite
     .fromTo($list, time, {rotation:0.01,x:0}, {force3D:true, x: -listWidth, ease: Linear.easeNone}, 0)
@@ -37,19 +54,18 @@ $( document ).ready(function() {
     .to($list, time, {force3D:true, rotation:0.01, x: 0, ease: Linear.easeNone}, time)
     .progress(1).progress(0)
     .play();
-  
 
   // Animation du Slider équipe
-  var $tickerWrapper2 = $(".slider__wrapper2");
-  var $list2 = $tickerWrapper2.find("ul");
-  var $clonedList2 = $list2.clone();
-  var listWidth2 = 10;
+  let $tickerWrapper2 = $(".slider__wrapper2");
+  let $list2 = $tickerWrapper2.find("ul");
+  let $clonedList2 = $list2.clone();
+  let listWidth2 = 10;
   
   $list2.find("li").each(function (i) {
-              listWidth2 += $(this, i).outerWidth(true);
+    listWidth2 += $(this, i).outerWidth(true);
   });
   
-  var endPos2 = $tickerWrapper2.width() - listWidth2;
+  let endPos2 = $tickerWrapper2.width() - listWidth2;
   
   $list2.add($clonedList2).css({
       "width" : listWidth2 + "px"
@@ -57,8 +73,8 @@ $( document ).ready(function() {
   $clonedList2.addClass("cloned").appendTo($tickerWrapper2);
   
   //Branchement de la lib TimelineMax pour avoir le slider infini
-  var infinite2 = new TimelineMax({repeat: -1, paused: true});
-  var time2 = 55;
+  let infinite2 = new TimelineMax({repeat: -1, paused: true});
+  let time2 = 55;
   
   infinite2
   .fromTo($list2, time2, {rotation:0.01,x:0}, {force3D:true, x: -listWidth2, ease: Linear.easeNone}, 0)
@@ -68,10 +84,10 @@ $( document ).ready(function() {
   .to($list2, time2, {force3D:true, rotation:0.01, x: 0, ease: Linear.easeNone}, time2)
   .progress(1).progress(0)
   .play();
-    
-   
  
   // Sélecteur à puce des tarifs 
+
+  
   $( ".select1").click(function() {
       $(".select1").addClass("active");
       $(".select2").removeClass("active");
@@ -99,6 +115,25 @@ $( document ).ready(function() {
       $(".select3").removeClass("active");
       $(".select4").addClass("active");
   });
+  
+
+/*
+selecteur('.select1',['.select2','.select3','.select4']);
+selecteur('.select2', ['.select1','.select3','.select4']);
+selecteur('.select3', ['.select1','.select2','.select4']);
+selecteur('.select4', ['.select1','.select2','.select3']);
+
+  function selecteur (el,...args){
+    $(el).click(function() {
+      for(let ind of args){
+        $(el).addClass("active");
+       console.log(ind);
+       $(ind).removeClass("active");
+      }
+  });
+  }
+  selecteur();
+  */
 
   // Slider équipe
   const slider = document.querySelector('.coiffeurs');
@@ -129,11 +164,10 @@ $( document ).ready(function() {
     slider.scrollLeft = scrollLeft - walk;
   });
 
-
   // Le Loader (bien mettre les variables en anglais pour éviter la corruption avec le carousel)
-  var counter = 0;
-  var c = 0;
-  var i = setInterval(function () {
+  let counter = 0;
+  let c = 0;
+  let i = setInterval(function () {
     $(".loading__page .counter p").html(c + "%");
     counter++;
     c++;
@@ -144,14 +178,12 @@ $( document ).ready(function() {
     }
   }, 10);
 
-
-
   // Compteur Slide
 
-  var compteur = 1;
-  var maxCompteur = 4;
-  var hauteur = 0;
-  var photo = document.querySelector(".carousel"+compteur);
+  let compteur = 1;
+  let maxCompteur = 4;
+  let hauteur = 0;
+  let photo = document.querySelector(".carousel"+compteur);
 
   $( ".controls__container p:nth-child(2)" ).click(function() {
     compteur++;
@@ -213,7 +245,7 @@ $( document ).ready(function() {
   }
 
   // Animation du carousel de la section Home
-  var currentMousePos = {};
+  let currentMousePos = {};
 
   $( "#home" ).on( "mousemove", function(event) {
           currentMousePos.x = event.pageX;
@@ -222,5 +254,4 @@ $( document ).ready(function() {
           photo.style.left = ((window.innerWidth * 0.5*1)+-currentMousePos.x/7) + "px";
           photo.style.top = ((window.innerHeight * 0.5*1.1)+-currentMousePos.y/7) + "px";
   });
-
 });

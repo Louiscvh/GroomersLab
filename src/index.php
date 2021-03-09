@@ -163,7 +163,8 @@ $path = 'style'
 
                 </div>
                 <div class="footer__right">
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1aTO95hLGZyIQwmGpsc4A2Tal0FkloMiR" width="100%" height="300"></iframe>
+                    <div id="map">
+                    </div>
                 </div>
             </footer>
             <div class="mentions">
@@ -180,6 +181,7 @@ $path = 'style'
     <script type="module" src="js/index.js"></script>
     <script>
         AOS.init();
+        
     </script>
     <script type="text/javascript">
 		
