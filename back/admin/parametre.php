@@ -95,6 +95,7 @@ $title="Paramètres";
     <div class="admin__container">
         <?php echo flash_out() ?>
         <h1><?php echo $title?></h1>
+        <a href="<?php echo URL ?>src">< Retour</a> 
         <div class="param__categ">
             <a class="lien" href="?action=password">Changer de Mot de passe</a>
             <a class="lien" href="?action=email">Changer d'email</a>

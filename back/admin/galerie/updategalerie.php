@@ -27,11 +27,12 @@ $title = "Modifier une photo"
 
     <div class="admin__container modif">
         <h1><?php echo $title?></h1>
+        <?php echo flash_out() ?>
         <form method="post" action="../../core/galerie/updategalerie.php" enctype="multipart/form-data">
-
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div style="display: flex;
     flex-direction: column;">
+                <a href="<?php echo URL ?>src">< Retour</a>
                <img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <label for="">Photo</label>
@@ -46,6 +47,7 @@ $title = "Modifier une photo"
                 }
                 ?>
             </div> 
+            
             <div>
                 <label for="description">Description</label>
                 <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>">
