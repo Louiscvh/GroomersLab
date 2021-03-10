@@ -17,7 +17,7 @@ $( document ).ready(function() {
     iconUrl: './img/logo_white.png',
     iconSize:     [40, 40], // size of the icon
     iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-30.866350858938574, -15.3479970557850103] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 
   var marker = L.marker([48.866350858938574, 2.3479970557850103], {

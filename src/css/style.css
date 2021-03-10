@@ -263,6 +263,8 @@ h1 {
     bottom:-0px!important;
 }
 
+
+
 .simplybook-widget-button {
     padding: 15px 40px!important;
     position: relative!important;
@@ -774,6 +776,12 @@ iframe {
 
 .leaflet-bottom {
     display: none;
+}
+
+.leaflet-popup-content {
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
 .footer__numTel {
