@@ -2,6 +2,15 @@
 
 $( document ).ready(function() {
 
+
+  $(window).on('load resize', function () {
+    if ($(this).width() < 640) {
+      $('table tfoot').hide();
+    } else {
+      $('table tfoot').show();
+    }
+  });
+  
   //Leaflet config
   var map = L.map('map', {
     center: [48.866350858938574, 2.3479970557850103],

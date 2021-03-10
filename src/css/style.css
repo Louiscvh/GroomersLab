@@ -101,7 +101,7 @@ section {
 
 /* Couleurs typos */
 
-p, h1, h2, h3, h4, h5, h5, a, span, i {
+p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
     color: white!important;
 }
 
@@ -579,6 +579,7 @@ h1 {
 .tarifs__controller {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 100px;
 }
 
 .tarifs__controller h3 {
@@ -614,11 +615,53 @@ h1 {
 }
 
 .tarifs__content {
-    height: 600px;
     width: 100%;
-    background-color: white;
-    opacity: 10%;
     margin-top: 60px;
+}
+
+.table__container {
+    width: 100%;
+    font-family: essonnes-display, serif;
+}
+
+.table__header h3 {
+    width: 300px!important;
+    max-width: auto;
+    color: var(--vertSecondaire)!important;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.table__ligne {
+    margin: 30px 0px;
+}
+
+.table__ligne, .table__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__ligne p:first-child {
+    color: white!important;
+    font-size: 1.6rem;
+    font-family: essonnes-display, serif;
+
+}
+
+.table__ligne p {
+    font-size: 1.2rem;
+    color: var(--vertSecondaire)!important;
+    font-family: avenirregular, arial, cursive;
+}
+
+.table__ligne p, .table__header h3 {
+    min-width: 250px;
+    text-align: center;
+}
+
+.table__header h3:first-child, .table__ligne p:first-child {
+    text-align: left!important;
 }
 
 /* Section équipe */
@@ -772,6 +815,7 @@ iframe {
 
 .leaflet-bar a {
     background-color: black!important;
+    border-bottom: 0px solid #ccc!important;
 }
 
 .leaflet-bottom {
@@ -810,6 +854,26 @@ iframe {
     .home__content p {
         font-size: 1rem;
     }
+
+    .tarifs__controller {
+        flex-direction: column;
+        text-align: center;
+        
+    }
+
+    .tarifs__controller h3 {
+        margin-top: 35px;
+    }
+
+    .table__ligne p, .table__header h3 {
+        width: 150px;
+        text-align: center; 
+    }
+
+    .table__ligne p, .table__header h3 {
+        min-width: 100px;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -823,5 +887,13 @@ iframe {
 
     .footer__left, .footer__right {
         width: 100%;
+    }
+
+    table tr:first-child {
+        text-align: left;
+    }
+
+    .table__header h3 {
+        font-size: 1rem;
     }
 }

@@ -115,7 +115,34 @@ $path = 'style'
                     <h3 class="select3">Extras</h3>
                     <h3 class="select4">Soins</h3>
                 </div>
-                <div class="tarifs__content"></div>
+                <div class="tarifs__content">
+                    <div class="table__container">
+                        <div class="table__header">
+                            <h3></h3>
+                            <h3>Prix Homme</h3>
+                            <h3>Prix Femme</h3>
+                            <h3>Prix Enfants</h3>
+                        </div>
+                        <div class="table__ligne">
+                            <p>Coupe Simple</p>
+                            <p>19.99€</p>
+                            <p>33.99€</p>
+                            <p>19.99€</p>
+                        </div>
+                        <div class="table__ligne">
+                            <p>Coupe Ciseaux</p>
+                            <p>P1</p>
+                            <p>P2</p>
+                            <p>P3</p>
+                        </div>
+                        <div class="table__ligne">
+                            <p>Taillage Bouc</p>
+                            <p>P1</p>
+                            <p>P2</p>
+                            <p>P3</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
         <section data-scroll-section>
@@ -155,7 +182,7 @@ $path = 'style'
                         </div>
                         <div class="footer__infosRight">
                             <h3>HORAIRES D’OUVERTURE</h3>
-                            <p>DU MARDI AU SAMEDI DE 11h à 20h</p>
+                            <p>DU MARDI AU SAMEDI DE 11h A 20h</p>
                         </div>
                     </div>
                     <a href="tel:0142335894" class="footer__numTel lien">01 42 33 58 94</a>
