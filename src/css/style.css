@@ -259,6 +259,31 @@ h1 {
     font-weight: 300;
 }
 
+.home__content .simplybook-widget-button {
+    bottom:-0px!important;
+}
+
+.simplybook-widget-button {
+    padding: 15px 40px!important;
+    position: relative!important;
+    border: 0.8px solid var(--vertSecondaire)!important;
+    background-color: var(--vertSecondaire)!important;
+    transition: all 0.3s ease-in!important;
+    border-radius: 0px!important;
+    font-family: avenirregular, arial, cursive;
+    box-shadow: none!important;
+    bottom: 20px!important;
+}
+
+.simplybook-widget-button:hover {
+    background-color: transparent!important;
+    border: 0px solid var(--vertSecondaire);
+}
+
+.simplybook-widget-button:hover div {
+     margin-bottom: 0px!important;
+}
+
 .carousel {
     position: absolute;
     height: 500px;
@@ -745,6 +770,10 @@ iframe {
 
 .leaflet-bar a {
     background-color: black!important;
+}
+
+.leaflet-bottom {
+    display: none;
 }
 
 .footer__numTel {

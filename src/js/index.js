@@ -12,10 +12,33 @@ $( document ).ready(function() {
       attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> © swisstopo <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> <a target="_blank" href="https://www.swisstopo.admin.ch/en/home.html">&copy; swisstopo</a>',
       zoom: 13
   }).addTo(map);
+
+  var greenIcon = L.icon({
+    iconUrl: './img/logo_white.png',
+    iconSize:     [40, 40], // size of the icon
+    iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-30.866350858938574, -15.3479970557850103] // point from which the popup should open relative to the iconAnchor
+});
+
   var marker = L.marker([48.866350858938574, 2.3479970557850103], {
       title: 'GroomersLab',
-  }).addTo(map);
+      icon: greenIcon,
+  }).addTo(map).bindPopup("Groomers Lab");;
 
+
+   // Fonction pour déclarer les ancres
+   let target;
+   function ancres (li, section) {
+     $(li).click(function(){
+       target = document.querySelector(section);
+       scroll.scrollTo(target);
+     });
+   }
+   
+   ancres("nav ul li:first-child", "#coiffures");
+   ancres("nav ul li:nth-child(2)", "#tarifs");
+   ancres('nav ul li:nth-child(3)', '#barber');
+ 
   
   // Déclaration du scroll de Locomotive Scroll
   const scroll = new LocomotiveScroll({
@@ -254,4 +277,8 @@ selecteur('.select4', ['.select1','.select2','.select3']);
           photo.style.left = ((window.innerWidth * 0.5*1)+-currentMousePos.x/7) + "px";
           photo.style.top = ((window.innerHeight * 0.5*1.1)+-currentMousePos.y/7) + "px";
   });
+
+  // Bouton réservation
+  $(".simplybook-widget-button").appendTo(".home__content");
+
 });

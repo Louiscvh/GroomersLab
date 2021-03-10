@@ -5,9 +5,9 @@
     <p>10AM_8PM</p>
     <nav>
         <ul>
-            <li><a class="lien" href="#">Tarifs</a></li>
-            <li><a class="lien" href="#">Rendez-vous</a></li>
-            <li><a class="lien"href="#">Galerie</a></li>
+            <li><a class="lien"  href="#">Coiffures</a></li>
+            <li><a class="lien"  href="#">Tarifs</a></li>
+            <li><a class="lien"  href="#">Barber</a></li>
             <?php
             if (isset($_SESSION['admin'])) { ?>
                 <li><a class="lien" href="<?php echo URL?>back/admin/parametre.php" class="btn btn-primary">Admin</a></li>
