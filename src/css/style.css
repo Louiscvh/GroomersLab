@@ -429,6 +429,10 @@ h1 {
     flex-direction: column;
 }
 
+.scroll__container {
+    align-items: center;
+}
+
 .scroll2 {
     position: relative;
     margin: 0 auto;
