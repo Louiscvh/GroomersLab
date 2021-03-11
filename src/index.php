@@ -9,8 +9,14 @@ if(isset($_GET['action']) && $_GET['action'] == 'deco'){
     exit();
 }
 
+$themes = executeSQL("SELECT DISTINCT theme FROM hair ORDER BY theme");
+if( $themes->rowCount() > 0){
+    $infos_themes = $themes->fetchAll();
+}
+
 $title = 'Page d\'accueil';
-$path = 'style'
+$path = 'style';
+$i = 0;
 ?>
 
 <?php require_once('../public/includes/head.php')?>
@@ -110,10 +116,10 @@ $path = 'style'
         <div class="container" data-scroll-section>
             <section id="tarifs">
                 <div data-scroll data-scroll-speed="2" class="tarifs__controller">
-                    <h3 class="select1">Coupes</h3>
-                    <h3 class="select2">Forfaits</h3>
-                    <h3 class="select3">Extras</h3>
-                    <h3 class="select4">Soins</h3>
+                    <?php foreach($infos_themes as $theme) { 
+                        $i++;?>
+                        <h3 data-theme="<?php echo $theme['theme'] ?>" class="select<?php echo $i?>"><?php echo $theme['theme'] ?></h3>
+                    <?php } ?>
                 </div>
                 <div class="tarifs__content">
                     <div class="table__container">
