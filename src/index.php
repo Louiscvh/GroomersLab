@@ -32,14 +32,14 @@ $path = 'style'
         <div class="container" data-scroll-section>
             
             <section id="home">
-                <div class="carouselData">
+                <div  class="carouselData">
                     <img class="carousel carousel1" src="img/carousel1.jpeg" alt="">
                     <img class="carousel carousel2" src="img/carousel2.jpeg" alt="">
                     <img class="carousel carousel3" src="img/carousel3.jpeg" alt="">
                 </div>
 
                 <?php require_once('../public/includes/header.php'); ?>
-                <div class="home__content">
+                <div  class="home__content">
                     <h1>GROOMERS LAB BARBER SHOP</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Amet, sit tincidunt aliquam in. </p><br>
@@ -109,7 +109,7 @@ $path = 'style'
         </section>
         <div class="container" data-scroll-section>
             <section id="tarifs">
-                <div class="tarifs__controller">
+                <div data-scroll data-scroll-speed="2" class="tarifs__controller">
                     <h3 class="select1">Coupes</h3>
                     <h3 class="select2">Forfaits</h3>
                     <h3 class="select3">Extras</h3>
@@ -171,18 +171,21 @@ $path = 'style'
                 <?php require_once('../public/includes/effectifsection.php'); ?>
             </section>
         </div>
+        <div class="slider" data-scroll-section>
+            <span class="bandeau" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-20">Contactez-nous</span>
+        </div>
         <section id="footer" class="endSection" data-scroll-section>
             <footer>
                 <div class="footer__left">
-                    <h2>Grommers Lab</h2>
+                    <h2  data-scroll data-scroll-speed="1">Grommers Lab</h2>
                     <div class="footer__infos">
                         <div class="footer__infosLeft">
-                            <h3>Contact</h3>
+                            <h3>ADRESSE</h3>
                             <p>22 RUE SAINT SAUVEUR, 75002, PARIS</p>
                         </div>
                         <div class="footer__infosRight">
                             <h3>HORAIRES D’OUVERTURE</h3>
-                            <p>DU MARDI AU SAMEDI DE 11h A 20h</p>
+                            <p>DU MARDI AU SAMEDI DE 11H A 20H</p>
                         </div>
                     </div>
                     <a href="tel:0142335894" class="footer__numTel lien">01 42 33 58 94</a>
@@ -200,20 +203,29 @@ $path = 'style'
             </div>
         </section>
     </div>
+    <!-- Lib scroll Locomotive Scroll -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>
+    <!-- AOS Transition -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <!-- Plugin GSAP ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <!-- Plugin GSAP TweenMax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Js main -->
     <script type="module" src="js/index.js"></script>
+    <!-- Bouton réserver -->
     <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
     <script>var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/groomerslab.simplybook.it","theme":"simple_beauty_theme","theme_settings":{"sb_base_color":"#396f53","header_color":"#ffffff","timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","display_item_mode":"block","body_bg_color":"#ffffff","sb_review_image":"","dark_font_color":"#000000","light_font_color":"#ffffff","sb_company_label_color":"#333333","hide_img_mode":"0","show_sidebar":"1","sb_busy":"#000000","sb_available":"#e6e6e6"},"timeline":"flexible","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"R\u00e9server","button_background_color":"#000000","button_text_color":"#ffffff","button_position":"bottom"});</script>     
     <script>
         AOS.init();
         
     </script>
-    <script type="text/javascript">
-		
-	</script> 
+    
+
 
 </body>
 

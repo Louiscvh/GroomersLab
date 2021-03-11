@@ -2,15 +2,6 @@
 
 $( document ).ready(function() {
 
-
-  $(window).on('load resize', function () {
-    if ($(this).width() < 640) {
-      $('table tfoot').hide();
-    } else {
-      $('table tfoot').show();
-    }
-  });
-  
   //Leaflet config
   var map = L.map('map', {
     center: [48.866350858938574, 2.3479970557850103],
@@ -53,7 +44,8 @@ $( document ).ready(function() {
   const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
-      multiplier: 0.8
+      multiplier: 0.6,
+      repeat: true
   });
 
   // Animation du Slider Tarifs
@@ -118,8 +110,6 @@ $( document ).ready(function() {
   .play();
  
   // Sélecteur à puce des tarifs 
-
-  
   $( ".select1").click(function() {
       $(".select1").addClass("active");
       $(".select2").removeClass("active");
@@ -192,9 +182,14 @@ selecteur('.select4', ['.select1','.select2','.select3']);
     if(!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 0.8; //scroll-fast
+    const walk = (x - startX) * 1; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
   });
+
+  
+
+  //GSAP pour les anim lors du load de la page
+ 
 
   // Le Loader (bien mettre les variables en anglais pour éviter la corruption avec le carousel)
   let counter = 0;
@@ -227,19 +222,19 @@ selecteur('.select4', ['.select1','.select2','.select3']);
       $( ".compteurNumber span" ).css("transform",`translateY(0px)`);
     }
     if(compteur == 1) {
-      $(".carousel"+compteur).fadeIn();
-      $(".carousel2").fadeOut();
-      $(".carousel3").fadeOut();
+      $(".carousel"+compteur).fadeIn("slow");
+      $(".carousel2").fadeOut("slow");
+      $(".carousel3").fadeOut("slow");
     }
     if(compteur == 2) {
-      $(".carousel"+compteur).fadeIn();
-      $(".carousel1").fadeOut();
-      $(".carousel3").fadeOut();
+      $(".carousel"+compteur).fadeIn("slow");
+      $(".carousel1").fadeOut("slow");
+      $(".carousel3").fadeOut("slow");
     }
     if(compteur == 3) {
-      $(".carousel"+compteur).fadeIn();
-      $(".carousel1").fadeOut();
-      $(".carousel2").fadeOut();
+      $(".carousel"+compteur).fadeIn("slow");
+      $(".carousel1").fadeOut("slow");
+      $(".carousel2").fadeOut("slow");
     }
     photo = document.querySelector(".carousel"+compteur);
   });

@@ -7,7 +7,7 @@
         <ul>
             <li><a class="lien"  href="#">Coiffures</a></li>
             <li><a class="lien"  href="#">Tarifs</a></li>
-            <li><a class="lien"  href="#">Barber</a></li>
+            <li><a class="lien"  href="#">Barbers</a></li>
             <?php
             if (isset($_SESSION['admin'])) { ?>
                 <li><a class="lien" href="<?php echo URL?>back/admin/parametre.php" class="btn btn-primary">Admin</a></li>

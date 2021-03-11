@@ -15,7 +15,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <main>
     <div class="coiffeur__container">
-        <div class="coiffeurs">
+        <div class="coiffeurs" data-scroll data-scroll-speed="2">
             <?php foreach ($tImages as $value) : ?>
                 <article class="coiffeur">
                     <div class="coiffeur__cube" alt="<?= $value['description'] ?>" style=" margin-bottom:20px;background-image: url(../public/data/<?= $value['file'] ?>);">
@@ -31,10 +31,14 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
                 </article>
             <?php endforeach; ?> 
         </div>
-    </div>            
-    <div class="slider">
-        <div class="slider__progress"></div>
     </div>
+    <div class="scroll2">
+        <div class="scroll2__container">
+            <p>Scroll</p>
+            <div class="scroll__sepa"></div>
+        </div>
+    </div>
+    
     <?php
     if(isset($_SESSION['admin'])){ ?>
     <div class="container">

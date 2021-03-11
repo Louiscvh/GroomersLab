@@ -10,8 +10,10 @@
     margin: 0;
     text-decoration: none;
     list-style: none;
-    scroll-behavior: smooth;
+}
 
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -143,6 +145,18 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
     }
     100% { 
         height: 0px; 
+    }
+}
+
+@keyframes scrollInfo2 {
+    0% { 
+        width: 0px; 
+    }
+    50%   { 
+        width: 30px; 
+    }
+    100% { 
+        width: 0px; 
     }
 }
 
@@ -293,7 +307,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     top: 40%;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 .reserve {
@@ -405,20 +419,34 @@ h1 {
     top: 85vh;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
 }
 
-.scroll__container {
+.scroll__container, .scroll2__container {
     margin-bottom: 50px;
     display: flex;
     justify-content: center;    
     flex-direction: column;
-    align-items: center;
 }
 
-.scroll__container p {
+.scroll2 {
+    position: relative;
+    margin: 0 auto;
+    width: 100vw;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.scroll2__container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll__container p, .scroll2__container p {
     margin-bottom: 20px;
     font-size: 1rem;
-    font-family: essonnes-display, serif;
+    font-family: avenirregular, arial, cursive;
     font-style: normal;
     font-weight: 300;
 }
@@ -503,6 +531,10 @@ h1 {
 .coif__block {
     display: flex;
     flex-direction: column;
+}
+
+.coif__block img {
+    transform-origin: bottom;
 }
 
 .coif__block h4 {
@@ -617,11 +649,17 @@ h1 {
 .tarifs__content {
     width: 100%;
     margin-top: 60px;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .table__container {
     width: 100%;
     font-family: essonnes-display, serif;
+    padding-bottom: 30px
+}
+
+.table__header {
+    padding-top: 50px;
 }
 
 .table__header h3 {
@@ -634,6 +672,7 @@ h1 {
 
 .table__ligne {
     margin: 30px 0px;
+    padding: 0px 50px;
 }
 
 .table__ligne, .table__header {
@@ -646,7 +685,6 @@ h1 {
     color: white!important;
     font-size: 1.6rem;
     font-family: essonnes-display, serif;
-
 }
 
 .table__ligne p {
@@ -670,15 +708,6 @@ h1 {
     width: 100%!important;
 }
 
-.slider {
-    width: 35%;
-    height: 2px;
-    background-color: white;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 70px;
-  }
   
 .coiffeur__container {
     position: relative;
@@ -694,12 +723,18 @@ h1 {
     display: flex;
     overflow-x: scroll;
     white-space: nowrap;
-    transition: all 0.2s;
     transform: scale(1);
     will-change: transform;
     user-select: none;
     cursor: grab;
+    white-space: nowrap;
+    transition: all 0.2s;
+    overflow-y: hidden;
 }
+
+.coiffeurs .active {
+    transform: scale(1.05)!important;
+  }
   
 .coiffeur {
     margin-left: 250px;
@@ -723,6 +758,7 @@ h1 {
     transition: all ease-out 0.3s;
     z-index: 1;
     position: relative;
+    transform-origin: bottom;
 }
   
 .coiffeur__title {
@@ -758,6 +794,35 @@ h1 {
     transition: opacity 0.3s ease-out;
 }
 
+.scroll2__container .scroll__sepa {
+    height: 1px;
+    width: 30px;
+    background-color: white;
+    animation: 4s ease infinite scrollInfo2;
+    transform-origin: left!important;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin-bottom: 200px!important;
+
+}
+
+.bandeau {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+    padding: 50px;
+    padding-left: 40px!important;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 70%;
+    margin: 0 auto;
+    font-family:quakiezdisplay, arial, cursive;
+}
+
 /* Footer */
 
 footer {
@@ -777,16 +842,11 @@ footer {
     height: 300px;
 }
 
-iframe {
-    border-width: 0px;
-}
-
-
 .footer__left h2 {
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 200;
     font-size: 4rem;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .footer__infos {
@@ -798,7 +858,9 @@ iframe {
 
 .footer__infos h3 {
     font-family: avenirregular, arial, cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    font-weight: 400;
 }
 
 .footer__infos p {
@@ -806,7 +868,7 @@ iframe {
     font-size: 1rem;
     font-weight: 100;
     margin-top: 10px;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .footer__infosRight {
@@ -843,7 +905,11 @@ iframe {
     margin-top: 50px;
     font-family: avenirregular, arial, cursive;
     opacity: 0.3;
+}
+
+.mentions h4 {
     font-weight: 200;
+    
 }
 
 @media screen and (max-width: 1100px) {
@@ -894,6 +960,14 @@ iframe {
     }
 
     .table__header h3 {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+    .table__ligne {
+        padding: 15px;
+    }
+
+    .table__ligne p:first-child {
+        font-size: 1.2rem;
+
     }
 }
