@@ -129,24 +129,16 @@ $i = 0;
                             <h3>Prix Femme</h3>
                             <h3>Prix Enfants</h3>
                         </div>
-                        <div class="table__ligne">
-                            <p>Coupe Simple</p>
-                            <p>19.99€</p>
-                            <p>33.99€</p>
-                            <p>19.99€</p>
+                        <div id="tarif">
+                            <!--
+                                DEBUT TARIF
+                            -->
+                            
                         </div>
-                        <div class="table__ligne">
-                            <p>Coupe Ciseaux</p>
-                            <p>P1</p>
-                            <p>P2</p>
-                            <p>P3</p>
-                        </div>
-                        <div class="table__ligne">
-                            <p>Taillage Bouc</p>
-                            <p>P1</p>
-                            <p>P2</p>
-                            <p>P3</p>
-                        </div>
+                        <?php
+                        if(isset($_SESSION['admin'])){ ?>
+                            <a href="<?php echo URL ?>back/admin/tarif/addtarif.php">Ajouter un prix</a>
+                        <?php } ?>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,7 @@
 'use strict';
 
+const URL = 'http://localhost/GroomersLab/';
+
 $( document ).ready(function() {
 
   //Leaflet config
@@ -110,7 +112,7 @@ $( document ).ready(function() {
   .play();
  
   // Sélecteur à puce des tarifs 
-  selecteur('.select1',['.select2','.select3','.select4']);
+  /*selecteur('.select1',['.select2','.select3','.select4']);
   selecteur('.select2', ['.select1','.select3','.select4']);
   selecteur('.select3', ['.select1','.select2','.select4']);
   selecteur('.select4', ['.select1','.select2','.select3']);
@@ -125,7 +127,7 @@ $( document ).ready(function() {
       }
   });
   }
-  selecteur();
+  selecteur();*/
   
 
   // Slider équipe
@@ -259,3 +261,84 @@ $( document ).ready(function() {
   let nbrCoiffures = $(".coif__container").length;
 
 });
+if ($('.tarifs__controller h3').length > 0) {
+
+  $('.tarifs__controller h3').each(function () {
+
+      let themechoisi = $(this);
+
+      themechoisi.on('click', function (e) {
+          e.preventDefault();
+          let theme = $(this).data('theme'); /* recup de l'attribut data-theme */
+          console.log(theme);
+          $('.tarifs__controller h3').removeClass('active');
+          themechoisi.addClass('active');
+
+          /* AJAX */
+          /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
+          $.post(URL + 'back/core/tarif/ajout.php', { "theme": theme}, function (reponse) {
+
+              console.log(reponse);
+
+              let html = '<div class="tarif__container">';
+              
+              for (let i = 0; i < reponse.result.length; i++) {
+              reponse.result[i].men = number_format(reponse.result[i].men, 2, ',', '.' );
+                  html += `
+                  <div class="table__ligne">
+                    <p>${reponse.result[i].name}</p>
+
+                    <p>${reponse.result[i].men}€</p>`;
+
+                    if(!reponse.result[i].women){
+                        html += `<p>-</p>`;
+                    }else{
+                        reponse.result[i].women = number_format(reponse.result[i].women, 2, ',', '.' );
+                        html += `<p>${reponse.result[i].women}€</p>`;
+                    }
+
+                    if(!reponse.result[i].kid){
+                        html += `<p>-</p>`;
+                    }else{
+                        reponse.result[i].kid = number_format(reponse.result[i].kid, 2, ',', '.' );
+                        html += `<p>${reponse.result[i].kid}€</p>`;
+                    }
+
+                  html += `</div>`;
+                  if (reponse.admin == 'on'){
+                      html += `<a href="../back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
+                  }
+              }
+              $('#tarif').html(html);
+
+          }, 'json');
+
+      });
+
+  });
+
+  $('.select1').trigger('click');
+
+}
+
+function number_format(number, decimals, decPoint, thousandsSep){
+  decimals = decimals || 0;
+  number = parseFloat(number);
+
+  if(!decPoint || !thousandsSep){
+      decPoint = '.';
+      thousandsSep = ',';
+  }
+
+  var roundedNumber = Math.round( Math.abs( number ) * ('1e' + decimals) ) + '';
+  var numbersString = decimals ? roundedNumber.slice(0, decimals * -1) : roundedNumber;
+  var decimalsString = decimals ? roundedNumber.slice(decimals * -1) : '';
+  var formattedNumber = "";
+
+  while(numbersString.length > 3){
+      formattedNumber += thousandsSep + numbersString.slice(-3)
+      numbersString = numbersString.slice(0,-3);
+  }
+
+  return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '' + '€');
+}
