@@ -110,52 +110,23 @@ $( document ).ready(function() {
   .play();
  
   // Sélecteur à puce des tarifs 
-  $( ".select1").click(function() {
-      $(".select1").addClass("active");
-      $(".select2").removeClass("active");
-      $(".select3").removeClass("active");
-      $(".select4").removeClass("active");
-  });
-
-  $( ".select2").click(function() {
-      $(".select1").removeClass("active");
-      $(".select2").addClass("active");
-      $(".select3").removeClass("active");
-      $(".select4").removeClass("active");
-  });
-
-  $( ".select3").click(function() {
-      $(".select1").removeClass("active");
-      $(".select2").removeClass("active");
-      $(".select3").addClass("active");
-      $(".select4").removeClass("active");
-  });
-
-  $( ".select4").click(function() {
-      $(".select1").removeClass("active");
-      $(".select2").removeClass("active");
-      $(".select3").removeClass("active");
-      $(".select4").addClass("active");
-  });
-  
-
-/*
-selecteur('.select1',['.select2','.select3','.select4']);
-selecteur('.select2', ['.select1','.select3','.select4']);
-selecteur('.select3', ['.select1','.select2','.select4']);
-selecteur('.select4', ['.select1','.select2','.select3']);
+  selecteur('.select1',['.select2','.select3','.select4']);
+  selecteur('.select2', ['.select1','.select3','.select4']);
+  selecteur('.select3', ['.select1','.select2','.select4']);
+  selecteur('.select4', ['.select1','.select2','.select3']);
 
   function selecteur (el,...args){
     $(el).click(function() {
       for(let ind of args){
         $(el).addClass("active");
-       console.log(ind);
-       $(ind).removeClass("active");
+        ind.forEach(element =>        
+          $(element).removeClass("active")
+        );
       }
   });
   }
   selecteur();
-  */
+  
 
   // Slider équipe
   const slider = document.querySelector('.coiffeurs');
@@ -284,5 +255,7 @@ selecteur('.select4', ['.select1','.select2','.select3']);
 
   // Bouton réservation
   $(".simplybook-widget-button").appendTo(".home__content");
+
+  let nbrCoiffures = $(".coif__container").length;
 
 });
