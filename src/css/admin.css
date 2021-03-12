@@ -135,6 +135,7 @@ h1 {
     font-size: 5rem;
     margin-top: 50px;   
     text-transform: uppercase;
+    text-align: center;
 }
 
 h2 {
@@ -259,8 +260,15 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     margin: 30px 0px;
 }
 
+.backArrow {
+    font-family: avenirregular, arial, cursive;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
 
 /* Add Galerie */
+
 
 
 /* Update Galerie*/

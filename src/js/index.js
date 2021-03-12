@@ -182,7 +182,6 @@ $( document ).ready(function() {
   }, 10);
 
   // Compteur Slide
-
   let compteur = 1;
   let maxCompteur = 4;
   let hauteur = 0;
@@ -322,6 +321,13 @@ if ($('.tarifs__controller h3').length > 0) {
 
 }
 
+//Burger menu
+
+$(".burger__container").click(function(){
+  
+});
+
+// Format Euros
 function number_format(number, decimals, decPoint, thousandsSep){
   decimals = decimals || 0;
   number = parseFloat(number);

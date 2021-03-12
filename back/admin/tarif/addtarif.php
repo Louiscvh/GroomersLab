@@ -21,9 +21,9 @@ $title = "Ajouter un tarif"
     <a href=""><img class="logo" src="../../../src/img/logo_white.png" alt=""></a>
     <div class="admin__container">
         <form method="post" action="../../core/tarif/addtarif.php">
-            <h1>Ajouter un tarif :</h1>
+            <h1>Ajouter un tarif</h1>
             <?php echo flash_out() ?>
-            <a href="<?php echo URL ?>src">< Retour</a>
+            <a class="backArrow" href="<?php echo URL ?>src">< Retour</a>
             <div class="param__section">
                 <a class="lien" href="?action=choose">Selectionner Section</a>
                 <a class="lien" href="?action=add">Ajouter Section</a>

@@ -137,7 +137,7 @@ $i = 0;
                         </div>
                         <?php
                         if(isset($_SESSION['admin'])){ ?>
-                            <a class="addTarif" href="<?php echo URL ?>back/admin/tarif/addtarif.php?action=choose">Ajouter un tarif</a>
+                            <a href="<?php echo URL ?>back/admin/tarif/addtarif.php?action=choose">Ajouter un tarif</a>
                         <?php } ?>
                     </div>
                 </div>
