@@ -15,8 +15,10 @@ if( $themes->rowCount() > 0){
 }
 
 $title = 'Page d\'accueil';
+$url = URL;
 $path = 'style';
 $i = 0;
+var_dump($url);
 ?>
 
 <?php require_once('../public/includes/head.php')?>
@@ -28,7 +30,11 @@ $i = 0;
         </div>
     </div>
 
-    
+    <?php if(strpos($url,'Lab') !== false) {
+        echo 'Car exists.';
+    } else {
+        echo 'No cars.';
+    } ?>
     <div class="scroll" data-scroll-container>
             <div class="sepa__Block">
                 <div class="sepa"></div>
