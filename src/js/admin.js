@@ -17,4 +17,4 @@ if ($('#fichier').length > 0) {
     });
 }
 
-$('.choose').trigger('click');
+$('.param__section a:first-child').trigger('click');
