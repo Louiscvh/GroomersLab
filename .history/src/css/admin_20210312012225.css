@@ -1,0 +1,355 @@
+:root {
+    --noirMoyen: #1d1d1d;
+    --vertSecondaire: #396F53;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+html, body{ 
+    min-height: 100vh;
+}
+
+.param__section:first-child{
+    c
+}
+
+.alert {
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    left: 0%;
+    bottom: 0;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 20px;
+    margin-top: 30px;
+    font-family: avenirregular, arial, cursive;
+    z-index: 2;
+}
+
+#poper {
+    background-image: none!important;
+    background-color: #1d1d1d!important;
+}
+
+/* Typographies */
+
+@font-face {
+    font-family: 'avenirregular';
+    src: url('../font/avenir_roman-webfont.eot');
+    src: url('../font/avenir_roman-webfont.eot') format('embedded-opentype'),
+         url('../font/avenir_roman-webfont.woff2') format('woff2'),
+         url('../font/avenir_roman-webfont.woff') format('woff'),
+         url('../font/avenir_roman-webfont.ttf') format('truetype'),
+         url('../font/avenir_roman-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'quakiezdisplay';
+    src: url('../font/quakiez-webfont.eot');
+    src: url('../font/quakiez-webfont.eot') format('embedded-opentype'),
+         url('../font/quakiez-webfont.woff2') format('woff2'),
+         url('../font/quakiez-webfont.woff') format('woff'),
+         url('../font/quakiez-webfont.ttf') format('truetype'),
+         url('../font/quakiez-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Anim liens a */
+
+.lien {
+    text-decoration: none;
+    position: relative;
+}
+
+.lien::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    bottom: -4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in;
+}
+
+.lien:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Formulaire connexion */
+
+.resetPassword {
+    margin: 0 auto;
+    margin-top: 50px;
+    text-decoration: none;
+    font-family: avenirregular, arial, cursive;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+p, h1, h2, h3, h4, h5, h5, a, span, label {
+    color: white;
+}
+
+.admin__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+
+h1 {
+    color: #396F53;
+    margin-bottom: 100px;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
+    font-size: 5rem;
+    margin-top: 50px;   
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+form div {
+    width: 100%;
+}
+
+form img {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.form__controls {
+    display: flex;
+    align-items: center;
+    margin: 50px 0px;
+    font-family: avenirregular, arial, cursive;
+}
+
+.admin__container input {
+    margin-top: 15px!important;
+}
+
+.admin__container form div {
+    margin-top: 30px!important;
+}
+
+.admin__container form label {
+    font-family: avenirregular, arial, cursive;
+}
+
+input {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background-color: #1f1f1f;
+    color: white;
+    padding-left: 20px;
+    font-size: 16px;
+    font-family: avenirregular, arial, cursive;
+    margin-top: 30px;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+}
+
+.modif .submit {
+    width: 100px!important;
+    margin-top: 0px!important;
+    margin-right: 30px;
+    
+}
+
+.submit {
+    background-color: #396F53;
+    color: white!important;
+    padding: 0!important;
+    width: 100%;
+    height: 50px;
+    border-width: 0px;
+    font-family: avenirregular, arial, cursive;
+    margin-top: 50px!important;
+    font-size: 1rem;
+    transition: all 0.3s ease-in;
+    border: 0.8px solid var(--vertSecondaire);
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: transparent!important;
+}
+
+.sepa__block {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.sepa {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #707070;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 50%;
+    z-index: 1;
+}
+
+.sepa:nth-child(1) {
+    left:25%;
+}
+
+.sepa:nth-child(2) {
+    left:50%;
+}
+
+.sepa:nth-child(3) {
+    left:75%;
+}
+
+
+.deletegalerie {
+    margin: 30px 0px;
+}
+
+
+/* Add Galerie */
+
+
+/* Update Galerie*/
+
+.addgalerie input , .updategalerie input, .updateeffectif input {
+    margin-bottom: 30px;
+}
+
+
+/* Update Effectif*/
+
+.suppr {
+    margin: 20px 0px;
+    font-family: avenirregular, arial, cursive;
+
+}
+
+/* Page 404 */
+
+.container404, .container403 {
+    font-family: avenirregular, arial, cursive;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.container404__content, .container403__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.container404__content p, .container403__content p {
+    margin-bottom: 100px;
+    opacity: 50%;
+    margin-top: 10px;
+}
+
+/* Paramètres */
+
+
+.reinit__p {
+    font-family: avenirregular, arial, cursive;
+    margin-bottom: 50px;
+}
+
+/* Paramètres */
+
+.param__categ {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.param__categ a {
+    font-family: avenirregular, arial, cursive;
+    font-size: 2rem;
+}
+
+.param__login {
+    font-family: avenirregular, arial, cursive;
+    font-weight: 200;
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.admin__container h3 {
+    font-family: avenirregular, arial, cursive;
+    font-weight: 200;
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+    .param__categ {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .param__categ a {
+        font-family: avenirregular, arial, cursive;
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+  }
