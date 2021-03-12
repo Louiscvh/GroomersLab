@@ -1,7 +1,6 @@
 <?php //fichier public/index.php
 
 //on ajoute la config du site
-require_once('../config/settings.php');
 
 require_once('header.php');
 
@@ -23,12 +22,12 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
             <p>Made by <?= $value['author'] ?></p>
             <?php
             if(isset($_SESSION['admin'])){ ?>
-                <a href="../back/admin/galerie/updategalerie.php?haircutid=<?php echo $value['id']; ?>">Modifier</a>
+                <a href="<?php echo URL ?>groomers_Barber/back/admin/galerie/updategalerie.php?haircutid=<?php echo $value['id']; ?>">Modifier</a>
             <?php } ?> 
         </div>
     <?php } ?>
 </div>
 <?php
 if(isset($_SESSION['admin'])){ ?>
-        <a class="lien add"href="../back/admin/galerie/addgalerie.php">Ajouter une photo</a>
+        <a class="lien add"href="<?php echo URL ?>groomers_Barber/back/admin/galerie/addgalerie.php">Ajouter une photo</a>
 <?php } ?> 

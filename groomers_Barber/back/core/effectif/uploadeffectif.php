@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('../../../config/settings.php');
+require_once('../../../../config/settings.php');
 
 var_dump($_POST, $_FILES);
 
@@ -11,18 +11,16 @@ if(!isset($_SESSION['admin'])){
 	
 	flash_in('error', 'Action impossible. Try again');
 	
-	header('Location: '.URL.'src');
+	header('Location: '.URL);
 	exit();
 }
 $errors = 0 ;
 if (!empty($_POST)) {
     // J'ai soumis le formulaire
-	if ($_FILES['fichier']['size'] == 0 || empty(trim($_POST['description'])) || empty(trim($_POST['titre'])) || empty(trim($_POST['auteur']))) {
+	if ($_FILES['fichier']['size'] == 0 || empty(trim($_POST['description'])) || empty(trim($_POST['nom'])) || empty(trim($_POST['pseudo']))) {
         flash_in('error', 'Merci de remplir tous les champs');
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	}else{
-
-		
 		// Assainissement (sanitize)
 		foreach ($_POST as $key => $value) {
 			$_POST[$key] = htmlspecialchars(trim($value));
@@ -33,16 +31,17 @@ if (!empty($_POST)) {
 			require_once('../imagesettings.php');
 
 			if($errors == 0){
-				$add = $pdo->prepare('INSERT INTO haircut (file, description, title, author) VALUES (:file, :description, :title, :author)');
+				$add = $pdo->prepare('INSERT INTO team (file, description, name, pseudo, link) VALUES (:file, :description, :name, :pseudo, :link)');
 				$add->execute([
 					':file' => $nomfichier,
 					':description' => $_POST['description'],
-					':title' => $_POST['titre'],
-					':author' => $_POST['auteur']
+					':name' => $_POST['nom'],
+					':pseudo' => $_POST['pseudo'],
+					':link' => $_POST['lien']
 				]);
 			}
 		}
-		header('Location: '.URL.'src');
+		header('Location: '.URL.'index.php?success');
 		exit();
 	}
 }

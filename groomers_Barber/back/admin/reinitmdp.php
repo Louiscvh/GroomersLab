@@ -1,10 +1,10 @@
 <?php
 
-require_once('../../config/settings.php');
+require_once('../../../config/settings.php');
 
 if(isset($_SESSION['admin'])){
 
-	header('location:' . URL . 'src');
+	header('location:' . URL);
 	exit();
 }
 
@@ -26,7 +26,7 @@ if ( !empty($_POST)){
                     'expiration' => $expiration,
                     'id_user' => $infosUser['id_user']
                 ));
-                $lien = 'http://localhost' . URL . 'back/admin/validreinit.php?email=' . $infosUser['email'] . '&token=' . $token;
+                $lien = 'http://localhost' . URL . 'groomers_Barber/back/admin/validreinit.php?email=' . $infosUser['email'] . '&token=' . $token;
                 echo $lien;
 
                 $message ='<p>Bonjour'.$infosUser['login'].'<br>
@@ -41,7 +41,7 @@ if ( !empty($_POST)){
                 mail($infosUser['email'],$sujet,$message,implode(PHP_EOL,$headers));
             }
             flash_in('success','Si cette adresse est trouvée dans notre base, un email vous permettant de réinitialiser votre mot de passe vous sera envoyé dans quelques instants');
-            header('Location:'.URL.'back/admin.php');
+            header('Location: ../admin.php');
             exit();
         }
         else{
@@ -56,13 +56,13 @@ if ( !empty($_POST)){
 $path="admin";
 $title="Réinitisaliser mot de passe";
 ?>
-<?php require_once('../../public/includes/head.php')?>
+<?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
         <div style="left:25%;" class="sepa --sepa1"></div>
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
-    <a href=""><img class="logo" src="../../src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
 
     <div class="admin__container">
         <h1><?php echo $title?></h1>
@@ -74,7 +74,7 @@ $title="Réinitisaliser mot de passe";
                 <input type="email" class="form-control" id="email" name="email">
             </div>
             <button type="submit" class="submit btn btn-primary">Envoyer</button>
-            <a href="<?php echo URL ?>back/admin.php" class="lien suppr btn btn-warning">Retour</a>
+            <a href="../admin.php" class="lien suppr btn btn-warning">Retour</a>
         </form>
     </div>
 </body>

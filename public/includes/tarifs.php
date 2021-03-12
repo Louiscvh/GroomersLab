@@ -1,8 +1,5 @@
 <?php //fichier public/index.php
 
-//on ajoute la config du site
-
-require_once('../config/settings.php');
 
 require_once('header.php');
 

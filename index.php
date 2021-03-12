@@ -1,11 +1,11 @@
 <?php
 
-require_once('../config/settings.php');
+require_once('config/settings.php');
 
 if(isset($_GET['action']) && $_GET['action'] == 'deco'){
     unset($_SESSION['admin']);
     // header('location:' . $_SERVER['PHP_SELF']);
-    header('location:' . URL . 'src');
+    header('location:' . URL);
     exit();
 }
 
@@ -21,7 +21,7 @@ $i = 0;
 var_dump($url);
 ?>
 
-<?php require_once('../public/includes/head.php')?>
+<?php require_once('public/includes/head.php')?>
 
     <div class="loading__page">
         <div class="counter">
@@ -45,12 +45,12 @@ var_dump($url);
             
             <section id="home">
                 <div  class="carouselData">
-                    <img class="carousel carousel1" src="img/carousel1.jpeg" alt="">
-                    <img class="carousel carousel2" src="img/carousel2.jpeg" alt="">
-                    <img class="carousel carousel3" src="img/carousel3.jpeg" alt="">
+                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="">
+                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="">
+                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="">
                 </div>
 
-                <?php require_once('../public/includes/header.php'); ?>
+                <?php require_once('public/includes/header.php'); ?>
                 <div  class="home__content">
                     <h1>GROOMERS LAB BARBER SHOP</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -95,7 +95,7 @@ var_dump($url);
                 </div>
             </section>
             <section id="coiffures">
-                <?php require_once('../public/includes/galeriesection.php'); ?>
+                <?php require_once('public/includes/galeriesection.php'); ?>
             </section>
         </div>
         <section data-scroll-section>
@@ -136,14 +136,10 @@ var_dump($url);
                             <h3>Prix Enfants</h3>
                         </div>
                         <div id="tarif">
-                            <!--
-                                DEBUT TARIF
-                            -->
-                            
                         </div>
                         <?php
                         if(isset($_SESSION['admin'])){ ?>
-                            <a class="addTarif" href="<?php echo URL ?>back/admin/tarif/addtarif.php?action=choose">Ajouter un tarif</a>
+                            <a class="addTarif" href="<?php echo URL ?>groomers_Barber/back/admin/tarif/addtarif.php?action=choose">Ajouter un tarif</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -172,7 +168,7 @@ var_dump($url);
         </section>
         <div data-scroll-section>
             <section id="barber">
-                <?php require_once('../public/includes/effectifsection.php'); ?>
+                <?php require_once('public/includes/effectifsection.php'); ?>
             </section>
         </div>
     
@@ -218,7 +214,7 @@ var_dump($url);
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Js main -->
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="groomers_ui/src/js/index.js"></script>
     <!-- Bouton réserver -->
     <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
     <script>var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/groomerslab.simplybook.it","theme":"simple_beauty_theme","theme_settings":{"sb_base_color":"#396f53","header_color":"#ffffff","timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","display_item_mode":"block","body_bg_color":"#ffffff","sb_review_image":"","dark_font_color":"#000000","light_font_color":"#ffffff","sb_company_label_color":"#333333","hide_img_mode":"0","show_sidebar":"1","sb_busy":"#000000","sb_available":"#e6e6e6"},"timeline":"flexible","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"R\u00e9server","button_background_color":"#000000","button_text_color":"#ffffff","button_position":"bottom"});</script>     

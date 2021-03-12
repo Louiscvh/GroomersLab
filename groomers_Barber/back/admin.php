@@ -1,10 +1,10 @@
 <?php
 
-require_once('../config/settings.php');
+require_once('../../config/settings.php');
 
 if (isset($_SESSION['admin'])) {
     // Je suis déjà connecté
-    header('location:' . URL . 'src');
+    header('location:' . URL);
     exit();
 }
 
@@ -23,7 +23,7 @@ if(!empty($_POST)){
 
                 $_SESSION['admin'] = $user;
                 flash_in('success','Connexion reussie');
-                header('location:'.URL.'src');
+                header('location:'.URL);
                 exit();
 
             }else{
@@ -42,13 +42,13 @@ $path='admin';
 $title='Connexion'
 
 ?>
-<?php require_once('../public/includes/head.php')?>
+<?php require_once('../../public/includes/head.php')?>
     <div class="sepa__block">
         <div class="sepa"></div>
         <div class="sepa"></div>
         <div class="sepa"></div>
     </div>
-    <a href=""><img class="logo" src="../src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
     <?php echo flash_out() ?>
 
     <div class="admin__container">
@@ -62,7 +62,7 @@ $title='Connexion'
             </div>
             <button class="submit" type="submit" value="Se connecter">Se Connecter</button>
         </form>
-        <a class="resetPassword lien" href="<?php echo URL ?>back/admin/reinitmdp.php">J'ai oublié mon mot de passe</a>
+        <a class="resetPassword lien" href="admin/reinitmdp.php">J'ai oublié mon mot de passe</a>
 
     </div>
 </body>

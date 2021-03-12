@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../config/settings.php');
+require_once('../../../../config/settings.php');
 
 // on va avoir ici un paramètre dans $_POST
 $reponses = array();

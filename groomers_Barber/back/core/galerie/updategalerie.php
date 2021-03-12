@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../config/settings.php');
+require_once('../../../../config/settings.php');
 
 $_POST = array_map('trim', $_POST);
 
@@ -8,7 +8,7 @@ if(!isset($_SESSION['admin'])){
 
 	flash_in('error', 'Action impossible. Try again');
     
-	header('Location: '.URL.'src');
+	header('Location: '.URL);
 	exit();
 }
 
@@ -62,7 +62,7 @@ if (!empty($_POST)) {
 				]);
 			}
 		}
-		header('Location: '.URL.'src/index.php?success');
+		header('Location: '.URL.'index.php?success');
 		exit();
 	}
 	

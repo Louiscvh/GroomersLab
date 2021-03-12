@@ -1,11 +1,11 @@
 <?php
 
-require_once('../../../config/settings.php');
+require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
 	flash_in('error', 'Vous devez être administrateur pour supprimer une fiche');
-	header('Location: '.URL.'src');
+	header('Location: '.URL);
 	exit();
 
 }
@@ -29,5 +29,5 @@ if ($req->rowCount() == 1) {
 	flash_in('error', 'Photo inexistante');
 }
 
-header('Location: '.URL.'src');
+header('Location: '.URL);
 exit();

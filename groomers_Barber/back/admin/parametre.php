@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../config/settings.php');
+require_once('../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
@@ -78,13 +78,13 @@ if (isset($_POST['changeuser'])) {
 $path="admin";
 $title="Paramètres";
 ?>
-<?php require_once('../../public/includes/head.php')?>
-<a href=""><img class="logo" src="../../src/img/logo_white.png" alt=""></a>
+<?php require_once('../../../public/includes/head.php')?>
+<a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
 
     <div class="admin__container">
         <?php echo flash_out() ?>
         <h1><?php echo $title?></h1>
-        <a href="<?php echo URL ?>src">< Retour</a> 
+        <a href="<?php echo URL ?>">< Retour</a> 
         <div class="param__categ">
             <a class="lien" href="?action=password">Changer de Mot de passe</a>
             <a class="lien" href="?action=email">Changer d'email</a>

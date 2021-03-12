@@ -1,12 +1,12 @@
 <?php
 
-require_once('../../../config/settings.php');
+require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
 	flash_in('error', 'Action impossible. Try again');
     
-	header('Location: '.URL.'src');
+	header('Location: '.URL);
 	exit();
 }
 
@@ -26,7 +26,7 @@ if (!empty($_POST)) {
             ':kid' => $_POST['enfant'],
             ':theme' => $_POST['theme']
         ]);
-        header('Location: '.URL.'src');
+        header('Location: '.URL.'index.php?success');
         flash_in('success', 'Tarif ajouté');
         exit();
     }

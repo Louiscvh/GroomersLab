@@ -1,11 +1,11 @@
 <?php 
 
-require_once('../../config/settings.php');
+require_once('../../../config/settings.php');
 
 
 if(isset($_SESSION['admin'])){
 
-	header('location:' . URL . 'src');
+	header('location:' . URL);
 	exit();
 }
 
@@ -18,7 +18,7 @@ if(!empty($_GET['email']) && !empty($_GET['token'])){
     ));
     if($user->rowCount() == 0){
         flash_in('error','Le lien utilisé est invalide ou a expiré');
-        header('Location:' . URL . 'back/admin.php');
+        header('Location:../admin.php');
         exit();
     }
     else{
@@ -27,7 +27,7 @@ if(!empty($_GET['email']) && !empty($_GET['token'])){
 }
 else{
     flash_in('error','ce lien est invalide');
-    header('Location:' . URL . 'back/admin.php');
+    header('Location:../admin.php');
     exit();
 }
 
@@ -43,7 +43,7 @@ if(!empty($_POST)){
                     'id_user' => $_POST['id_user']
                 ));
                 flash_in('success','le mot de passe a été changé avec succés');
-                header('Location:'.URL.'back/admin.php');
+                header('Location:../admin.php');
                 exit();
             } else {
                 flash_in('error', 'Le mot de passe doit comporter entre 8 et 20 caractères dont au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial (_$!-.%)');
@@ -60,7 +60,7 @@ if(!empty($_POST)){
 $path = "admin";
 $title = "Changer mot de passe";
 ?>
-<?php require_once('../../public/includes/head.php')?>
+<?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
         <div style="left:25%;" class="sepa --sepa1"></div>
         <div style="left:50%;" class="sepa --sepa2"></div>
