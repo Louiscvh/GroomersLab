@@ -16,5 +16,3 @@ if ($('#fichier').length > 0) {
         }
     });
 }
-
-$('.param__section a:first-child').trigger('click');
