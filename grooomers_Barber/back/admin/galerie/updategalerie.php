@@ -32,7 +32,7 @@ $title = "Modifier une photo"
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div style="display: flex;
     flex-direction: column;">
-                <a href="<?php echo URL ?>src">< Retour</a>
+                <a class="backArrow" href="<?php echo URL ?>src">< Retour</a>
                <img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <label for="">Photo</label>

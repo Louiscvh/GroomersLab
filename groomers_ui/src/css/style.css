@@ -1,6 +1,7 @@
 :root {
-    --noirMoyen: #1d1d1d;
-    --vertSecondaire: #396F53;
+    --principale: black;
+    --secondaire: #396F53;
+    --typo: white;
 }
 
 /* Général */
@@ -17,7 +18,7 @@ html {
 }
 
 body {
-    background-color: black;
+    background-color: var(--principale);
 }
 
 .alert-success{
@@ -104,7 +105,7 @@ section {
 /* Couleurs typos */
 
 p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
-    color: white!important;
+    color: var(--typo)!important;
 }
 
 /* Anim liens a */
@@ -282,8 +283,8 @@ h1 {
 .simplybook-widget-button {
     padding: 15px 40px!important;
     position: relative!important;
-    border: 0.8px solid var(--vertSecondaire)!important;
-    background-color: var(--vertSecondaire)!important;
+    border: 0.8px solid var(--secondaire)!important;
+    background-color: var(--secondaire)!important;
     transition: all 0.3s ease-in!important;
     border-radius: 0px!important;
     font-family: avenirregular, arial, cursive;
@@ -293,7 +294,7 @@ h1 {
 
 .simplybook-widget-button:hover {
     background-color: transparent!important;
-    border: 0px solid var(--vertSecondaire);
+    border: 0px solid var(--secondaire);
 }
 
 .simplybook-widget-button:hover div {
@@ -312,8 +313,8 @@ h1 {
 
 .reserve {
     padding: 10px 30px;
-    border: 0.8px solid var(--vertSecondaire);
-    background-color: var(--vertSecondaire);
+    border: 0.8px solid var(--secondaire);
+    background-color: var(--secondaire);
     transition: all 0.3s ease-in;
 }
 
@@ -653,7 +654,7 @@ h1 {
 .tarifs__content {
     width: 100%;
     margin-top: 60px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .table__container {
@@ -662,6 +663,13 @@ h1 {
     padding-bottom: 30px
 }
 
+.table__container a {
+    padding: 0px 50px;
+    opacity: 0.5;
+}
+
+
+
 .table__header {
     padding-top: 50px;
 }
@@ -669,7 +677,7 @@ h1 {
 .table__header h3 {
     width: 300px!important;
     max-width: auto;
-    color: var(--vertSecondaire)!important;
+    color: var(--secondaire)!important;
     text-transform: uppercase;
     font-size: 1.2rem;
 }
@@ -693,7 +701,7 @@ h1 {
 
 .table__ligne p {
     font-size: 1.2rem;
-    color: var(--vertSecondaire)!important;
+    color: var(--secondaire)!important;
     font-family: avenirregular, arial, cursive;
 }
 
@@ -913,7 +921,6 @@ footer {
 
 .mentions h4 {
     font-weight: 200;
-    
 }
 
 @media screen and (max-width: 1100px) {

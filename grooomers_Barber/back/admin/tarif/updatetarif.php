@@ -42,10 +42,10 @@ $title = "Modifier tarif"
     <a href=""><img class="logo" src="../../../src/img/logo_white.png" alt=""></a>
     <div class="admin__container">
         <form method="post" action="../../core/tarif/updatetarif.php">
-            <h1>Modifier <?= $data['name'] ?> :</h1>
+            <h1>Modifier <?= $data['name'] ?></h1>
             <?php echo flash_out() ?>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <a href="<?php echo URL ?>src">< Retour</a>
+            <a class="backArrow" href="<?php echo URL ?>src">< Retour</a>
         
             <div>
                 <label for="coupe">Nom</label>

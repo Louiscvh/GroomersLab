@@ -25,9 +25,11 @@ $title = "Ajouter effectif"
         <?php echo flash_out() ?>
         <form method="post" action="../../core/effectif/uploadeffectif.php" enctype="multipart/form-data">
             <div>
-                <a href="<?php echo URL ?>src">< Retour</a>
+                <a class="backArrow" href="<?php echo URL ?>src">< Retour</a>
+                <br>
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <br>
                 <label for="">Photo</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
