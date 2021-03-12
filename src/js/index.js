@@ -307,7 +307,7 @@ if ($('.tarifs__controller h3').length > 0) {
 
                   html += `</div>`;
                   if (reponse.admin == 'on'){
-                      html += `<a href="../back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
+                      html += `<a href="${URL}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
                   }
               }
               $('#tarif').html(html);

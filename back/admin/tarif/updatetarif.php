@@ -18,7 +18,10 @@ $read->execute([':i' => $_GET['tarifid']]);
 
 $data = $read->fetch(PDO::FETCH_ASSOC); 
     
-
+$themes = executeSQL("SELECT DISTINCT theme FROM hair ORDER BY theme");
+if( $themes->rowCount() > 0){
+    $infos_themes = $themes->fetchAll();
+}
 
 if(isset($_GET['delete']) && !empty($_GET['tarifid'])){
     if (isset($_GET['delete']) && $_GET['delete'] == 'delhair') {
@@ -61,15 +64,18 @@ $title = "Modifier tarif"
                 <input type="text" class="form-control" id="enfant" name="enfant" value="<?= $data['kid'] ?>">
             </div> 
             <div>
-                <label for="theme">Section</label>
-                <input type="text" class="form-control" id="theme" name="theme" value="<?= $data['theme'] ?>">
+            <select name="theme" id="theme">
+                <?php foreach($infos_themes as $theme) { ?>
+                    <option data-theme="<?php echo $theme['theme'] ?>" <?php if($data['theme'] == $theme['theme']) echo 'selected'; ?> ><?php echo $theme['theme'] ?></option>
+                <?php } ?>
+            </select>
             </div> 
 
             <button type="submit" class="btn btn-primary">Modifier</button>
 
             <?php
             if(isset($_SESSION['admin'])){ ?>
-                <p><a href="?delete=delhair&tarifid=<?= $data['id']; ?>">Supprimer Hair</a></p>
+                <p><a href="?delete=delhair&tarifid=<?= $data['id']; ?>">Supprimer Tarif</a></p>
             <?php } ?>
         </form>
     </div>  

@@ -27,6 +27,7 @@ if (!empty($_POST)) {
             ':theme' => $_POST['theme']
         ]);
         header('Location: '.URL.'src');
+        flash_in('success', 'Tarif ajouté');
         exit();
     }
 }
