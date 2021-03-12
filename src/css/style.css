@@ -653,7 +653,7 @@ h1 {
 .tarifs__content {
     width: 100%;
     margin-top: 60px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .table__container {
@@ -913,7 +913,6 @@ footer {
 
 .mentions h4 {
     font-weight: 200;
-    
 }
 
 @media screen and (max-width: 1100px) {

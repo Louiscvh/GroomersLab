@@ -40,6 +40,8 @@ $( document ).ready(function() {
    ancres("nav ul li:first-child", "#coiffures");
    ancres("nav ul li:nth-child(2)", "#tarifs");
    ancres('nav ul li:nth-child(3)', '#barber');
+   ancres('nav ul li:nth-child(4)', '#footer');
+
  
   
   // Déclaration du scroll de Locomotive Scroll
@@ -49,6 +51,7 @@ $( document ).ready(function() {
       multiplier: 0.6,
       repeat: true
   });
+
 
   // Animation du Slider Tarifs
   let $tickerWrapper = $(".slider__wrapper");
@@ -270,7 +273,6 @@ if ($('.tarifs__controller h3').length > 0) {
       themechoisi.on('click', function (e) {
           e.preventDefault();
           let theme = $(this).data('theme'); /* recup de l'attribut data-theme */
-          console.log(theme);
           $('.tarifs__controller h3').removeClass('active');
           themechoisi.addClass('active');
 
@@ -278,7 +280,6 @@ if ($('.tarifs__controller h3').length > 0) {
           /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
           $.post(URL + 'back/core/tarif/ajout.php', { "theme": theme}, function (reponse) {
 
-              console.log(reponse);
 
               let html = '<div class="tarif__container">';
               

@@ -169,9 +169,7 @@ $i = 0;
                 <?php require_once('../public/includes/effectifsection.php'); ?>
             </section>
         </div>
-        <div class="slider" data-scroll-section>
-            <span class="bandeau" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-20">Contactez-nous</span>
-        </div>
+    
         <section id="footer" class="endSection" data-scroll-section>
             <footer>
                 <div class="footer__left">
