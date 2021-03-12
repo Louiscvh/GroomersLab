@@ -52,6 +52,12 @@ $( document ).ready(function() {
       repeat: true
   });
 
+  scroll.destroy()
+
+  setTimeout(function(){
+  scroll.init()
+  }, 100);
+
 
   // Animation du Slider Tarifs
   let $tickerWrapper = $(".slider__wrapper");
