@@ -48,7 +48,8 @@ $( document ).ready(function() {
   const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
-      multiplier: 0.6
+      multiplier: 0.6,
+      smoothMobile: true
   });
 
   scroll.destroy()
