@@ -4,6 +4,12 @@
     --typo: white;
 }
 
+.coffee {
+    --principale: white!important;
+    --secondaire: #C2A34F;
+    --typo: black;
+}
+
 /* Général */
 
 * {
@@ -75,6 +81,10 @@ section {
     background-color: #1d1d1d!important;
 }
 
+.hide {
+    display: none;
+}
+
 /* Typographies */
 
 @font-face {
@@ -122,7 +132,7 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color: var(--typo);
     bottom: -4px;
     transform: scaleX(0);
     transform-origin: right;
@@ -164,7 +174,7 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
 /* Temporaires */
 
 .loading__page {
-    background-color: #0d0d0d;
+    background-color: var(--principale);
     z-index: 100;
     position: absolute;
     width: 100vw;
@@ -278,8 +288,6 @@ h1 {
     bottom:-0px!important;
 }
 
-
-
 .simplybook-widget-button {
     padding: 15px 40px!important;
     position: relative!important;
@@ -295,6 +303,10 @@ h1 {
 .simplybook-widget-button:hover {
     background-color: transparent!important;
     border: 0px solid var(--secondaire);
+}
+
+.simplybook-widget-button div {
+    color: var(--typo);
 }
 
 .simplybook-widget-button:hover div {
@@ -337,24 +349,32 @@ h1 {
     padding: 10px;
 }
 
+.burger__content__coffee {
+    left: 0;
+}
+
 .burger__container::before {
     content: "Coffe Shop";
     position: absolute;
-    color: white;
+    color: var(--typo);
     margin-right: 10px;
     transition: all 0.3s ease-out;
     width: 80px;
     opacity: 0%;
     right: -20px;
-}
-
-.burger__container:hover::before {
-    content: "Coffe Shop";
-    right: 35px;
-    opacity: 100%;
     font-family: essonnes-display, serif;
     font-style: normal;
     font-weight: 300;
+}
+
+.burger__container__coffee::before {
+    content: "Barber Shop";
+    width: 120px;
+}
+
+.burger__container:hover::before {
+    right: 35px;
+    opacity: 100%;
 }
 
 .burger__container:hover .line:nth-child(1), .burger__container:hover .line:nth-child(3){
@@ -364,7 +384,7 @@ h1 {
 .line {
     width: 30px;
     height: 1px;
-    background-color: white;
+    background-color: var(--typo)!important;
     margin-top: 5px;
     transition: all 0.3s ease;
 } 
@@ -459,7 +479,7 @@ h1 {
 .scroll__sepa {
     height: 30px;
     width: 1px;
-    background-color: white;
+    background-color: var(--typo)!important;
     animation: 4s ease infinite scrollInfo;
 }
 
@@ -647,7 +667,7 @@ h1 {
     margin-top: 15px;
     height: 5px;
     width: 5px;
-    background-color: white;
+    background-color: var(--typo);
     border-radius: 100px;
 }
 
@@ -694,7 +714,7 @@ h1 {
 }
 
 .table__ligne p:first-child {
-    color: white!important;
+    color: var(--typo)!important;
     font-size: 1.6rem;
     font-family: essonnes-display, serif;
 }
@@ -809,7 +829,7 @@ h1 {
 .scroll2__container .scroll__sepa {
     height: 1px;
     width: 30px;
-    background-color: white;
+    background-color: var(--typo)!important;
     animation: 4s ease infinite scrollInfo2;
     transform-origin: left!important;
 }

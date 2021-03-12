@@ -48,8 +48,7 @@ $( document ).ready(function() {
   const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
-      multiplier: 0.6,
-      repeat: true
+      multiplier: 0.6
   });
 
 
@@ -310,22 +309,24 @@ if ($('.tarifs__controller h3').length > 0) {
                   }
               }
               $('#tarif').html(html);
-
           }, 'json');
-
       });
-
   });
-
   $('.select1').trigger('click');
-
 }
 
-//Burger menu
-
+//Burger menu redirection
 $(".burger__container").click(function(){
-  
+  if(window.location.toString().includes("index.php")) {
+    document.location.href="coffee.php"; 
+  }
+  else if(window.location.toString().includes("coffee.php")) {
+    document.location.href="index.php"; 
+  }
 });
+
+
+
 
 // Format Euros
 function number_format(number, decimals, decPoint, thousandsSep){

@@ -15,7 +15,7 @@ if( $themes->rowCount() > 0){
 }
 
 $title = 'Page d\'accueil';
-$url = URL."index.php";
+$url = URL."coffee.php";
 $path = 'style';
 $i = 0;
 ?>
@@ -29,6 +29,7 @@ $i = 0;
         </div>
     </div>
 
+    
     <div class="scroll" data-scroll-container>
             <div class="sepa__Block">
                 <div class="sepa"></div>
@@ -36,7 +37,6 @@ $i = 0;
                 <div class="sepa"></div>
             </div>
         <div class="container" data-scroll-section>
-            
             <section id="home">
                 <div  class="carouselData">
                     <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="">
@@ -45,15 +45,15 @@ $i = 0;
                 </div>
 
                 <?php require_once('public/includes/header.php'); ?>
-                <div  class="home__content">
+                <div class="home__content">
                     <h1>GROOMERS LAB BARBER SHOP</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Amet, sit tincidunt aliquam in. </p><br>
                 </div>
                 <div class="absoelement">
                     <div data-aos="fade-left" class="burger__home">
-                        <div class="burger__container">
-                            <div class="burger__content">
+                        <div class="burger__container ">
+                            <div class="burger__content burger__content__coffee">
                                 <div class="line"></div>
                                 <div class="line"></div>
                                 <div class="line"></div>
@@ -214,7 +214,20 @@ $i = 0;
     <script>var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/groomerslab.simplybook.it","theme":"simple_beauty_theme","theme_settings":{"sb_base_color":"#396f53","header_color":"#ffffff","timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","display_item_mode":"block","body_bg_color":"#ffffff","sb_review_image":"","dark_font_color":"#000000","light_font_color":"#ffffff","sb_company_label_color":"#333333","hide_img_mode":"0","show_sidebar":"1","sb_busy":"#000000","sb_available":"#e6e6e6"},"timeline":"flexible","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"R\u00e9server","button_background_color":"#000000","button_text_color":"#ffffff","button_position":"bottom"});</script>     
     <script>
         AOS.init();
+
+        //Actions au changement page coffee 
+        function changeToCoffee() {
+            document.querySelector(":root").classList.add("coffee");
+            document.querySelector("#barber").style.display = "none";
+            $(".burger__container").toggleClass("burger__container__coffee");
+        } 
     </script>
+    
+    <?php if(strpos($url,'coffee') !== false) {
+        echo '<script type="text/javascript">',
+                'changeToCoffee();',
+            '</script>';
+    }?>
 
 </body>
 
