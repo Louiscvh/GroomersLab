@@ -16,3 +16,10 @@ if ($('#fichier').length > 0) {
         }
     });
 }
+
+if(window.location.toString().includes("groomers_Coffee")) {
+    document.querySelector(":root").classList.add("coffee");
+    $(".logo").attr("src","../../../../groomers_ui/src/img/logo_black.png");
+}
+
+
