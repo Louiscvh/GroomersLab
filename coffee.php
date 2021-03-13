@@ -89,7 +89,7 @@ $i = 0;
                 </div>
             </section>
             <section id="coiffures">
-                <?php require_once('public/includes/galeriesection.php'); ?>
+                <?php require_once('public/includes/galeriecoffeesection.php'); ?>
             </section>
         </div>
         <section data-scroll-section>
@@ -125,9 +125,9 @@ $i = 0;
                     <div class="table__container">
                         <div class="table__header">
                             <h3></h3>
-                            <h3>Prix Homme</h3>
-                            <h3>Prix Femme</h3>
-                            <h3>Prix Enfants</h3>
+                            <h3>Standard</h3>
+                            <h3>Petit</h3>
+                            <h3>Grand</h3>
                         </div>
                         <div id="tarif">
                         </div>

@@ -28,7 +28,7 @@ if (!empty($_POST)) {
 
 		if ($errors == 0) {
 
-			require_once('../imagesettings.php');
+			require_once('../../../../public/includes/imagesettings.php');
 
 			if($errors == 0){
 				$add = $pdo->prepare('INSERT INTO team (file, description, name, pseudo, link) VALUES (:file, :description, :name, :pseudo, :link)');

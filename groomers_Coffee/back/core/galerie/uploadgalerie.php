@@ -11,7 +11,7 @@ if(!isset($_SESSION['admin'])){
 	
 	flash_in('error', 'Action impossible. Try again');
 	
-	header('Location: '.URL);
+	header('Location: '.URL. '/coffee.php');
 	exit();
 }
 $errors = 0 ;
@@ -33,7 +33,7 @@ if (!empty($_POST)) {
 			require_once('../../../../public/includes/imagesettings.php');
 
 			if($errors == 0){
-				$add = $pdo->prepare('INSERT INTO haircut (file, description, title, author) VALUES (:file, :description, :title, :author)');
+				$add = $pdo->prepare('INSERT INTO coffee_gallery (file, description, title, author) VALUES (:file, :description, :title, :author)');
 				$add->execute([
 					':file' => $nomfichier,
 					':description' => $_POST['description'],
@@ -42,7 +42,7 @@ if (!empty($_POST)) {
 				]);
 			}
 		}
-		header('Location: '.URL.'index.php?success');
+		header('Location: '.URL.'coffee.php?success');
 		exit();
 	}
 }

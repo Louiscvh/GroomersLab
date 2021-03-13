@@ -2,27 +2,29 @@
 
 require_once('../../../../config/settings.php');
 
+$_POST = array_map('trim', $_POST);
 
-if(empty($_POST) || !isset($_SESSION['admin'])){
+if(!isset($_SESSION['admin'])){
 
 	flash_in('error', 'Action impossible. Try again');
     
-	header('Location: '.URL);
+	header('Location: '.URL. '/coffee.php');
 	exit();
 }
 
+$error = false;
 $_POST = array_map('trim', $_POST);
 
 if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 
 	
-	$teammodify = executeSQL("SELECT * FROM team WHERE id=:id", array('id' => $_POST['id']));
+	$modify = executeSQL("SELECT * FROM coffee_gallery WHERE id=:id", array('id' => $_POST['id']));
 
 
-	if ($teammodify->rowCount() == 1) {
+	if ($modify->rowCount() == 1) {
 
 		// Suppression de la photo
-		$infos = $teammodify->fetch();
+		$infos = $modify->fetch();
 		$couverture = $infos['file'];
 		$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
 		if (!empty($couverture) && file_exists($chemin . $couverture)) {
@@ -35,11 +37,11 @@ if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 $errors = 0 ;
 if (!empty($_POST)) {
     // J'ai soumis le formulaire
-	if (empty(trim($_POST['description'])) || empty(trim($_POST['nom'])) || empty(trim($_POST['pseudo']))) {
+	if (empty(trim($_POST['description'])) || empty(trim($_POST['titre'])) || empty(trim($_POST['auteur']))) {
         flash_in('error', 'Merci de remplir tous les champs');
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	}else{
-    // Assainissement (sanitize)
+		// Assainissement (sanitize)
 		foreach ($_POST as $key => $value) {
 			$_POST[$key] = htmlspecialchars(trim($value));
 		}
@@ -47,22 +49,21 @@ if (!empty($_POST)) {
 		if ($errors == 0) {
 
 			require_once('../../../../public/includes/imagesettings.php');
-
+		
 			if ($errors == 0) {
 				
-				$add = $pdo->prepare('UPDATE team SET file = :file, description = :description, name = :name, pseudo = :pseudo, link = :link  WHERE id = :i');
+				$add = $pdo->prepare('UPDATE coffee_gallery SET file = :file, description = :description, title = :title, author = :author WHERE id = :id');
 				$add->execute([
-					':i' => $_POST['id'],
+					':id' => $_POST['id'],
 					':file' => $nomfichier,
 					':description' => $_POST['description'],
-					':name' => $_POST['nom'],
-					':pseudo' => $_POST['pseudo'],
-					':link' => $_POST['lien']
+					':title' => $_POST['titre'],
+					':author' => $_POST['auteur']
 				]);
 			}
 		}
-
-		header('Location: '.URL. 'index.php?success');
+		header('Location: '.URL.'coffee.php?success');
 		exit();
 	}
+	
 }
