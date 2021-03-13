@@ -1,8 +1,13 @@
 :root {
-    --noirMoyen: #1d1d1d;
-    --vertSecondaire: #396F53;
+    --principale: black;
+    --secondaire: #396F53;
+    --typo: white;
 }
-
+.coffee {
+    --principale: white!important;
+    --secondaire: #C2A34F;
+    --typo: black;
+}
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +18,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: var(--principale);
     margin: 0;
     padding: 0;
     position: relative;
@@ -112,7 +117,7 @@ html, body{
 
 
 p, h1, h2, h3, h4, h5, h5, a, span, label {
-    color: white;
+    color: var(--typo);
 }
 
 .admin__container {
@@ -128,7 +133,7 @@ p, h1, h2, h3, h4, h5, h5, a, span, label {
 
 
 h1 {
-    color: #396F53;
+    color: var(--secondaire);
     margin-bottom: 100px;
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 200;
@@ -217,7 +222,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     margin-top: 50px!important;
     font-size: 1rem;
     transition: all 0.3s ease-in;
-    border: 0.8px solid var(--vertSecondaire);
+    border: 0.8px solid var(--secondaire);
     cursor: pointer;
 }
 

@@ -9,7 +9,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'deco'){
     exit();
 }
 
-$themes = executeSQL("SELECT DISTINCT theme FROM hair ORDER BY theme");
+$themes = executeSQL("SELECT DISTINCT theme FROM coffee_table ORDER BY theme");
 if( $themes->rowCount() > 0){
     $infos_themes = $themes->fetchAll();
 }
@@ -133,7 +133,7 @@ $i = 0;
                         </div>
                         <?php
                         if(isset($_SESSION['admin'])){ ?>
-                            <a class="addTarif" href="<?php echo URL ?>groomers_Barber/back/admin/tarif/addtarif.php?action=choose">Ajouter un tarif</a>
+                            <a class="addTarif" href="<?php echo URL ?>groomers_Coffee/back/admin/tarif/addtarif.php?action=choose">Ajouter un tarif</a>
                         <?php } ?>
                     </div>
                 </div>

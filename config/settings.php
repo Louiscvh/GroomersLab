@@ -24,6 +24,7 @@ Définition du mode de fetch par défaut
 
 // Définition de constante
 define('URL', '/GroomersLab/');
+define('URLCoffee', '/GroomersLab/');
 
 // Fonctions
 function flash_in($type, $message)

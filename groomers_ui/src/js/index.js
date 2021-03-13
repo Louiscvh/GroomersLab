@@ -1,6 +1,7 @@
 'use strict';
 
-const URL = 'http://localhost/GroomersLab/';
+const URL = 'http://localhost/GroomersLab/groomers_Barber/';
+const URLCOFFEE = 'http://localhost/GroomersLab/groomers_Coffee/';
 
 $( document ).ready(function() {
 
@@ -269,59 +270,114 @@ $( document ).ready(function() {
   let nbrCoiffures = $(".coif__container").length;
 
 });
-if ($('.tarifs__controller h3').length > 0) {
 
-  $('.tarifs__controller h3').each(function () {
+if(window.location.toString().includes("coffee.php")) {
+  if ($('.tarifs__controller h3').length > 0) {
 
-      let themechoisi = $(this);
+    $('.tarifs__controller h3').each(function () {
 
-      themechoisi.on('click', function (e) {
-          e.preventDefault();
-          let theme = $(this).data('theme'); /* recup de l'attribut data-theme */
-          $('.tarifs__controller h3').removeClass('active');
-          themechoisi.addClass('active');
+        let sectionchoisie = $(this);
 
-          /* AJAX */
-          /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
-          $.post(URL + 'groomers_Barber/back/core/tarif/ajout.php', { "theme": theme}, function (reponse) {
+        sectionchoisie.on('click', function (e) {
+            e.preventDefault();
+            let section = $(this).data('theme'); /* recup de l'attribut data-theme */
+            $('.tarifs__controller h3').removeClass('active');
+            sectionchoisie.addClass('active');
+
+            /* AJAX */
+            /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
+            $.post(URLCOFFEE + '/back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
 
 
-              let html = '<div class="tarif__container">';
-              
-              for (let i = 0; i < reponse.result.length; i++) {
-              reponse.result[i].men = number_format(reponse.result[i].men, 2, ',', '.' );
-                  html += `
-                  <div class="table__ligne">
-                    <p>${reponse.result[i].name}</p>
+                let html = '<div class="tarif__container">';
+                
+                for (let i = 0; i < reponse.result.length; i++) {
+                reponse.result[i].standard = number_format(reponse.result[i].standard, 2, ',', '.' );
+                    html += `
+                    <div class="table__ligne">
+                      <p>${reponse.result[i].name}</p>
 
-                    <p>${reponse.result[i].men}€</p>`;
+                      <p>${reponse.result[i].standard}€</p>`;
 
-                    if(!reponse.result[i].women){
-                        html += `<p>-</p>`;
-                    }else{
-                        reponse.result[i].women = number_format(reponse.result[i].women, 2, ',', '.' );
-                        html += `<p>${reponse.result[i].women}€</p>`;
+                      if(!reponse.result[i].little){
+                          html += `<p>-</p>`;
+                      }else{
+                          reponse.result[i].little = number_format(reponse.result[i].little, 2, ',', '.' );
+                          html += `<p>${reponse.result[i].little}€</p>`;
+                      }
+
+                      if(!reponse.result[i].big){
+                          html += `<p>-</p>`;
+                      }else{
+                          reponse.result[i].big = number_format(reponse.result[i].big, 2, ',', '.' );
+                          html += `<p>${reponse.result[i].big}€</p>`;
+                      }
+
+                    html += `</div>`;
+                    if (reponse.admin == 'on'){
+                        html += `<a href="${URLCOFFEE}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
                     }
+                }
+                $('#tarif').html(html);
+            }, 'json');
+        });
+    });
+    $('.select1').trigger('click');
+  }
+}else {
+  if ($('.tarifs__controller h3').length > 0) {
 
-                    if(!reponse.result[i].kid){
-                        html += `<p>-</p>`;
-                    }else{
-                        reponse.result[i].kid = number_format(reponse.result[i].kid, 2, ',', '.' );
-                        html += `<p>${reponse.result[i].kid}€</p>`;
+    $('.tarifs__controller h3').each(function () {
+
+        let sectionchoisie = $(this);
+
+        sectionchoisie.on('click', function (e) {
+            e.preventDefault();
+            let section = $(this).data('theme'); /* recup de l'attribut data-theme */
+            $('.tarifs__controller h3').removeClass('active');
+            sectionchoisie.addClass('active');
+
+            /* AJAX */
+            /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
+            $.post(URL + '/back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
+
+
+                let html = '<div class="tarif__container">';
+                
+                for (let i = 0; i < reponse.result.length; i++) {
+                reponse.result[i].men = number_format(reponse.result[i].men, 2, ',', '.' );
+                    html += `
+                    <div class="table__ligne">
+                      <p>${reponse.result[i].name}</p>
+
+                      <p>${reponse.result[i].men}€</p>`;
+
+                      if(!reponse.result[i].women){
+                          html += `<p>-</p>`;
+                      }else{
+                          reponse.result[i].women = number_format(reponse.result[i].women, 2, ',', '.' );
+                          html += `<p>${reponse.result[i].women}€</p>`;
+                      }
+
+                      if(!reponse.result[i].kid){
+                          html += `<p>-</p>`;
+                      }else{
+                          reponse.result[i].kid = number_format(reponse.result[i].kid, 2, ',', '.' );
+                          html += `<p>${reponse.result[i].kid}€</p>`;
+                      }
+
+                    html += `</div>`;
+                    if (reponse.admin == 'on'){
+                        html += `<a href="${URL}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
                     }
-
-                  html += `</div>`;
-                  if (reponse.admin == 'on'){
-                      html += `<a href="${URL}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
-                  }
-              }
-              $('#tarif').html(html);
-          }, 'json');
-      });
-  });
-  $('.select1').trigger('click');
+                }
+                $('#tarif').html(html);
+            }, 'json');
+        });
+    });
+    $('.select1').trigger('click');
+  }
 }
-
 //Burger menu redirection
 $(".burger__container").click(function(){
   if(window.location.toString().includes("coffee.php")) {
