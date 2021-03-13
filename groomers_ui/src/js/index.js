@@ -324,16 +324,12 @@ if ($('.tarifs__controller h3').length > 0) {
 
 //Burger menu redirection
 $(".burger__container").click(function(){
-  if(window.location.toString().includes("index.php")) {
+  if(window.location.toString().includes("coffee.php")) {
+    document.location.href="index.php"; 
+  }else {
     document.location.href="coffee.php"; 
   }
-  else if(window.location.toString().includes("coffee.php")) {
-    document.location.href="index.php"; 
-  }
 });
-
-
-
 
 // Format Euros
 function number_format(number, decimals, decPoint, thousandsSep){

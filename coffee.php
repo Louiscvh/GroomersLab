@@ -220,6 +220,8 @@ $i = 0;
             document.querySelector(":root").classList.add("coffee");
             document.querySelector("#barber").style.display = "none";
             $(".burger__container").toggleClass("burger__container__coffee");
+            $(".logo").attr("src","groomers_ui/src/img/logo_black.png");
+            $(".simplybook-widget-button").css("display", "none");
         } 
     </script>
     
