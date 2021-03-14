@@ -826,6 +826,7 @@ h1 {
     position: relative;
     width: 100%;
     z-index: 2;
+    scrollbar-width: none;
 }
   
 ::-webkit-scrollbar {
@@ -843,6 +844,7 @@ h1 {
     white-space: nowrap;
     transition: all 0.2s;
     overflow-y: hidden;
+    scrollbar-width: none;
 }
 
 .coiffeurs .active {
