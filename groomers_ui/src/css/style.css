@@ -990,6 +990,24 @@ footer {
     margin-left: 20px;
 }
 
+#map {
+    position: relative;
+    z-index: 1;
+}
+
+.map__gradient{
+    height: 100%;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%, rgba(126,7,154,0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%, rgba(126,7,154,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%, rgba(126,7,154,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#7e079a",GradientType=1);
+    position: absolute;
+    z-index: 2;
+    pointer-events: none
+}
+
 .leaflet-bar a {
     background-color: var(--principale)!important;
     border-bottom: 0px solid #ccc!important;

@@ -20,13 +20,13 @@ $( document ).ready(function() {
    ancres('.ancres li:nth-child(4)', '#footer');
 
   //Minimenu click
-  $( ".miniburger__home, .ancres a" ).click(function() {
+  $( ".miniburger__home, .ancres2 a" ).click(function() {
     $(".minimenu").toggleClass("--open");
   });
-  $( ".minimenu__close, .ancres a" ).click(function() {
+  $( ".minimenu__close, .ancres2 a" ).click(function() {
     $(".minimenu").toggleClass("--open");
   });
-  $( ".ancres a" ).click(function() {
+  $( ".ancres2 a" ).click(function() {
     $(".minimenu").toggleClass("--open");
   });
 

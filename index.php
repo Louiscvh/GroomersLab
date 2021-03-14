@@ -34,7 +34,7 @@ $i = 0;
             <p class="lien">< Fermer</p>
         </div>
         <div class="minimenu__container">
-            <ul class="ancres">       
+            <ul class="ancres2">       
                 <li><a class="lien"  href="#">Galerie</a></li>     
                 <?php if(strpos($url,'coffee') !== false) { ?>
                     <li><a class="lien"  href="#">La carte</a></li>
@@ -208,6 +208,7 @@ $i = 0;
 
                 </div>
                 <div class="footer__right">
+                    <div class="map__gradient"></div>
                     <div id="map">
                     </div>
                 </div>
