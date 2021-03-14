@@ -240,6 +240,8 @@ $i = 0;
     <script>
         AOS.init();
     </script>
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+
 
 </body>
 

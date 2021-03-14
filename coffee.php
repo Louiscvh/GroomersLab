@@ -246,6 +246,8 @@ $i = 0;
             $(".map__gradient").css("background", "");
         } 
     </script>
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+
     
     <?php if(strpos($url,'coffee') !== false) {
         echo '<script type="text/javascript">',
