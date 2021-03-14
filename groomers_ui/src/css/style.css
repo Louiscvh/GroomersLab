@@ -221,6 +221,72 @@ header {
     padding-top: 50px;
 }
 
+.miniburger__home {
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    display: none;
+}
+
+.cross {
+    width: 30px;
+    height: 2px;
+    background-color: var(--typo);
+}
+
+.miniburger__container {
+    position: absolute;
+    top: 15px;
+}
+
+.cross:last-child {
+    transform: rotate(90deg);
+    position: relative;
+    top: -1px;
+}
+
+.minimenu {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--principale);
+    z-index: 99;
+    overflow: hidden;
+    display: none;
+}
+
+.minimenu__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.minimenu__container li{
+    font-size: 2rem;
+    font-family:quakiezdisplay, arial, cursive;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+.minimenu__close {
+    position: absolute;
+    font-size: 1rem;
+    font-family: avenirregular, arial, cursive;
+    right: 0;
+    cursor: pointer;
+    padding: 50px;
+    margin-top: 15px;
+}
+
+.--open {
+    display: block;
+}
+
 .logo {
     height: 50px;
     width: 50px;
@@ -258,6 +324,7 @@ header li {
     position: relative;
     top: 40vh;
     transform: translateY(-50%);
+    width: 90%;
 }
 
 h1 {
@@ -268,7 +335,7 @@ h1 {
 }
 
 .home__content p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     opacity: 50%;
     margin: 50px 0px;
     font-family: avenirregular, arial, cursive;
@@ -388,6 +455,8 @@ h1 {
     margin-top: 5px;
     transition: all 0.3s ease;
 } 
+
+
 
 .controls {
     position: absolute;
@@ -946,6 +1015,14 @@ footer {
 @media screen and (max-width: 1100px) {
     h1 {
       font-size: 2.5rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .miniburger__home {
+        display: block;
     }
 
     .home__content p {

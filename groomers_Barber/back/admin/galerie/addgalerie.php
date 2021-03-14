@@ -23,7 +23,7 @@ $title = "Ajouter une photo"
         <h1><?php echo $title?></h1>
         <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
             <div>
-                <a class="backArrow" href="<?php echo URL ?>">< Retour</a>
+                <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
                 <br>
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>

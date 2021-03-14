@@ -1,7 +1,8 @@
+
 <header  data-aos="fade-down">
     <a style="padding: 0px;" href="">
-    <img class="logo" src="groomers_ui/src/img/logo_white.png" alt="">
-</a>
+        <img class="logo" src="groomers_ui/src/img/logo_white.png" alt="">
+    </a>
     <p>10AM_8PM</p>
     <nav>
         <ul>       
@@ -19,5 +20,12 @@
             <?php } ?>
         </ul>
     </nav>
+    <div class="miniburger__home">
+        <div class="miniburger__container">
+            <div class="cross"></div>
+            <div class="cross"></div>
+        </div>
+    </div>
+    
 </header>
 <?php echo flash_out() ?>

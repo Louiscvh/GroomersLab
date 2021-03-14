@@ -29,6 +29,28 @@ $i = 0;
         </div>
     </div>
 
+    <div class="minimenu">
+        <div class="minimenu__close">
+            <p class="lien">< Fermer</p>
+        </div>
+        <div class="minimenu__container">
+            <ul>       
+                <li><a class="lien"  href="#">Galerie</a></li>     
+                <?php if(strpos($url,'coffee') !== false) { ?>
+                    <li><a class="lien"  href="#">La carte</a></li>
+                <?php }else{?>
+                    <li><a class="lien"  href="#">Tarifs</a></li>
+                    <li><a class="lien"  href="#">Barbers   </a></li>
+                <?php } ?>
+                <?php
+                if (isset($_SESSION['admin'])) { ?>
+                    <li><a class="lien" href="<?php echo URL?>groomers_Barber/back/admin/parametre.php" class="btn btn-primary">Admin</a></li>
+                    <li><a class="lien" href="?action=deco" class="btn btn-primary">Se déconnecter</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+
     <div class="scroll" data-scroll-container>
             <div class="sepa__Block">
                 <div class="sepa"></div>
@@ -45,6 +67,7 @@ $i = 0;
                 </div>
 
                 <?php require_once('public/includes/header.php'); ?>
+                
                 <div  class="home__content">
                     <h1>GROOMERS LAB BARBER SHOP</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -60,6 +83,7 @@ $i = 0;
                             </div>
                         </div>
                     </div>
+                    
                     <div data-aos="fade-up" class="controls">
                         <div class="controls__container">
                             <p class="lien">Précédent</p>

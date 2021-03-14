@@ -1,33 +1,9 @@
 'use strict';
 
-const URL = 'http://localhost/GroomersLab/groomers_Barber/';
-const URLCOFFEE = 'http://localhost/GroomersLab/groomers_Coffee/';
+const URL = 'http://localhost:8888/GroomersLab/groomers_Barber/';
+const URLCOFFEE = 'http://localhost:8888/GroomersLab/groomers_Coffee/';
 
 $( document ).ready(function() {
-
-  //Leaflet config
-  var map = L.map('map', {
-    center: [48.866350858938574, 2.3479970557850103],
-    zoom: 17,
-  });
-
-  L.tileLayer('https://api.maptiler.com/maps/ch-swisstopo-lbm-dark/{z}/{x}/{y}.png?key=z7VZjPjowDhkEFyKoLzj', {
-      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> © swisstopo <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> <a target="_blank" href="https://www.swisstopo.admin.ch/en/home.html">&copy; swisstopo</a>',
-      zoom: 13
-  }).addTo(map);
-
-  var greenIcon = L.icon({
-    iconUrl: 'groomers_ui/src/img/logo_white.png',
-    iconSize:     [40, 40], // size of the icon
-    iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
-});
-
-  var marker = L.marker([48.866350858938574, 2.3479970557850103], {
-      title: 'GroomersLab',
-      icon: greenIcon,
-  }).addTo(map).bindPopup("Groomers Lab");;
-
 
    // Fonction pour déclarer les ancres
    let target;
@@ -43,7 +19,39 @@ $( document ).ready(function() {
    ancres('nav ul li:nth-child(3)', '#barber');
    ancres('nav ul li:nth-child(4)', '#footer');
 
- 
+  //Minimenu click
+  $( ".miniburger__home" ).click(function() {
+    $(".minimenu").toggleClass("--open");
+  });
+  $( ".minimenu__close" ).click(function() {
+    $(".minimenu").toggleClass("--open");
+  });
+
+  //Leaflet map config
+  var map = L.map('map', {
+    center: [48.866350858938574, 2.3479970557850103],
+    zoom: 17,
+  });
+
+  L.tileLayer('https://api.maptiler.com/maps/ch-swisstopo-lbm-dark/{z}/{x}/{y}.png?key=z7VZjPjowDhkEFyKoLzj', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> © swisstopo <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> <a target="_blank" href="https://www.swisstopo.admin.ch/en/home.html">&copy; swisstopo</a>',
+      zoom: 13
+  }).addTo(map);
+
+  var greenIcon = L.icon({
+    iconUrl: 'groomers_ui/src/img/logo_white.png',
+    iconSize:     [40, 40], // size of the icon
+    iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+  });
+
+  var marker = L.marker([48.866350858938574, 2.3479970557850103], {
+      title: 'GroomersLab',
+      icon: greenIcon,
+  }).addTo(map).bindPopup("Groomers Lab");;
+
+
+  
   
   // Déclaration du scroll de Locomotive Scroll
   const scroll = new LocomotiveScroll({
@@ -266,9 +274,6 @@ $( document ).ready(function() {
 
   // Bouton réservation
   $(".simplybook-widget-button").appendTo(".home__content");
-
-  let nbrCoiffures = $(".coif__container").length;
-
 });
 
 if(window.location.toString().includes("coffee.php")) {
@@ -286,7 +291,7 @@ if(window.location.toString().includes("coffee.php")) {
 
             /* AJAX */
             /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
-            $.post(URLCOFFEE + '/back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
+            $.post(URLCOFFEE + 'back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
 
 
                 let html = '<div class="tarif__container">';
@@ -339,7 +344,7 @@ if(window.location.toString().includes("coffee.php")) {
 
             /* AJAX */
             /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
-            $.post(URL + '/back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
+            $.post(URL + 'back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
 
 
                 let html = '<div class="tarif__container">';
@@ -378,6 +383,8 @@ if(window.location.toString().includes("coffee.php")) {
     $('.select1').trigger('click');
   }
 }
+
+
 //Burger menu redirection
 $(".burger__container").click(function(){
   if(window.location.toString().includes("coffee.php")) {

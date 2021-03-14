@@ -23,14 +23,17 @@ $title = "Ajouter un tarif"
         <form method="post" action="../../core/tarif/addtarif.php">
             <h1>Ajouter un tarif</h1>
             <?php echo flash_out() ?>
-            <a class="backArrow" href="<?php echo URL ?>">< Retour</a>
+            <div>
+                <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
+            </div>
             <div class="param__section">
                 <a class="lien" href="?action=choose">Selectionner Section</a>
-                <a class="lien" href="?action=add">Ajouter Section</a>
+                <a class="lien addSection" href="?action=add">Ajouter Section</a>
             </div>
             <div>
                 <?php if (isset($_GET['action']) && $_GET['action'] == 'choose') { ?>
-                    <select name="theme" id="theme">
+                    <label for="theme">Sélectionner Section</label>
+                    <select class="sectionSelect" name="theme" id="theme">
                         <?php foreach($infos_themes as $theme) { ?>
                             <option data-theme="<?php echo $theme['theme'] ?>"><?php echo $theme['theme'] ?></option>
                         <?php } ?>
@@ -59,7 +62,7 @@ $title = "Ajouter un tarif"
                 <label for="enfant">Tarif Enfant</label>
                 <input type="text" class="form-control" id="enfant" name="enfant">
             </div>
-            <button type="submit" class="btn btn-primary">Modifier</button>
+            <button type="submit" class="submit btn btn-primary">Modifier</button>
         </form>
     </div>  
     <?php require_once('../../../../public/includes/footersection.php')?>
