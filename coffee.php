@@ -28,17 +28,13 @@ $i = 0;
             <h2>GROOMERS LAB</h2>
         </div>
     </div>
-
-    
-
-    
     <div class="scroll" data-scroll-container>
             <div class="sepa__Block">
                 <div class="sepa"></div>
                 <div class="sepa"></div>
                 <div class="sepa"></div>
             </div>
-        <div class="container" data-scroll-section>
+        <div class="container block" data-scroll-section>
             <section id="home">
                 <div  class="carouselData">
                     <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="">
@@ -94,7 +90,7 @@ $i = 0;
                 <?php require_once('public/includes/galeriecoffeesection.php'); ?>
             </section>
         </div>
-        <section data-scroll-section>
+        <section data-scroll-section class="block">
             <div class="slider__wrapper">
                 <ul class='slider__list'>
                     <li class='listitem'>
@@ -115,7 +111,7 @@ $i = 0;
                 </ul>
                 </div>
         </section>
-        <div class="container" data-scroll-section>
+        <div class="container block" data-scroll-section>
             <section id="tarifs">
                 <div data-scroll data-scroll-speed="2" class="tarifs__controller">
                     <?php foreach($infos_themes as $theme) { 
@@ -141,7 +137,7 @@ $i = 0;
                 </div>
             </section>
         </div>
-        <section data-scroll-section>
+        <section data-scroll-section class="block">
             <div class="slider__wrapper2">
                 <ul class='slider__list2'>
                     <li class='listitem'>
@@ -162,13 +158,13 @@ $i = 0;
                 </ul>
                 </div>
         </section>
-        <div data-scroll-section>
+        <div data-scroll-section class="block">
             <section id="barber">
                 <?php require_once('public/includes/effectifsection.php'); ?>
             </section>
         </div>
     
-        <section id="footer" class="endSection" data-scroll-section>
+        <section id="footer" class="endSection block" data-scroll-section>
             <footer>
                 <div class="footer__left">
                     <h2  data-scroll data-scroll-speed="1">Grommers Lab</h2>
@@ -224,6 +220,7 @@ $i = 0;
             $(".burger__container").toggleClass("burger__container__coffee");
             $(".logo").attr("src","groomers_ui/src/img/logo_black.png");
             $(".simplybook-widget-button").css("display", "none");
+            $(".slider__wrapper2 span").html("Nous retrouver");
         } 
     </script>
     

@@ -34,7 +34,7 @@ $i = 0;
             <p class="lien">< Fermer</p>
         </div>
         <div class="minimenu__container">
-            <ul>       
+            <ul class="ancres">       
                 <li><a class="lien"  href="#">Galerie</a></li>     
                 <?php if(strpos($url,'coffee') !== false) { ?>
                     <li><a class="lien"  href="#">La carte</a></li>
@@ -57,7 +57,7 @@ $i = 0;
                 <div class="sepa"></div>
                 <div class="sepa"></div>
             </div>
-        <div class="container" data-scroll-section>
+        <div class="container block" data-scroll-section>
             
             <section id="home">
                 <div  class="carouselData">
@@ -116,7 +116,7 @@ $i = 0;
                 <?php require_once('public/includes/galeriesection.php'); ?>
             </section>
         </div>
-        <section data-scroll-section>
+        <section data-scroll-section class="block">
             <div class="slider__wrapper">
                 <ul class='slider__list'>
                     <li class='listitem'>
@@ -137,7 +137,7 @@ $i = 0;
                 </ul>
                 </div>
         </section>
-        <div class="container" data-scroll-section>
+        <div class="container block" data-scroll-section>
             <section id="tarifs">
                 <div data-scroll data-scroll-speed="2" class="tarifs__controller">
                     <?php foreach($infos_themes as $theme) { 
@@ -163,7 +163,7 @@ $i = 0;
                 </div>
             </section>
         </div>
-        <section data-scroll-section>
+        <section data-scroll-section class="block">
             <div class="slider__wrapper2">
                 <ul class='slider__list2'>
                     <li class='listitem'>
@@ -184,13 +184,13 @@ $i = 0;
                 </ul>
                 </div>
         </section>
-        <div data-scroll-section>
+        <div data-scroll-section class="block">
             <section id="barber">
                 <?php require_once('public/includes/effectifsection.php'); ?>
             </section>
         </div>
     
-        <section id="footer" class="endSection" data-scroll-section>
+        <section id="footer" class="endSection block" data-scroll-section>
             <footer>
                 <div class="footer__left">
                     <h2  data-scroll data-scroll-speed="1">Grommers Lab</h2>

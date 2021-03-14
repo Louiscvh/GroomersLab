@@ -46,6 +46,10 @@ body {
     z-index: 0;
 }
 
+.block {
+    z-index: 999;
+}
+
 p, h4 {
     display:inline-block;
 }
@@ -252,9 +256,11 @@ header {
     width: 100%;
     position: absolute;
     background-color: var(--principale);
-    z-index: 99;
+    z-index: 9999;
     overflow: hidden;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .minimenu__container {
@@ -284,7 +290,8 @@ header {
 }
 
 .--open {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .logo {
@@ -481,6 +488,10 @@ h1 {
     opacity: 20%;
 }
 
+.sepa__Block {
+    z-index: 998;
+}
+
 .sepa {
     position: absolute;
     height: 100%;
@@ -616,6 +627,7 @@ h1 {
 
 .coif__container {
     display: grid;
+    -ms-display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     justify-content: space-between;
     align-items: center;
@@ -977,7 +989,7 @@ footer {
 }
 
 .leaflet-bar a {
-    background-color: black!important;
+    background-color: var(--principale)!important;
     border-bottom: 0px solid #ccc!important;
 }
 
@@ -1047,6 +1059,11 @@ footer {
     .table__ligne p, .table__header h3 {
         min-width: 100px;
         text-align: center;
+    }
+
+    .burger__container::before {
+        content: "";
+       
     }
 }
 
