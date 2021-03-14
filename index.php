@@ -34,7 +34,7 @@ $i = 0;
             <p class="lien">< Fermer</p>
         </div>
         <div class="minimenu__container">
-            <ul class="ancres2">       
+            <ul class="ancres ancres2">       
                 <li><a class="lien"  href="#">Galerie</a></li>     
                 <?php if(strpos($url,'coffee') !== false) { ?>
                     <li><a class="lien"  href="#">La carte</a></li>
