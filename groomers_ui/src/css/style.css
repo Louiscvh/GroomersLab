@@ -177,6 +177,17 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
 
 /* Temporaires */
 
+.header__1 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+  .header__2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+ 
+
 .loading__page {
     background-color: var(--principale);
     z-index: 1000;
@@ -389,14 +400,16 @@ h1 {
      margin-bottom: 0px!important;
 }
 
+
+
 .carousel {
     position: absolute;
-    height: 500px;
     z-index: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     top: 40%;
-    cursor: pointer;    
+    cursor: pointer; 
+    height: 500px;
 }
 
 .reserve {
@@ -412,7 +425,7 @@ h1 {
 
 .burger__home {
     position: absolute;
-    right: 0;
+    right: 0px;
     top: 50vh;
     transform: translateY(-50%);
     cursor: pointer;
@@ -423,10 +436,6 @@ h1 {
     transition: all 0.3s ease-out;
     position: relative;
     padding: 10px;
-}
-
-.burger__content__coffee {
-    left: 0;
 }
 
 .burger__container::before {
@@ -446,6 +455,11 @@ h1 {
 .burger__container__coffee::before {
     content: "Barber Shop";
     width: 120px;
+    left: 30px;
+}
+
+.burger__container__coffee:hover::before {
+    left: 50px;
 }
 
 .burger__container:hover::before {
@@ -464,8 +478,6 @@ h1 {
     margin-top: 5px;
     transition: all 0.3s ease;
 } 
-
-
 
 .controls {
     position: absolute;
@@ -1062,6 +1074,17 @@ footer i {
     font-weight: 200;
 }
 
+@media screen and (max-width: 1500px) {
+    .tarifs__controller {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .tarifs__controller h3 {
+        margin: 0px 20px;
+    }
+}
+
 @media screen and (max-width: 1100px) {
     h1 {
       font-size: 2.5rem;
@@ -1081,11 +1104,6 @@ footer i {
 
     .home__content p {
         font-size: 1rem;
-    }
-
-    .tarifs__controller {
-        flex-direction: column;
-        text-align: center;
     }
 
     .tarifs__controller h3 {

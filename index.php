@@ -50,26 +50,23 @@ $i = 0;
             </ul>
         </div>
     </div>
-
     <div class="scroll" data-scroll-container>
-            <div class="sepa__Block">
-                <div class="sepa"></div>
-                <div class="sepa"></div>
-                <div class="sepa"></div>
-            </div>
+        <div class="sepa__Block">
+            <div class="sepa"></div>
+            <div class="sepa"></div>
+            <div class="sepa"></div>
+        </div>
         <div class="container block" data-scroll-section>
             <section id="home">
-                <div  class="carouselData">
+                <div class="carouselData">
                     <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="">
                     <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="">
                     <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="">
                 </div>
-
                 <?php require_once('public/includes/header.php'); ?>
                 <div  class="home__content">
-                    <h1>GROOMERS LAB <br>BARBER SHOP</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> 
-                        Amet, sit tincidunt aliquam in. </p>
+                    <h1><span class="header__1">GROOMERS LAB</span><br><span class="header__2">BARBER SHOP</span></h1>
+                    <p>Prenez le côté positif du confinement. Laissez vos barbes pousser. <br>Dans quelques semaines on s’occupera du reste.</p>
                 </div>
                 <div class="absoelement">
                     <div data-aos="fade-left" class="burger__home">
@@ -81,7 +78,6 @@ $i = 0;
                             </div>
                         </div>
                     </div>
-                    
                     <div data-aos="fade-up" class="controls">
                         <div class="controls__container">
                             <p class="lien">Précédent</p>
@@ -230,6 +226,8 @@ $i = 0;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
     <!-- Plugin GSAP TweenMax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <!-- Plugin GSAP Anime -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Js main -->
@@ -240,6 +238,7 @@ $i = 0;
     <script>
         AOS.init();
     </script>
+
     <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 
 

@@ -278,146 +278,216 @@ $( document ).ready(function() {
   $(".simplybook-widget-button").appendTo(".home__content");
 
 
-if(window.location.toString().includes("coffee.php")) {
-  if ($('.tarifs__controller h3').length > 0) {
-
-    $('.tarifs__controller h3').each(function () {
-
-        let sectionchoisie = $(this);
-
-        sectionchoisie.on('click', function (e) {
-            e.preventDefault();
-            let section = $(this).data('theme'); /* recup de l'attribut data-theme */
-            $('.tarifs__controller h3').removeClass('active');
-            sectionchoisie.addClass('active');
-
-            /* AJAX */
-            /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
-            $.post(URLCOFFEE + 'back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
-
-
-                let html = '<div class="tarif__container">';
-                
-                for (let i = 0; i < reponse.result.length; i++) {
-                reponse.result[i].standard = number_format(reponse.result[i].standard, 2, ',', '.' );
-                    html += `
-                    <div class="table__ligne">
-                      <p>${reponse.result[i].name}</p>
-
-                      <p>${reponse.result[i].standard}€</p>`;
-
-                      if(!reponse.result[i].little){
-                          html += `<p>-</p>`;
-                      }else{
-                          reponse.result[i].little = number_format(reponse.result[i].little, 2, ',', '.' );
-                          html += `<p>${reponse.result[i].little}€</p>`;
-                      }
-
-                      if(!reponse.result[i].big){
-                          html += `<p>-</p>`;
-                      }else{
-                          reponse.result[i].big = number_format(reponse.result[i].big, 2, ',', '.' );
-                          html += `<p>${reponse.result[i].big}€</p>`;
-                      }
-
-                    html += `</div>`;
-                    if (reponse.admin == 'on'){
-                        html += `<a href="${URLCOFFEE}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
-                    }
-                }
-                $('#tarif').html(html);
-            }, 'json');
-        });
-    });
-    $('.select1').trigger('click');
-  }
-}else {
-  if ($('.tarifs__controller h3').length > 0) {
-
-    $('.tarifs__controller h3').each(function () {
-
-        let sectionchoisie = $(this);
-
-        sectionchoisie.on('click', function (e) {
-            e.preventDefault();
-            let section = $(this).data('theme'); /* recup de l'attribut data-theme */
-            $('.tarifs__controller h3').removeClass('active');
-            sectionchoisie.addClass('active');
-
-            /* AJAX */
-            /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
-            $.post(URL + 'back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
-
-
-                let html = '<div class="tarif__container">';
-                
-                for (let i = 0; i < reponse.result.length; i++) {
-                reponse.result[i].men = number_format(reponse.result[i].men, 2, ',', '.' );
-                    html += `
-                    <div class="table__ligne">
-                      <p>${reponse.result[i].name}</p>
-
-                      <p>${reponse.result[i].men}€</p>`;
-
-                      if(!reponse.result[i].women){
-                          html += `<p>-</p>`;
-                      }else{
-                          reponse.result[i].women = number_format(reponse.result[i].women, 2, ',', '.' );
-                          html += `<p>${reponse.result[i].women}€</p>`;
-                      }
-
-                      if(!reponse.result[i].kid){
-                          html += `<p>-</p>`;
-                      }else{
-                          reponse.result[i].kid = number_format(reponse.result[i].kid, 2, ',', '.' );
-                          html += `<p>${reponse.result[i].kid}€</p>`;
-                      }
-
-                    html += `</div>`;
-                    if (reponse.admin == 'on'){
-                        html += `<a href="${URL}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
-                    }
-                }
-                $('#tarif').html(html);
-            }, 'json');
-        });
-    });
-    $('.select1').trigger('click');
-  }
-}
-
-
-//Burger menu redirection
-$(".burger__container").click(function(){
   if(window.location.toString().includes("coffee.php")) {
-    document.location.href="index.php"; 
+    if ($('.tarifs__controller h3').length > 0) {
+
+      $('.tarifs__controller h3').each(function () {
+
+          let sectionchoisie = $(this);
+
+          sectionchoisie.on('click', function (e) {
+              e.preventDefault();
+              let section = $(this).data('theme'); /* recup de l'attribut data-theme */
+              $('.tarifs__controller h3').removeClass('active');
+              sectionchoisie.addClass('active');
+
+              /* AJAX */
+              /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
+              $.post(URLCOFFEE + 'back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
+
+
+                  let html = '<div class="tarif__container">';
+                  
+                  for (let i = 0; i < reponse.result.length; i++) {
+                  reponse.result[i].standard = number_format(reponse.result[i].standard, 2, ',', '.' );
+                      html += `
+                      <div class="table__ligne">
+                        <p>${reponse.result[i].name}</p>
+
+                        <p>${reponse.result[i].standard}€</p>`;
+
+                        if(!reponse.result[i].little){
+                            html += `<p>-</p>`;
+                        }else{
+                            reponse.result[i].little = number_format(reponse.result[i].little, 2, ',', '.' );
+                            html += `<p>${reponse.result[i].little}€</p>`;
+                        }
+
+                        if(!reponse.result[i].big){
+                            html += `<p>-</p>`;
+                        }else{
+                            reponse.result[i].big = number_format(reponse.result[i].big, 2, ',', '.' );
+                            html += `<p>${reponse.result[i].big}€</p>`;
+                        }
+
+                      html += `</div>`;
+                      if (reponse.admin == 'on'){
+                          html += `<a href="${URLCOFFEE}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
+                      }
+                  }
+                  $('#tarif').html(html);
+              }, 'json');
+          });
+      });
+      $('.select1').trigger('click');
+    }
   }else {
-    document.location.href="coffee.php"; 
+    if ($('.tarifs__controller h3').length > 0) {
+
+      $('.tarifs__controller h3').each(function () {
+
+          let sectionchoisie = $(this);
+
+          sectionchoisie.on('click', function (e) {
+              e.preventDefault();
+              let section = $(this).data('theme'); /* recup de l'attribut data-theme */
+              $('.tarifs__controller h3').removeClass('active');
+              sectionchoisie.addClass('active');
+
+              /* AJAX */
+              /* destination, paramètres sous forme d'objet, fonction qui traite la réponse, format */
+              $.post(URL + 'back/core/tarif/ajout.php', { "theme": section}, function (reponse) {
+
+
+                  let html = '<div class="tarif__container">';
+                  
+                  for (let i = 0; i < reponse.result.length; i++) {
+                  reponse.result[i].men = number_format(reponse.result[i].men, 2, ',', '.' );
+                      html += `
+                      <div class="table__ligne">
+                        <p>${reponse.result[i].name}</p>
+
+                        <p>${reponse.result[i].men}€</p>`;
+
+                        if(!reponse.result[i].women){
+                            html += `<p>-</p>`;
+                        }else{
+                            reponse.result[i].women = number_format(reponse.result[i].women, 2, ',', '.' );
+                            html += `<p>${reponse.result[i].women}€</p>`;
+                        }
+
+                        if(!reponse.result[i].kid){
+                            html += `<p>-</p>`;
+                        }else{
+                            reponse.result[i].kid = number_format(reponse.result[i].kid, 2, ',', '.' );
+                            html += `<p>${reponse.result[i].kid}€</p>`;
+                        }
+
+                      html += `</div>`;
+                      if (reponse.admin == 'on'){
+                          html += `<a href="${URL}back/admin/tarif/updatetarif.php?tarifid=${reponse.result[i].id}">Modifier</a>`;
+                      }
+                  }
+                  $('#tarif').html(html);
+              }, 'json');
+          });
+      });
+      $('.select1').trigger('click');
+    }
   }
-});
 
-// Format Euros
-function number_format(number, decimals, decPoint, thousandsSep){
-  decimals = decimals || 0;
-  number = parseFloat(number);
+  //Burger menu redirection
+  $(".burger__container").click(function(){
+    $("body").fadeOut(800);
+    if(window.location.toString().includes("coffee.php")) {
+      setTimeout(function(){
+        document.location.href="index.php"; 
+    },800);
+    }else {
+      setTimeout(function(){
+        document.location.href="coffee.php"; 
+      },800);
+    }
+  });
 
-  if(!decPoint || !thousandsSep){
-      decPoint = '.';
-      thousandsSep = ',';
+  // Format Euros
+  function number_format(number, decimals, decPoint, thousandsSep){
+    decimals = decimals || 0;
+    number = parseFloat(number);
+
+    if(!decPoint || !thousandsSep){
+        decPoint = '.';
+        thousandsSep = ',';
+    }
+
+    var roundedNumber = Math.round( Math.abs( number ) * ('1e' + decimals) ) + '';
+    var numbersString = decimals ? roundedNumber.slice(0, decimals * -1) : roundedNumber;
+    var decimalsString = decimals ? roundedNumber.slice(decimals * -1) : '';
+    var formattedNumber = "";
+
+    while(numbersString.length > 3){
+        formattedNumber += thousandsSep + numbersString.slice(-3)
+        numbersString = numbersString.slice(0,-3);
+    }
+
+    return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '' + '€');
   }
 
-  var roundedNumber = Math.round( Math.abs( number ) * ('1e' + decimals) ) + '';
-  var numbersString = decimals ? roundedNumber.slice(0, decimals * -1) : roundedNumber;
-  var decimalsString = decimals ? roundedNumber.slice(decimals * -1) : '';
-  var formattedNumber = "";
 
-  while(numbersString.length > 3){
-      formattedNumber += thousandsSep + numbersString.slice(-3)
-      numbersString = numbersString.slice(0,-3);
-  }
+    // TEST GSAP
 
-  return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '' + '€');
-}
+    // TEST GSAP
+    var anim1 = document.querySelector('.header__1');
+    anim1.innerHTML = anim1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+    anime.timeline()
+    .add({
+        targets: '.header__1 .letter',
+        translateY: [100,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 1500,
+        delay: (el, i) => 2000 + 50 * i
+    });
 
+    var anim2 = document.querySelector('.header__2');
+    anim2.innerHTML = anim2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+    .add({
+        targets: '.header__2 .letter',
+        translateY: [100,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 1500,
+        delay: (el, i) => 2000 + 50 * i
+    });
+
+    var anim3 = document.querySelector('.home__content p');
+
+    anime.timeline()
+    .add({
+        targets: '.home__content p',
+        translateY: [100,0],
+        translateZ: 0,
+        opacity: [0,0.5],
+        easing: "easeOutExpo",
+        duration: 1500,
+        delay: 2600
+    });
+
+    var anim4 = document.querySelector('.simplybook-widget-button');
+
+    anime.timeline()
+    .add({
+        targets: '.simplybook-widget-button',
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 500,
+        delay: 3000
+    });
+
+    var anim4 = document.querySelectorAll('header, .absoelement');
+
+    anime.timeline()
+    .add({
+        targets: 'header, .absoelement',
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 1500,
+        delay: 3000
+    });
+      
 });
