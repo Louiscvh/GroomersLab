@@ -63,6 +63,7 @@ if (!empty($_POST)) {
 			}
 		}
 		header('Location: '.URL.'coffee.php?success');
+		flash_in('success', 'Photo modifiée');
 		exit();
 	}
 	

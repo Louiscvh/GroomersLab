@@ -32,7 +32,7 @@ $title = "Ajouter un tarif"
             </div>
             <?php if (isset($_GET['action']) && $_GET['action'] == 'choose') { ?>
             <div>
-            <label for="theme">Sélectionner Section</label>
+            <label for="theme">Sélectionner Section *</label>
             <select class="sectionSelect" name="theme" id="theme">
                 <?php foreach($infos_themes as $theme) { ?>
                     <option data-theme="<?php echo $theme['theme'] ?>"><?php echo $theme['theme'] ?></option>
@@ -42,24 +42,24 @@ $title = "Ajouter un tarif"
             <?php } ?>
             <?php if (isset($_GET['action']) && $_GET['action'] == 'add') { ?>
             <div>
-                <label for="theme">Section</label>
+                <label for="theme">Section *</label>
                 <input type="text" class="form-control" id="theme" name="theme">
             </div>
             <?php } ?>
             <div>
-                <label for="name">Nom</label>
+                <label for="name">Nom *</label>
                 <input type="text" class="form-control" id="name" name="name">
             </div> 
             <div>
-                <label for="standard">Standard</label>
+                <label for="standard">Tarif Standard *</label>
                 <input type="text" class="form-control" id="standard" name="standard">
             </div> 
             <div>
-                <label for="little">Petit</label>
+                <label for="little">Tarif Petit</label>
                 <input type="text" class="form-control" id="little" name="little">
             </div> 
             <div>
-                <label for="big">Grand</label>
+                <label for="big">Tarif Grand</label>
                 <input type="text" class="form-control" id="big" name="big">
             </div>
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>  

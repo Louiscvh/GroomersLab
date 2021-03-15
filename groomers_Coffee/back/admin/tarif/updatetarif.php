@@ -8,7 +8,7 @@ require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être connecté pour ajouter un tarif');
+	flash_in('error', 'Vous devez être connecté pour modifier un tarif');
 	header('Location: ' .URL. 'coffee.php');
 	exit();
 }
@@ -29,43 +29,43 @@ if(isset($_GET['delete']) && !empty($_GET['tarifid'])){
         //execute
         $req->execute([':i' => $_GET['tarifid']]);
     }
-    flash_in('success', 'Supprimé');
+    flash_in('success', 'Tarif supprimé');
     //redirige vers accueil
     header('Location: '.URL.'coffee.php');
     exit();
 }
 
 $path = "admin";
-$title = "Modifier tarif"
+$title = "Modifier : ".$data['name']
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
     <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
     <div class="admin__container modif">
         <form method="post" action="../../core/tarif/updatetarif.php">
-            <h1>Modifier <?= $data['name'] ?></h1>
+            <h1>Modifier : <?= $data['name'] ?></h1>
             <?php echo flash_out() ?>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div>
                 <a class="lien backArrow" href="<?php echo URL ?>/coffee.php">< Retour</a>
             </div>
             <div>
-                <label for="name">Nom</label>
+                <label for="name">Nom *</label>
                 <input type="text" class="form-control" id="name" name="name" value="<?= $data['name'] ?>">
             </div> 
             <div>
-                <label for="standard">Tarif Homme</label>
+                <label for="standard">Tarif Standard *</label>
                 <input type="text" class="form-control" id="standard" name="standard" value="<?= $data['standard'] ?>">
             </div> 
             <div>
-                <label for="little">Tarif Femme</label>
+                <label for="little">Tarif Petit</label>
                 <input type="text" class="form-control" id="little" name="little" value="<?= $data['little'] ?>">
             </div> 
             <div>
-                <label for="big">Tarif Enfant</label>
+                <label for="big">Tarif Grand</label>
                 <input type="text" class="form-control" id="big" name="big" value="<?= $data['big'] ?>">
             </div> 
             <div>
-            <label for="theme">Sélectionner Section</label>
+            <label for="theme">Sélectionner Section *</label>
             <select class="sectionSelect" name="theme" id="theme">
                 <?php foreach($infos_themes as $theme) { ?>
                     <option data-theme="<?php echo $theme['theme'] ?>" <?php if($data['theme'] == $theme['theme']) echo 'selected'; ?> ><?php echo $theme['theme'] ?></option>

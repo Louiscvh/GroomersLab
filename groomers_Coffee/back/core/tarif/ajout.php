@@ -9,7 +9,7 @@ $reponses = array();
 if (!empty($_POST['theme'])) {
 
     if ($_POST['theme'] != '*') {
-        $requete  = executeSQL("SELECT * FROM coffee_table WHERE theme=:theme", array('theme' => $_POST['theme']));
+        $requete  = executeSQL("SELECT * FROM coffee_table WHERE theme=:theme ORDER BY name", array('theme' => $_POST['theme']));
     } else {
         $requete = executeSQL("SELECT * FROM coffee_table");
     }

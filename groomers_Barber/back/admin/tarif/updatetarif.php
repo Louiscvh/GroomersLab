@@ -23,37 +23,39 @@ if( $themes->rowCount() > 0){
     $infos_themes = $themes->fetchAll();
 }
 
+
+
 if(isset($_GET['delete']) && !empty($_GET['tarifid'])){
     if (isset($_GET['delete']) && $_GET['delete'] == 'delhair') {
         $req = $pdo->prepare('DELETE FROM hair WHERE id = :i');
         //execute
         $req->execute([':i' => $_GET['tarifid']]);
     }
-    flash_in('success', 'Supprimé');
+    flash_in('success', 'Tarif supprimé');
     //redirige vers accueil
     header('Location: '.URL);
     exit();
 }
 
 $path = "admin";
-$title = "Modifier tarif"
+$title = "Modifier : ".$data['name']
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
     <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
     <div class="admin__container modif">
         <form method="post" action="../../core/tarif/updatetarif.php">
-            <h1>Modifier <?= $data['name'] ?></h1>
+            <h1>Modifier : <?= $data['name'] ?></h1>
             <?php echo flash_out() ?>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div>
                 <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
             </div>
             <div>
-                <label for="coupe">Nom</label>
+                <label for="coupe">Nom *</label>
                 <input type="text" class="form-control" id="coupe" name="coupe" value="<?= $data['name'] ?>">
             </div> 
             <div>
-                <label for="homme">Tarif Homme</label>
+                <label for="homme">Tarif Homme *</label>
                 <input type="text" class="form-control" id="homme" name="homme" value="<?= $data['men'] ?>">
             </div> 
             <div>
@@ -65,7 +67,7 @@ $title = "Modifier tarif"
                 <input type="text" class="form-control" id="enfant" name="enfant" value="<?= $data['kid'] ?>">
             </div> 
             <div>
-            <label for="theme">Sélectionner Section</label>
+            <label for="theme">Sélectionner Section *</label>
             <select class="sectionSelect" name="theme" id="theme">
                 <?php foreach($infos_themes as $theme) { ?>
                     <option data-theme="<?php echo $theme['theme'] ?>" <?php if($data['theme'] == $theme['theme']) echo 'selected'; ?> ><?php echo $theme['theme'] ?></option>

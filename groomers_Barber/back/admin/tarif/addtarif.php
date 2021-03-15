@@ -33,7 +33,7 @@ $title = "Ajouter un tarif"
 
             <?php if (isset($_GET['action']) && $_GET['action'] == 'choose') { ?>
             <div>
-                <label for="theme">Sélectionner Section</label>
+                <label for="theme">Sélectionner Section *</label>
                 <select class="sectionSelect" name="theme" id="theme">
                     <?php foreach($infos_themes as $theme) { ?>
                         <option data-theme="<?php echo $theme['theme'] ?>"><?php echo $theme['theme'] ?></option>
@@ -43,25 +43,25 @@ $title = "Ajouter un tarif"
             <?php } ?>
             <?php if (isset($_GET['action']) && $_GET['action'] == 'add') { ?>
             <div>
-                <label for="theme">Section</label>
+                <label for="theme">Section *</label>
                 <input type="text" class="form-control" id="theme" name="theme">
             </div>
             <?php } ?>
             <div>
-                <label for="coupe">Nom</label>
+                <label for="coupe">Nom *</label>
                 <input type="text" class="form-control" id="coupe" name="coupe">
             </div> 
             <div>
-                <label for="homme">Tarif Homme</label>
-                <input type="text" class="form-control" id="homme" name="homme">
+                <label for="homme">Tarif Homme *</label>
+                <input type="text" class="form-control" id="homme" name="homme" pattern="^\d+(\.\d+)*$">
             </div> 
             <div>
                 <label for="femme">Tarif Femme</label>
-                <input type="text" class="form-control" id="femme" name="femme">
+                <input type="text" class="form-control" id="femme" name="femme" pattern="^\d+(\.\d+)*$">
             </div> 
             <div>
                 <label for="enfant">Tarif Enfant</label>
-                <input type="text" class="form-control" id="enfant" name="enfant">
+                <input type="text" class="form-control" id="enfant" name="enfant" pattern="^\d+(\.\d+)*$">
             </div>
             <button type="submit" class="submit btn btn-primary">Envoyer</button>
         </form>

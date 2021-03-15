@@ -43,6 +43,7 @@ if (!empty($_POST)) {
 			}
 		}
 		header('Location: '.URL.'index.php?success');
+		flash_in('success', 'Photo ajoutée');
 		exit();
 	}
 }

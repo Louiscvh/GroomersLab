@@ -10,7 +10,7 @@ if(!isset($_SESSION['admin'])){
 }
 
 $path = "admin";
-$title = "Ajouter effectif"
+$title = "Ajouter un barber"
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
     <div class="sepa__block">
@@ -32,7 +32,7 @@ $title = "Ajouter effectif"
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <br>
-                <label for="">Photo</label>
+                <label for="">Photo *</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -45,15 +45,15 @@ $title = "Ajouter effectif"
                 ?>
             </div> 
             <div>
-                <label for="description">Description</label>
+                <label for="description">Description *</label>
                 <input type="text" class="form-control" id="description" name="description">
             </div> 
             <div>
-                <label for="nom">Nom</label>
+                <label for="nom">Nom *</label>
                 <input type="text" class="form-control" id="nom" name="nom">
             </div> 
             <div>
-                <label for="pseudo">Pseudo</label>
+                <label for="pseudo">Pseudo *</label>
                 <input type="text" class="form-control" id="pseudo" name="pseudo">
             </div> 
             <div>

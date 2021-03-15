@@ -15,7 +15,7 @@ $read->execute([':i' => $_GET['teamid']]);
 $data = $read->fetch(PDO::FETCH_ASSOC); 
 
 $path = "admin";
-$title = "Modifier effectif"
+$title = "Modifier : ".$data['name']; 
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
     <div class="sepa__block">
@@ -26,7 +26,7 @@ $title = "Modifier effectif"
     <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
 
     <div class="admin__container modif">
-        <h1><?php echo $title?></h1>
+        <h1>Modifier : <?= $data['name'] ?></h1>
         <?php echo flash_out() ?>
         <form method="post" action="../../core/effectif/updateeffectif.php" enctype="multipart/form-data">
 
@@ -39,7 +39,7 @@ $title = "Modifier effectif"
                 <label for="fichier"><img src="<?php
                     echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <br>
-                <label for="">Photo</label>
+                <label for="">Photo *</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -52,15 +52,15 @@ $title = "Modifier effectif"
                 ?>
             </div> 
             <div>
-                <label for="description">Description</label>
+                <label for="description">Description *</label>
                 <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>">
             </div> 
             <div>
-                <label for="nom">Nom</label>
+                <label for="nom">Nom *</label>
                 <input type="text" class="form-control" id="nom" name="nom" value="<?= $data['name'] ?>">
             </div>
             <div>
-                <label for="pseudo">Pseudo</label>
+                <label for="pseudo">Pseudo *</label>
                 <input type="text" class="form-control" id="pseudo" name="pseudo" value="<?= $data['pseudo'] ?>">
             </div> 
             <div>
