@@ -266,18 +266,17 @@ $( document ).ready(function() {
 
   // Animation du carousel de la section Home
   let currentMousePos = {};
-
   $( "#home" ).on( "mousemove", function(event) {
-          currentMousePos.x = event.pageX;
-          currentMousePos.y = event.pageY;
+    currentMousePos.x = event.pageX;
+    currentMousePos.y = event.pageY;
 
-          photo.style.left = ((window.innerWidth * 0.5*1)+-currentMousePos.x/7) + "px";
-          photo.style.top = ((window.innerHeight * 0.5*1.1)+-currentMousePos.y/7) + "px";
+    photo.style.left = ((window.innerWidth * 0.5*1.05)+-currentMousePos.x/7) + "px";
+    photo.style.top = ((window.innerHeight * 0.5*1.1)+-currentMousePos.y/7) + "px";
   });
-
+  
   // Bouton réservation
   $(".simplybook-widget-button").appendTo(".home__content");
-});
+
 
 if(window.location.toString().includes("coffee.php")) {
   if ($('.tarifs__controller h3').length > 0) {
@@ -419,3 +418,6 @@ function number_format(number, decimals, decPoint, thousandsSep){
 
   return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '' + '€');
 }
+
+
+});

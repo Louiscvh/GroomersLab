@@ -58,7 +58,6 @@ $i = 0;
                 <div class="sepa"></div>
             </div>
         <div class="container block" data-scroll-section>
-            
             <section id="home">
                 <div  class="carouselData">
                     <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="">
@@ -67,11 +66,10 @@ $i = 0;
                 </div>
 
                 <?php require_once('public/includes/header.php'); ?>
-                
                 <div  class="home__content">
-                    <h1>GROOMERS LAB BARBER SHOP</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Amet, sit tincidunt aliquam in. </p><br>
+                    <h1>GROOMERS LAB <br>BARBER SHOP</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> 
+                        Amet, sit tincidunt aliquam in. </p>
                 </div>
                 <div class="absoelement">
                     <div data-aos="fade-left" class="burger__home">
@@ -99,12 +97,12 @@ $i = 0;
                     <div data-aos="fade-up" class="social">
                         <div class="social__container">
                             <div class="compteurSlide">
-                            <div class="compteurNumber">
-                                <span>1</span>
-                                <span>2</span>
-                                <span>3</span>
-                            </div>
-                            <span class="maxCompteur"> - 3</span>
+                                <div class="compteurNumber">
+                                    <span>1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                </div>
+                                <span class="maxCompteur"> - 3</span>
                             </div>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -205,7 +203,9 @@ $i = 0;
                         </div>
                     </div>
                     <a href="tel:0142335894" class="footer__numTel lien">01 42 33 58 94</a>
-
+                    <br>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="footer__right">
                     <div class="map__gradient"></div>

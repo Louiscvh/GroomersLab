@@ -5,7 +5,7 @@
 }
 
 .coffee {
-    --principale: white!important;
+    --principale: #FAF7F1!important;
     --secondaire: #C2A34F;
     --typo: black;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .container {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
     position: relative;
     z-index: 0;
@@ -55,7 +55,7 @@ p, h4 {
 }
 
 section {
-    padding-bottom: 200px;
+    padding-bottom: 210px;
 }
 
 .endSection {
@@ -179,7 +179,7 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
 
 .loading__page {
     background-color: var(--principale);
-    z-index: 100;
+    z-index: 1000;
     position: absolute;
     width: 100vw;
     left: 0;
@@ -305,6 +305,9 @@ header ul {
 }
 
 header p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1rem;
     font-family: essonnes-display, serif;
     font-style: normal;
@@ -313,6 +316,7 @@ header p {
 
 header a {
     margin: 0px 30px;
+    font-weight: 200;
 }
 
 header li {
@@ -331,23 +335,21 @@ header li {
     position: relative;
     top: 40vh;
     transform: translateY(-50%);
-    width: 90%;
 }
 
 h1 {
     font-size: 5rem;
-    width: 50%;
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 200;
 }
 
 .home__content p {
     font-size: 1.5rem;
-    opacity: 50%;
+    opacity: 30%;
     margin: 50px 0px;
     font-family: avenirregular, arial, cursive;
-    font-weight: 200;
-
+    font-weight: lighter;
+    width: 100%;
 }
 
 .home__content a {
@@ -519,7 +521,7 @@ h1 {
     position: absolute;
     top: 85vh;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%)!important;
     z-index: 3;
 }
 
@@ -619,7 +621,7 @@ h1 {
 
 .social i {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 20px;
 }
 
@@ -713,17 +715,15 @@ h1 {
 
 /* Section tarifs */
 
-
 .tarifs__controller {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 100px;
+    flex-wrap: wrap;
 }
 
 .tarifs__controller h3 {
-    color: white;
     opacity: 40%;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family:quakiezdisplay, arial, cursive;
@@ -733,7 +733,6 @@ h1 {
 .tarifs__controller h3:hover {
     opacity: 80%;
 }
-
 
 .tarifs__controller .active {
     color: white;
@@ -755,7 +754,7 @@ h1 {
 .tarifs__content {
     width: 100%;
     margin-top: 60px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(196, 196, 196, 0.05);
 }
 
 .table__container {
@@ -776,11 +775,17 @@ h1 {
 }
 
 .table__header h3 {
-    width: 300px!important;
+    width: 250px!important;
+    min-height: 30px;
     max-width: auto;
     color: var(--secondaire)!important;
     text-transform: uppercase;
     font-size: 1.2rem;
+}
+
+.table__header h3:first-child {
+    margin-left: 50px;
+ 
 }
 
 .table__ligne {
@@ -807,7 +812,7 @@ h1 {
 }
 
 .table__ligne p, .table__header h3 {
-    min-width: 250px;
+    width: 250px;
     text-align: center;
 }
 
@@ -942,6 +947,7 @@ h1 {
 
 footer {
     display: flex;
+    align-items: center;
 }
 
 .footer__left {
@@ -951,6 +957,7 @@ footer {
 
 .footer__right {
     width: 50%;
+    position: relative;
 }
 
 #map {
@@ -960,7 +967,8 @@ footer {
 .footer__left h2 {
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 200;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
     margin-bottom: 50px;
 }
 
@@ -974,16 +982,15 @@ footer {
 .footer__infos h3 {
     font-family: avenirregular, arial, cursive;
     font-size: 1.5rem;
-    opacity: 0.7;
     font-weight: 400;
+    opacity: 0.5;
 }
 
 .footer__infos p {
     font-family: avenirregular, arial, cursive;
     font-size: 1rem;
     font-weight: 100;
-    margin-top: 10px;
-    opacity: 0.3;
+    margin-top: 20px;
 }
 
 .footer__infosRight {
@@ -1029,10 +1036,16 @@ footer {
 }
 
 .footer__numTel {
-    font-size: 4rem;
-    font-family: essonnes-display, serif;
+    font-family: avenirregular, arial, cursive;
+    font-size: 1.5rem;
     display: inline-block;
     padding-bottom: 5px;
+}
+
+footer i {
+    color: white;
+    font-size: 1.4rem;
+    margin: 20px 20px 0px 0px;
 }
 
 .mentions {
@@ -1054,6 +1067,10 @@ footer {
       font-size: 2.5rem;
     }
 
+    .carouselData, .controls__container, .compteurSlide {
+        display: none;
+    }
+
     nav {
         display: none;
     }
@@ -1069,7 +1086,6 @@ footer {
     .tarifs__controller {
         flex-direction: column;
         text-align: center;
-        
     }
 
     .tarifs__controller h3 {
@@ -1118,6 +1134,12 @@ footer {
 
     .table__ligne p:first-child {
         font-size: 1.2rem;
+    }
 
+    .simplybook-widget-button {
+        width: 80%;
+    }
+    .simplybook-widget-button div{
+        text-align: center;
     }
 }
