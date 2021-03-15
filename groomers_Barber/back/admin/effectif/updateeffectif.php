@@ -25,18 +25,21 @@ $title = "Modifier effectif"
     </div>
     <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
 
-    <div class="admin__container">
+    <div class="admin__container modif">
         <h1><?php echo $title?></h1>
         <?php echo flash_out() ?>
         <form method="post" action="../../core/effectif/updateeffectif.php" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
-
-            <div style="display: flex;flex-direction: column;">
+            <div>
                 <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
-                <img src="<?php
-                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
-                <label for="fichier">Photo</label>
+            </div>
+            <div>
+                <br>
+                <label for="fichier"><img src="<?php
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <br>
+                <label for="">Photo</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -63,9 +66,11 @@ $title = "Modifier effectif"
             <div>
                 <label for="lien">Lien</label>
                 <input type="text" class="form-control" id="lien" name="lien" value="<?= $data['link'] ?>" >
-            </div> 
-            <button class="submit"type="submit" class="btn btn-primary">Modifier</button>
-            <a class="lien suppr"href="deleteeffectif.php?teamid=<?= $data['id']; ?>">Supprimer</a>
+            </div>
+            <div class="form__controls">
+                <button class="submit"type="submit" class="submit">Modifier</button>
+                <a class="deletegalerie lien"href="deleteeffectif.php?teamid=<?= $data['id']; ?>">Supprimer</a>
+            </div>
         </form>
     </div>
     <?php require_once('../../../../public/includes/footersection.php')?>

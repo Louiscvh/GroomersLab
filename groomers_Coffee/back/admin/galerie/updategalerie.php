@@ -30,11 +30,14 @@ $title = "Modifier une photo"
         <?php echo flash_out() ?>
         <form method="post" action="../../core/galerie/updategalerie.php" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <div style="display: flex;
-    flex-direction: column;">
-                <a class="backArrow" href="<?php echo URL ?>/coffee.php">< Retour</a>
-               <img src="<?php
-                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+        <div>
+                <a class="lien backArrow" href="<?php echo URL ?>/coffee.php">< Retour</a>
+            </div>
+            <div>
+                <br>
+                <label for="fichier"><img src="<?php
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <br>
                 <label for="">Photo</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
@@ -47,7 +50,6 @@ $title = "Modifier une photo"
                 }
                 ?>
             </div> 
-            
             <div>
                 <label for="description">Description</label>
                 <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>">

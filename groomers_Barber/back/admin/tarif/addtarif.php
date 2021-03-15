@@ -30,22 +30,23 @@ $title = "Ajouter un tarif"
                 <a class="lien" href="?action=choose">Selectionner Section</a>
                 <a class="lien addSection" href="?action=add">Ajouter Section</a>
             </div>
+
+            <?php if (isset($_GET['action']) && $_GET['action'] == 'choose') { ?>
             <div>
-                <?php if (isset($_GET['action']) && $_GET['action'] == 'choose') { ?>
-                    <label for="theme">Sélectionner Section</label>
-                    <select class="sectionSelect" name="theme" id="theme">
-                        <?php foreach($infos_themes as $theme) { ?>
-                            <option data-theme="<?php echo $theme['theme'] ?>"><?php echo $theme['theme'] ?></option>
-                        <?php } ?>
-                    </select>
-                <?php } ?>
+                <label for="theme">Sélectionner Section</label>
+                <select class="sectionSelect" name="theme" id="theme">
+                    <?php foreach($infos_themes as $theme) { ?>
+                        <option data-theme="<?php echo $theme['theme'] ?>"><?php echo $theme['theme'] ?></option>
+                    <?php } ?>
+                </select>
             </div>
+            <?php } ?>
+            <?php if (isset($_GET['action']) && $_GET['action'] == 'add') { ?>
             <div>
-                <?php if (isset($_GET['action']) && $_GET['action'] == 'add') { ?>
-                    <label for="theme">Section</label>
-                    <input type="text" class="form-control" id="theme" name="theme">
-                <?php } ?>
+                <label for="theme">Section</label>
+                <input type="text" class="form-control" id="theme" name="theme">
             </div>
+            <?php } ?>
             <div>
                 <label for="coupe">Nom</label>
                 <input type="text" class="form-control" id="coupe" name="coupe">
@@ -62,7 +63,7 @@ $title = "Ajouter un tarif"
                 <label for="enfant">Tarif Enfant</label>
                 <input type="text" class="form-control" id="enfant" name="enfant">
             </div>
-            <button type="submit" class="submit btn btn-primary">Modifier</button>
+            <button type="submit" class="submit btn btn-primary">Envoyer</button>
         </form>
     </div>  
     <?php require_once('../../../../public/includes/footersection.php')?>
