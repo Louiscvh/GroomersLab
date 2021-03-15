@@ -53,15 +53,15 @@ $title = "Ajouter un tarif"
             </div> 
             <div>
                 <label for="homme">Tarif Homme *</label>
-                <input type="text" class="form-control" id="homme" name="homme" pattern="^\d+(\.\d+)*$">
+                <input type="text" class="form-control" id="homme" name="homme">
             </div> 
             <div>
                 <label for="femme">Tarif Femme</label>
-                <input type="text" class="form-control" id="femme" name="femme" pattern="^\d+(\.\d+)*$">
+                <input type="text" class="form-control" id="femme" name="femme">
             </div> 
             <div>
                 <label for="enfant">Tarif Enfant</label>
-                <input type="text" class="form-control" id="enfant" name="enfant" pattern="^\d+(\.\d+)*$">
+                <input type="text" class="form-control" id="enfant" name="enfant">
             </div>
             <button type="submit" class="submit btn btn-primary">Envoyer</button>
         </form>
