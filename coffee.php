@@ -65,9 +65,8 @@ $i = 0;
 
                 <?php require_once('public/includes/header.php'); ?>
                 <div class="home__content">
-                    <h1>GROOMERS LAB <br>BARBER SHOP</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
-                        Amet, sit tincidunt aliquam in. </p>
+                <h1><span class="header__1">GROOMERS LAB</span><br><span class="header__2">COFFEE SHOP</span></h1>
+                    <p>Un café salon de thé idéal pour vos rendez-vous au centre de Paris</p>
                 </div>
                 <div class="absoelement">
                     <div data-aos="fade-left" class="burger__home">
@@ -227,6 +226,8 @@ $i = 0;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
     <!-- Plugin GSAP TweenMax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Js main -->
@@ -247,8 +248,9 @@ $i = 0;
             $(".slider__wrapper2 span").html("Nous retrouver");
             $(".sepa").css("background-color", "#C2A34F");
             $("h1, .home__content p").css("text-align", "right");
-            $(".burger__home ").css("left", "0px");
+            $(".burger__home").css('right', 'initial'); 
             $(".tarifs__content").css("background-color", "rgba(243, 239, 230, 0.5)");
+            $(".burger__container:before").css("color", "red");
         } 
     </script>
     <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
