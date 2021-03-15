@@ -5,7 +5,7 @@
     </a>
     <p>10AM_8PM</p>
     <nav>
-        <ul>       
+        <ul class="ancres">       
             <li><a class="lien"  href="#">Galerie</a></li>     
             <?php if(strpos($url,'coffee') !== false) { ?>
                 <li><a class="lien"  href="#">La carte</a></li>

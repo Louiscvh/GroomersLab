@@ -46,6 +46,10 @@ body {
     z-index: 0;
 }
 
+.block {
+    z-index: 999;
+}
+
 p, h4 {
     display:inline-block;
 }
@@ -252,9 +256,11 @@ header {
     width: 100%;
     position: absolute;
     background-color: var(--principale);
-    z-index: 99;
+    z-index: 9999;
     overflow: hidden;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .minimenu__container {
@@ -284,7 +290,8 @@ header {
 }
 
 .--open {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .logo {
@@ -481,6 +488,10 @@ h1 {
     opacity: 20%;
 }
 
+.sepa__Block {
+    z-index: 998;
+}
+
 .sepa {
     position: absolute;
     height: 100%;
@@ -616,6 +627,7 @@ h1 {
 
 .coif__container {
     display: grid;
+    -ms-display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     justify-content: space-between;
     align-items: center;
@@ -814,6 +826,7 @@ h1 {
     position: relative;
     width: 100%;
     z-index: 2;
+    scrollbar-width: none;
 }
   
 ::-webkit-scrollbar {
@@ -831,6 +844,7 @@ h1 {
     white-space: nowrap;
     transition: all 0.2s;
     overflow-y: hidden;
+    scrollbar-width: none;
 }
 
 .coiffeurs .active {
@@ -976,8 +990,27 @@ footer {
     margin-left: 20px;
 }
 
+#map {
+    position: relative;
+    z-index: 1;
+    height: 300px;
+}
+
+.map__gradient{
+    height: 300px;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%, rgba(126,7,154,0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%, rgba(126,7,154,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%, rgba(126,7,154,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#7e079a",GradientType=1);
+    position: absolute;
+    z-index: 2;
+    pointer-events: none
+}
+
 .leaflet-bar a {
-    background-color: black!important;
+    background-color: var(--principale)!important;
     border-bottom: 0px solid #ccc!important;
 }
 
@@ -989,6 +1022,10 @@ footer {
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 400;
     font-size: 1.5rem;
+}
+
+.leaflet-container {
+     background: transparent; 
 }
 
 .footer__numTel {
@@ -1047,6 +1084,11 @@ footer {
     .table__ligne p, .table__header h3 {
         min-width: 100px;
         text-align: center;
+    }
+
+    .burger__container::before {
+        content: "";
+       
     }
 }
 

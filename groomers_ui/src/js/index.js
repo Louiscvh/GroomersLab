@@ -14,16 +14,19 @@ $( document ).ready(function() {
      });
    }
    
-   ancres("nav ul li:first-child", "#coiffures");
-   ancres("nav ul li:nth-child(2)", "#tarifs");
-   ancres('nav ul li:nth-child(3)', '#barber');
-   ancres('nav ul li:nth-child(4)', '#footer');
+   ancres(".ancres li:first-child", "#coiffures");
+   ancres(".ancres li:nth-child(2)", "#tarifs");
+   ancres('.ancres li:nth-child(3)', '#barber');
+   ancres('.ancres li:nth-child(4)', '#footer');
 
   //Minimenu click
-  $( ".miniburger__home" ).click(function() {
+  $( ".miniburger__home, .ancres2 a" ).click(function() {
     $(".minimenu").toggleClass("--open");
   });
-  $( ".minimenu__close" ).click(function() {
+  $( ".minimenu__close, .ancres2 a" ).click(function() {
+    $(".minimenu").toggleClass("--open");
+  });
+  $( ".ancres2 a" ).click(function() {
     $(".minimenu").toggleClass("--open");
   });
 
