@@ -1,7 +1,7 @@
 'use strict';
 
-const URL = 'http://localhost:8888/GroomersLab/groomers_Barber/';
-const URLCOFFEE = 'http://localhost:8888/GroomersLab/groomers_Coffee/';
+const URL = '/GroomersLab/groomers_Barber/';
+const URLCOFFEE = '/GroomersLab/groomers_Coffee/';
 
 $( document ).ready(function() {
 
