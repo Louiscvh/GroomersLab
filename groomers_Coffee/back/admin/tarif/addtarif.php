@@ -52,15 +52,15 @@ $title = "Ajouter un tarif"
             </div> 
             <div>
                 <label for="standard">Tarif Standard *</label>
-                <input type="text" class="form-control" id="standard" name="standard">
+                <input type="number" step="0.01" class="form-control" id="standard" name="standard">
             </div> 
             <div>
                 <label for="little">Tarif Petit</label>
-                <input type="text" class="form-control" id="little" name="little">
+                <input type="number" step="0.01" class="form-control" id="little" name="little">
             </div> 
             <div>
                 <label for="big">Tarif Grand</label>
-                <input type="text" class="form-control" id="big" name="big">
+                <input type="number" step="0.01" class="form-control" id="big" name="big">
             </div>
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>  
         </form>

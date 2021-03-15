@@ -53,15 +53,15 @@ $title = "Ajouter un tarif"
             </div> 
             <div>
                 <label for="homme">Tarif Homme *</label>
-                <input type="text" class="form-control" id="homme" name="homme">
+                <input type="number" step="0.01" class="form-control" id="homme" name="homme">
             </div> 
             <div>
                 <label for="femme">Tarif Femme</label>
-                <input type="text" class="form-control" id="femme" name="femme">
+                <input type="number" step="0.01" class="form-control" id="femme" name="femme">
             </div> 
             <div>
                 <label for="enfant">Tarif Enfant</label>
-                <input type="text" class="form-control" id="enfant" name="enfant">
+                <input type="number" step="0.01" class="form-control" id="enfant" name="enfant">
             </div>
             <button type="submit" class="submit btn btn-primary">Envoyer</button>
         </form>

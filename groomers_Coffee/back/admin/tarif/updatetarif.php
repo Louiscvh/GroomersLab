@@ -54,15 +54,15 @@ $title = "Modifier : ".$data['name']
             </div> 
             <div>
                 <label for="standard">Tarif Standard *</label>
-                <input type="text" class="form-control" id="standard" name="standard" value="<?= $data['standard'] ?>">
+                <input type="number" step="0.01" class="form-control" id="standard" name="standard" value="<?= $data['standard'] ?>">
             </div> 
             <div>
                 <label for="little">Tarif Petit</label>
-                <input type="text" class="form-control" id="little" name="little" value="<?= $data['little'] ?>">
+                <input type="number" step="0.01" class="form-control" id="little" name="little" value="<?= $data['little'] ?>">
             </div> 
             <div>
                 <label for="big">Tarif Grand</label>
-                <input type="text" class="form-control" id="big" name="big" value="<?= $data['big'] ?>">
+                <input type="number" step="0.01" class="form-control" id="big" name="big" value="<?= $data['big'] ?>">
             </div> 
             <div>
             <label for="theme">Sélectionner Section *</label>
