@@ -23,7 +23,7 @@ Définition du mode de fetch par défaut
 */
 
 // Définition de constante
-define('URL', 'https://www.barbierlab.fr/%27');
+define('URL', 'https://www.barbierlab.fr/');
 
 // Fonctions
 function flash_in($type, $message)
