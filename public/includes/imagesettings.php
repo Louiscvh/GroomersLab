@@ -14,7 +14,7 @@ $types_autorises = array('image/jpeg', 'image/png', 'image/webp');
 		} else {
 
 			$nomfichier = uniqid() . '_' . $_FILES['file']['name'];
-			$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+			$chemin = $_SERVER['DOCUMENT_ROOT'].'/public/data/';
 			move_uploaded_file($_FILES['file']['tmp_name'], $chemin . $nomfichier);
 		}
 	} elseif (!empty($_POST['datapreview'])) {
@@ -29,7 +29,7 @@ $types_autorises = array('image/jpeg', 'image/png', 'image/webp');
 			list(, $donnees) = explode(',', $data);
 			list(, $extension) = explode('/', $typemime);
 			$nomfichier = uniqid() . '_' . time() . '.' . $extension;
-			$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+			$chemin = $_SERVER['DOCUMENT_ROOT'].'/public/data/';
 			// création du fichier à partir de datapreview
 			file_put_contents($chemin . $nomfichier, base64_decode($donnees));
 		}

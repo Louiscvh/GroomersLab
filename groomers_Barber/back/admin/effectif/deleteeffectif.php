@@ -16,7 +16,7 @@ if ($req->rowCount() == 1) {
 	// Suppression de la photo
 	$infos = $req->fetch();
 	$couverture = $infos['file'];
-	$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+	$chemin = $_SERVER['DOCUMENT_ROOT'].'/public/data/';
 	if (!empty($couverture) && file_exists($chemin . $couverture)) {
 		// Supprime le fichier
 		unlink($chemin . $couverture);

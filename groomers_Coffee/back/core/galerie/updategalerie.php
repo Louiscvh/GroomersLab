@@ -26,7 +26,7 @@ if(!empty($_FILES['fichier']['name']) || !empty($_POST['datapreview'])){
 		// Suppression de la photo
 		$infos = $modify->fetch();
 		$couverture = $infos['file'];
-		$chemin = $_SERVER['DOCUMENT_ROOT'] . URL . 'public/data/';
+		$chemin = $_SERVER['DOCUMENT_ROOT'].'/public/data/';
 		if (!empty($couverture) && file_exists($chemin . $couverture)) {
 			// Supprime le fichier
 			unlink($chemin . $couverture);
