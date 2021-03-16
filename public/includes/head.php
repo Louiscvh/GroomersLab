@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Site dans le cadre du projet site dynamique - DIGITAL CAMPUS"> 
     <title>Groomers | <?php echo $title ?></title>
-    <link rel=”canonical” href=”http://paged’exemple.fr/pageoriginelle.html” />
+    <link rel="canonical" href="http://paged’exemple.fr/pageoriginelle.html" />
     <!-- AOS Transition -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Font Awesome -->
