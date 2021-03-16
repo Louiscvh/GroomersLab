@@ -48,11 +48,6 @@ $title = "Modifier : ".$data['name']
             <?php echo flash_out() ?>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div>
-                <a class="backArrow" href="<?php echo URL ?>">< Retour</a>
-            </div>
-            
-        
-            <div>
                 <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
             </div>
             <div>

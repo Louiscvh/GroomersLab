@@ -20,7 +20,7 @@ $title="Erreur 403";
             <h1>Erreur 403</h1>
             <h2>Ooops !</h2>
             <p>On s'est peut-être perdu</p>
-            <a class="lien" href="http://localhost/GroomersLab/">Revenir à l'accueil</a>
+            <a class="lien" href="<?php echo URL ?>">Revenir à l'accueil</a>
         </div>
     </div>
 </body>

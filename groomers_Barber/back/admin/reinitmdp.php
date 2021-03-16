@@ -26,18 +26,17 @@ if ( !empty($_POST)){
                     'expiration' => $expiration,
                     'id_user' => $infosUser['id_user']
                 ));
-                $lien = 'http://localhost' . URL . 'groomers_Barber/back/admin/validreinit.php?email=' . $infosUser['email'] . '&token=' . $token;
+                $lien = URL . 'groomers_Barber/back/admin/validreinit.php?email=' . $infosUser['email'] . '&token=' . $token;
                 echo $lien;
 
-                $message ='<p>Bonjour'.$infosUser['login'].'<br>
-                Voici le lien à suivre afin de réinitialiser votre mot de passe. Ce lien est valide 30 minutes. Ne tardez pas !<p br>
-                <a href="'.$lien.'">'.$lien.'</a>
-                <br>
-                A bientot sur notre site</p>';
                 $headers[] = 'MIME-Version:1.0';
-                $headers[] = 'Content-type:text/html; charset=iso-8859-1';
+                $headers[] = 'Content-type:text/html; charset="UTF-8"';
                 $headers[] = 'From: noreply@notresite.com';
                 $sujet = '[Groomers] Demande de réinitialisation de mot de passe';
+                $message ='<p>Bonjour '.$infosUser['login'].'<br>
+                Voici le lien à suivre afin de réinitialiser votre mot de passe. Ce lien est valide 30 minutes. Ne tardez pas !<br>
+                <a href="'.$lien.'">'.$lien.'</a><br>
+                À bientot sur notre site</br>';
                 mail($infosUser['email'],$sujet,$message,implode(PHP_EOL,$headers));
             }
             flash_in('success','Si cette adresse est trouvée dans notre base, un email vous permettant de réinitialiser votre mot de passe vous sera envoyé dans quelques instants');

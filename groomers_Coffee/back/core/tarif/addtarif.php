@@ -1,7 +1,6 @@
 <?php
 
 require_once('../../../../config/settings.php');
-var_dump($_POST);
 
 if(!isset($_SESSION['admin'])){
 

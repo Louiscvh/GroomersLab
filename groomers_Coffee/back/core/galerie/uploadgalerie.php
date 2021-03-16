@@ -3,7 +3,6 @@
 
 require_once('../../../../config/settings.php');
 
-var_dump($_POST, $_FILES);
 
 $_POST = array_map('trim', $_POST);
 
