@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Groomers Lab"> 
-    <script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette4",Mode:"floating right",Theme:"classic",Message:"Ce site Web utilise des cookies, en poursuivant votre navigation, vous acceptez leur utilisations.",ButtonText:"Accepter",LinkText:"Lire plus",Time:"5",})</script>
+    <meta name="description" content="Site dans le cadre du projet site dynamique - DIGITAL CAMPUS"> 
     <title>Groomers | <?php echo $title ?></title>
+    <link rel=”canonical” href=”http://paged’exemple.fr/pageoriginelle.html” />
     <!-- AOS Transition -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Font Awesome -->
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://use.typekit.net/rzj3zdq.css">
     <!-- API pour la carte -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Favicon optis pour tous les appareils -->
     <link rel="apple-touch-icon" sizes="57x57" href="groomers_ui/src/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="57x57" href="groomers_ui/src/img/favicon/apple-icon-57x57.png">
@@ -37,5 +36,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette4",Mode:"floating right",Theme:"classic",Message:"Ce site Web utilise des cookies, en poursuivant votre navigation, vous acceptez leur utilisations.",ButtonText:"Accepter",LinkText:"Lire plus",Time:"5",})</script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
