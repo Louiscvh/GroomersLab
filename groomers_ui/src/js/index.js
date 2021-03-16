@@ -1,7 +1,7 @@
 'use strict';
 
-const URL = '/GroomersLab/groomers_Barber/';
-const URLCOFFEE = '/GroomersLab/groomers_Coffee/';
+const URL = '/groomers_Barber/';
+const URLCOFFEE = '/groomers_Coffee/';
 
 $( document ).ready(function() {
 
