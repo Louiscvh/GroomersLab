@@ -8,7 +8,7 @@ require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être connecté pour ajouter un tarif');
+	flash_in('error', 'Vous devez être connecté pour modifier un tarif');
 	header('Location: ' .URL. 'coffee.php');
 	exit();
 }
@@ -29,54 +29,53 @@ if(isset($_GET['delete']) && !empty($_GET['tarifid'])){
         //execute
         $req->execute([':i' => $_GET['tarifid']]);
     }
-    flash_in('success', 'Supprimé');
+    flash_in('success', 'Tarif supprimé');
     //redirige vers accueil
     header('Location: '.URL.'coffee.php');
     exit();
 }
 
 $path = "admin";
-$title = "Modifier tarif"
+$title = "Modifier : ".$data['name']
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
     <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
-    <div class="admin__container">
+    <div class="admin__container modif">
         <form method="post" action="../../core/tarif/updatetarif.php">
-            <h1>Modifier <?= $data['name'] ?></h1>
+            <h1>Modifier : <?= $data['name'] ?></h1>
             <?php echo flash_out() ?>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <a class="backArrow" href="<?php echo URL ?>/coffee.php">< Retour</a>
-        
             <div>
-                <label for="name">Nom</label>
+                <a class="lien backArrow" href="<?php echo URL ?>/coffee.php">< Retour</a>
+            </div>
+            <div>
+                <label for="name">Nom *</label>
                 <input type="text" class="form-control" id="name" name="name" value="<?= $data['name'] ?>">
             </div> 
             <div>
-                <label for="standard">Tarif Homme</label>
-                <input type="text" class="form-control" id="standard" name="standard" value="<?= $data['standard'] ?>">
+                <label for="standard">Tarif Standard *</label>
+                <input type="number" step="0.01" class="form-control" id="standard" name="standard" value="<?= $data['standard'] ?>">
             </div> 
             <div>
-                <label for="little">Tarif Femme</label>
-                <input type="text" class="form-control" id="little" name="little" value="<?= $data['little'] ?>">
+                <label for="little">Tarif Petit</label>
+                <input type="number" step="0.01" class="form-control" id="little" name="little" value="<?= $data['little'] ?>">
             </div> 
             <div>
-                <label for="big">Tarif Enfant</label>
-                <input type="text" class="form-control" id="big" name="big" value="<?= $data['big'] ?>">
+                <label for="big">Tarif Grand</label>
+                <input type="number" step="0.01" class="form-control" id="big" name="big" value="<?= $data['big'] ?>">
             </div> 
             <div>
-            <select name="theme" id="theme">
+            <label for="theme">Sélectionner Section *</label>
+            <select class="sectionSelect" name="theme" id="theme">
                 <?php foreach($infos_themes as $theme) { ?>
                     <option data-theme="<?php echo $theme['theme'] ?>" <?php if($data['theme'] == $theme['theme']) echo 'selected'; ?> ><?php echo $theme['theme'] ?></option>
                 <?php } ?>
             </select>
             </div> 
-
-            <button type="submit" class="btn btn-primary">Modifier</button>
-
-            <?php
-            if(isset($_SESSION['admin'])){ ?>
-                <p><a href="?delete=delprice&tarifid=<?= $data['id']; ?>">Supprimer Tarif</a></p>
-            <?php } ?>
+            <div class="form__controls">
+                <button type="submit" class="btn btn-primary submit">Modifier</button>
+                <a class="deletegalerie lien" href="?delete=delprice&tarifid=<?= $data['id']; ?>">Supprimer Tarif</a>
+            </div>        
         </form>
     </div>  
     <?php require_once('../../../../public/includes/footersection.php')?>

@@ -6,7 +6,7 @@ require_once('header.php');
 
 
 
-$images = $pdo->prepare('SELECT * FROM coffee_gallery ORDER BY id');
+$images = $pdo->prepare('SELECT * FROM coffee_gallery ORDER BY title');
 $images->execute();
 
 $tImages = $images->fetchAll(PDO::FETCH_ASSOC);

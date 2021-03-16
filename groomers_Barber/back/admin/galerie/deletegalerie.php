@@ -4,7 +4,7 @@ require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être administrateur pour supprimer une fiche');
+	flash_in('error', 'Vous devez être administrateur pour supprimer une photo');
 	header('Location: '.URL);
 	exit();
 
@@ -24,7 +24,7 @@ if ($req->rowCount() == 1) {
 	}
 	// Suppression en BDD
 	executeSQL("DELETE FROM haircut WHERE id = :id", array('id' => $_GET['haircutid']));
-	flash_in('success', "La photo a été supprimé");
+	flash_in('success', "Photo supprimée");
 } else {
 	flash_in('error', 'Photo inexistante');
 }

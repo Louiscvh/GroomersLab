@@ -6,7 +6,7 @@ require_once('header.php');
 
 
 
-$images = $pdo->prepare('SELECT * FROM team');
+$images = $pdo->prepare('SELECT * FROM team ORDER BY name');
 $images->execute();
 
 $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
     <?php
     if(isset($_SESSION['admin'])){ ?>
     <div class="container">
-        <a class="lien add" href="<?php echo URL ?>groomers_Barber/back/admin/effectif/addeffectif.php">Ajouter un membre</a>
+        <a class="lien add" href="<?php echo URL ?>groomers_Barber/back/admin/effectif/addeffectif.php">Ajouter un barber</a>
     </div>
     <?php } ?> 
 </main> 

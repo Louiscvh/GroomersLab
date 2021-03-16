@@ -87,7 +87,7 @@ html, body{
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color: var(--typo);
     bottom: -4px;
     transform: scaleX(0);
     transform-origin: right;
@@ -151,6 +151,7 @@ form {
     flex-direction: column;
     align-items: center;
     width: 50%;
+    overflow: hidden;
 }
 
 form div {
@@ -382,6 +383,10 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-weight: 200;
     font-size: 2rem;
     opacity: 0.5;
+}
+
+#preview{
+    cursor: pointer;
 }
 
 .admin__container h3 {

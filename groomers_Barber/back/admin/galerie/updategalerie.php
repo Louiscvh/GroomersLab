@@ -15,7 +15,7 @@ $read->execute([':i' => $_GET['haircutid']]);
 $data = $read->fetch(PDO::FETCH_ASSOC); 
 
 $path = "admin";
-$title = "Modifier une photo"
+$title = "Modifier : ".$data['title']
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
     <div class="sepa__block">
@@ -26,16 +26,19 @@ $title = "Modifier une photo"
     <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
 
     <div class="admin__container modif">
-        <h1><?php echo $title?></h1>
+        <h1>Modifier : <?= $data['title'] ?></h1>
         <?php echo flash_out() ?>
         <form method="post" action="../../core/galerie/updategalerie.php" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <div style="display: flex;
-    flex-direction: column;">
+            <div>
                 <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
-               <img src="<?php
-                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
-                <label for="">Photo</label>
+            </div>
+            <div>
+                <br>
+                <label for="fichier"><img src="<?php
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <br>
+                <label for="">Photo *</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -49,15 +52,15 @@ $title = "Modifier une photo"
             </div> 
             
             <div>
-                <label for="description">Description</label>
+                <label for="description">Description *</label>
                 <input type="text" class="form-control" id="description" name="description" value="<?= $data['description'] ?>">
             </div> 
             <div>
-                <label for="titre">Titre</label>
+                <label for="titre">Titre *</label>
                 <input type="text" class="form-control" id="titre" name="titre" value="<?= $data['title'] ?>">
             </div> 
             <div>
-                <label for="auteur">Auteur</label>
+                <label for="auteur">Auteur *</label>
                 <input type="text" class="form-control" id="auteur" name="auteur" value="<?= $data['author'] ?>" >
             </div>
             <div class="form__controls">

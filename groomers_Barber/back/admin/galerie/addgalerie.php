@@ -24,9 +24,13 @@ $title = "Ajouter une photo"
         <form method="post" action="../../core/galerie/uploadgalerie.php" enctype="multipart/form-data">
             <div>
                 <a class="lien backArrow" href="<?php echo URL ?>">< Retour</a>
+            </div>
+            <div>
                 <br>
                 <label for="fichier"><img src="<?php
-                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'assets/img/placeholder.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                <br>
+                <label for="">Photo *</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">
                 <input type="hidden" name="datapreview" id="datapreview" value="<?php echo $_POST['datapreview'] ?? '' ?>">
             
@@ -39,15 +43,15 @@ $title = "Ajouter une photo"
                 ?>
             </div> 
             <div>
-                <label for="description">Description</label>
+                <label for="description">Description *</label>
                 <input type="text" class="form-control" id="description" name="description">
             </div> 
             <div>
-                <label for="titre">Titre</label>
+                <label for="titre">Titre *</label>
                 <input type="text" class="form-control" id="titre" name="titre">
             </div> 
             <div>
-                <label for="auteur">Auteur</label>
+                <label for="auteur">Auteur *</label>
                 <input type="text" class="form-control" id="auteur" name="auteur">
             </div> 
             <button class="submit" type="submit" value="Se connecter">Envoyer</button>

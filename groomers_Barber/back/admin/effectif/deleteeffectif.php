@@ -4,7 +4,7 @@ require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Vous devez être administrateur pour supprimer un membre de la team groomers');
+	flash_in('error', 'Vous devez être administrateur pour supprimer un barber de la team groomers');
 	header('Location: '.URL);
 	exit();
 
@@ -23,9 +23,9 @@ if ($req->rowCount() == 1) {
 	}
 	// Suppression en BDD
 	executeSQL("DELETE FROM team WHERE id = :id", array('id' => $_GET['teamid']));
-	flash_in('success', "Le membre a été supprimé");
+	flash_in('success', "Barber supprimé");
 } else {
-	flash_in('error', 'Membre inexistant');
+	flash_in('error', 'Barber inexistant');
 }
 
 header('Location: '.URL);

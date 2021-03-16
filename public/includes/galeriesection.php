@@ -6,7 +6,7 @@ require_once('header.php');
 
 
 
-$images = $pdo->prepare('SELECT * FROM haircut ORDER BY id');
+$images = $pdo->prepare('SELECT * FROM haircut ORDER BY title');
 $images->execute();
 
 $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
