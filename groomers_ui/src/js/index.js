@@ -462,7 +462,7 @@ $( document ).ready(function() {
         targets: '.home__content p',
         translateY: [100,0],
         translateZ: 0,
-        opacity: [0,0.5],
+        opacity: [0,0.3],
         easing: "easeOutExpo",
         duration: 1500,
         delay: 2600

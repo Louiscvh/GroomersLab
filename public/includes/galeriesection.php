@@ -14,7 +14,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="coif__container">
+<div class="coif__container" >
     <?php foreach ($tImages as $value) { ?>
         <div class="coif__block">
             <img data-scroll data-scroll-speed="1.5" src="<?php echo URL . 'public/data/' . $value['file'] ?>" alt="<?= $value['description'] ?>">

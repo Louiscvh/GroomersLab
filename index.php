@@ -69,7 +69,7 @@ $i = 0;
                     <p>Prenez le côté positif du confinement. Laissez vos barbes pousser. <br>Dans quelques semaines on s’occupera du reste.</p>
                 </div>
                 <div class="absoelement">
-                    <div data-aos="fade-left" class="burger__home">
+                    <div class="burger__home">
                         <div class="burger__container">
                             <div class="burger__content">
                                 <div class="line"></div>
@@ -78,19 +78,19 @@ $i = 0;
                             </div>
                         </div>
                     </div>
-                    <div data-aos="fade-up" class="controls">
+                    <div class="controls">
                         <div class="controls__container">
                             <p class="lien">Précédent</p>
                             <p class="lien">Suivant</p>
                         </div> 
                     </div>
-                    <div data-aos="fade-up" class="scroll__info">
+                    <div class="scroll__info">
                         <div class="scroll__container">
                             <p>Scroll</p>
                             <div class="scroll__sepa"></div>
                         </div>
                     </div>
-                    <div data-aos="fade-up" class="social">
+                    <div class="social">
                         <div class="social__container">
                             <div class="compteurSlide">
                                 <div class="compteurNumber">

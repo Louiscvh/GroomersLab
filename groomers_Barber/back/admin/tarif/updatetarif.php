@@ -45,7 +45,10 @@ $title = "Modifier tarif"
             <h1>Modifier <?= $data['name'] ?></h1>
             <?php echo flash_out() ?>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <a class="backArrow" href="<?php echo URL ?>">< Retour</a>
+            <div>
+                <a class="backArrow" href="<?php echo URL ?>">< Retour</a>
+            </div>
+            
         
             <div>
                 <label for="coupe">Nom</label>
@@ -64,18 +67,18 @@ $title = "Modifier tarif"
                 <input type="text" class="form-control" id="enfant" name="enfant" value="<?= $data['kid'] ?>">
             </div> 
             <div>
-            <select name="theme" id="theme">
+            <select name="theme" id="theme" class="sectionSelect">
                 <?php foreach($infos_themes as $theme) { ?>
                     <option data-theme="<?php echo $theme['theme'] ?>" <?php if($data['theme'] == $theme['theme']) echo 'selected'; ?> ><?php echo $theme['theme'] ?></option>
                 <?php } ?>
             </select>
             </div> 
 
-            <button type="submit" class="btn btn-primary">Modifier</button>
+            <button type="submit" class=" submit btn btn-primary">Modifier</button>
 
             <?php
             if(isset($_SESSION['admin'])){ ?>
-                <p><a href="?delete=delhair&tarifid=<?= $data['id']; ?>">Supprimer Tarif</a></p>
+                <p><a class="lien suppr" href="?delete=delhair&tarifid=<?= $data['id']; ?>">Supprimer Tarif</a></p>
             <?php } ?>
         </form>
     </div>  
