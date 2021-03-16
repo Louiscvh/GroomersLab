@@ -36,7 +36,7 @@ if (!empty($_POST)) {
                 ':theme' => $_POST['theme']
             ]);   
         }
-        header('Location: '.URL.'index.php?success');
+        header('Location: '.URL);
         flash_in('success', 'Tarif modifié');
         exit();
     }

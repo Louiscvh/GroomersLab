@@ -62,7 +62,7 @@ if (!empty($_POST)) {
 				]);
 			}
 		}
-		header('Location: '.URL.'index.php?success');
+		header('Location: '.URL);
 		flash_in('success', 'Photo modifiée');
 		exit();
 	}

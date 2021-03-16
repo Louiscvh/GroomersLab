@@ -7,9 +7,9 @@ session_start();
 
 // Connexion BDD
 $pdo = new PDO(
-    'mysql:host=localhost;charset=utf8;dbname=groomers',
-    'root',
-    '',
+    'mysql:host=louiscavyc839.mysql.db;charset=utf8;dbname=louiscavyc839',
+    'louiscavyc839',
+    'Ecd5fa2456dc',
     array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
@@ -23,7 +23,7 @@ Définition du mode de fetch par défaut
 */
 
 // Définition de constante
-define('URL', '/GroomersLab/');
+define('URL', 'http://www.barbierlab.fr/');
 
 // Fonctions
 function flash_in($type, $message)

@@ -26,7 +26,7 @@ if (!empty($_POST)) {
             ':kid' => $_POST['enfant'],
             ':theme' => $_POST['theme']
         ]);
-        header('Location: '.URL.'index.php?success');
+        header('Location: '.URL);
         flash_in('success', 'Tarif ajouté');
         exit();
     }

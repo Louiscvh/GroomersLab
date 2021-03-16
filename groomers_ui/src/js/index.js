@@ -391,7 +391,7 @@ $( document ).ready(function() {
     $("body").fadeOut(800);
     if(window.location.toString().includes("coffee.php")) {
       setTimeout(function(){
-        document.location.href="index.php"; 
+        document.location.href="http://www.barbierlab.fr/"; 
     },800);
     }else {
       setTimeout(function(){
