@@ -31,7 +31,7 @@ $i = 0;
 
     <div class="minimenu">
         <div class="minimenu__close">
-            <p class="lien">< Fermer</p>
+            <p class="lien">Fermer</p>
         </div>
         <div class="minimenu__container">
             <ul class="ancres ancres2">       
