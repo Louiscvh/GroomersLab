@@ -17,7 +17,7 @@ $title = "Ajouter une photo"
         <div style="left:50%;" class="sepa --sepa2"></div>
         <div style="left:75%;" class="sepa --sepa3"></div>
     </div>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
     <div class="admin__container">
         <?php echo flash_out() ?>
         <h1><?php echo $title?></h1>

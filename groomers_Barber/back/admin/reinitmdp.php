@@ -57,11 +57,11 @@ $title="Réinitisaliser mot de passe";
 ?>
 <?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
-        <div style="left:25%;" class="sepa --sepa1"></div>
-        <div style="left:50%;" class="sepa --sepa2"></div>
-        <div style="left:75%;" class="sepa --sepa3"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
     </div>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
 
     <div class="admin__container">
         <h1><?php echo $title?></h1>

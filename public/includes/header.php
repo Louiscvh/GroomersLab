@@ -1,17 +1,17 @@
 
 <header  data-aos="fade-down">
-    <a style="padding: 0px;" href="">
-        <img class="logo" src="groomers_ui/src/img/logo_white.png" alt="">
+    <a style="padding: 0px;" href="https://www.barbierlab.fr/">
+        <img class="logo" src="groomers_ui/src/img/logo_white.png" alt="Logo Groomers">
     </a>
     <p>10AM_8PM</p>
     <nav>
         <ul class="ancres">       
-            <li><a class="lien"  href="#">Galerie</a></li>     
+            <li><a class="lien">Galerie</a></li>     
             <?php if(strpos($url,'coffee') !== false) { ?>
-                <li><a class="lien"  href="#">La carte</a></li>
+                <li><a class="lien">La carte</a></li>
             <?php }else{?>
-                <li><a class="lien"  href="#">Tarifs</a></li>
-                <li><a class="lien"  href="#">Barbers   </a></li>
+                <li><a class="lien">Tarifs</a></li>
+                <li><a class="lien">Barbers</a></li>
             <?php } ?>
             <?php
             if (isset($_SESSION['admin'])) { ?>

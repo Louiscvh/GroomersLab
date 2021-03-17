@@ -23,7 +23,7 @@ $title = "Modifier : ".$data['title']
         <div class="sepa"></div>
         <div class="sepa"></div>
     </div>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
 
     <div class="admin__container modif">
         <h1>Modifier : <?= $data['title'] ?></h1>

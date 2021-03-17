@@ -8,6 +8,7 @@
     --secondaire: #C2A34F;
     --typo: black;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -22,6 +23,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    font-family: avenirregular, arial, cursive;
 }
 
 html, body{ 
@@ -131,6 +133,21 @@ p, h1, h2, h3, h4, h5, h5, a, span, label {
     margin-bottom: 80px;
 }
 
+.mentions__container {
+    align-items: baseline;
+    padding-top: 80px;
+    margin-bottom: 0!important;
+    padding-bottom: 80px!important;
+}
+
+.mentions__container h1 {
+    margin-bottom: 80px!important;
+    margin-top: 80px!important;
+}
+
+.mentions__container h3 {
+    font-family: essonnes-display, serif!important;
+}
 
 h1 {
     color: var(--secondaire);

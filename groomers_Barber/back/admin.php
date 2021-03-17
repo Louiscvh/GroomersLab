@@ -48,7 +48,7 @@ $title='Connexion'
         <div class="sepa"></div>
         <div class="sepa"></div>
     </div>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
     <?php echo flash_out() ?>
 
     <div class="admin__container">

@@ -88,6 +88,9 @@ $( document ).ready(function() {
   });
   
   $clonedList.addClass("cloned").appendTo($tickerWrapper);
+
+  //Bug Alt Logo Groomers
+  $(".logo").attr("alt","Logo Groomers");
   
   //Branchement de la lib TimelineMax pour avoir le slider infini
   let infinite = new TimelineMax({repeat: -1, paused: true});

@@ -18,7 +18,7 @@ $path = "admin";
 $title = "Ajouter un tarif"
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt=""></a>
+    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
     <div class="admin__container">
         <form method="post" action="../../core/tarif/addtarif.php">
             <h1>Ajouter un tarif</h1>

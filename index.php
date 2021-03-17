@@ -40,7 +40,7 @@ $i = 0;
                     <li><a class="lien"  href="#">La carte</a></li>
                 <?php }else{?>
                     <li><a class="lien"  href="#">Tarifs</a></li>
-                    <li><a class="lien"  href="#">Barbers   </a></li>
+                    <li><a class="lien"  href="#">Barbers</a></li>
                 <?php } ?>
                 <?php
                 if (isset($_SESSION['admin'])) { ?>
@@ -59,9 +59,9 @@ $i = 0;
         <div class="container block" data-scroll-section>
             <section id="home">
                 <div class="carouselData">
-                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="">
-                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="">
-                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="">
+                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="Image carousel 1">
+                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="Image carousel 2">
+                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="Image carousel 3">
                 </div>
                 <?php require_once('public/includes/header.php'); ?>
                 <div  class="home__content">
@@ -100,8 +100,8 @@ $i = 0;
                                 </div>
                                 <span class="maxCompteur"> - 3</span>
                             </div>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/groomers_lab/"><i class="fab fa-instagram"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/Groomerslab-156964195016317/"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -200,8 +200,8 @@ $i = 0;
                     </div>
                     <a href="tel:0142335894" class="footer__numTel lien">01 42 33 58 94</a>
                     <br>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/groomers_lab/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/Groomerslab-156964195016317/"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="footer__right">
                     <div class="map__gradient"></div>
@@ -239,7 +239,16 @@ $i = 0;
         AOS.init();
     </script>
 
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKK9ENWWWE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JKK9ENWWWE');
+    </script>
 
 
 </body>

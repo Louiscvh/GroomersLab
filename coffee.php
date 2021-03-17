@@ -34,12 +34,12 @@ $i = 0;
         </div>
         <div class="minimenu__container">
             <ul class="ancres ancres2">       
-                <li><a class="lien"  href="#">Galerie</a></li>     
+                <li><a class="lien">Galerie</a></li>     
                 <?php if(strpos($url,'coffee') !== false) { ?>
-                    <li><a class="lien"  href="#">La carte</a></li>
+                    <li><a class="lien">La carte</a></li>
                 <?php }else{?>
-                    <li><a class="lien"  href="#">Tarifs</a></li>
-                    <li><a class="lien"  href="#">Barbers   </a></li>
+                    <li><a class="lien">Tarifs</a></li>
+                    <li><a class="lien">Barbers   </a></li>
                 <?php } ?>
                 <?php
                 if (isset($_SESSION['admin'])) { ?>
@@ -58,9 +58,9 @@ $i = 0;
         <div class="container block" data-scroll-section>
             <section id="home">
                 <div  class="carouselData">
-                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel4.jpg" alt="">
-                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="">
-                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="">
+                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel4.jpg" alt="Image carousel 1">
+                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="Image carousel 2">
+                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="Image carousel 3">
                 </div>
 
                 <?php require_once('public/includes/header.php'); ?>
@@ -100,8 +100,8 @@ $i = 0;
                             </div>
                             <span class="maxCompteur"> - 3</span>
                             </div>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/groomers_lab/"><i class="fab fa-instagram"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/Groomerslab-156964195016317/"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -200,8 +200,8 @@ $i = 0;
                     </div>
                     <a href="tel:0142335894" class="footer__numTel lien">01 42 33 58 94</a>
                     <br>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/groomers_lab/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/Groomerslab-156964195016317/"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="footer__right">
                     <div class="map__gradient"></div>
@@ -210,9 +210,9 @@ $i = 0;
                 </div>
             </footer>
             <div class="mentions">
-                <h4 class="lien">Politique de confidentialité</h4>
+                <a href="mentions.php" class="lien">Politique de confidentialité</a>
                 <h4>© 2021 Groomers Lab</h4>
-                <h4 class="lien">Mentions légales</h4>
+                <a class="lien">Mentions légales</a>
             </div>
         </section>
     </div>
@@ -243,6 +243,7 @@ $i = 0;
             document.querySelector("#barber").style.display = "none";
             $(".burger__container").toggleClass("burger__container__coffee");
             $(".logo").attr("src","groomers_ui/src/img/logo_black.png");
+            $(".logo").attr("alt","Logo Groomers");
             $(".simplybook-widget-button").css("display", "none");
             $(".slider__wrapper2 span").html("Nous retrouver");
             $(".sepa").css("background-color", "#C2A34F");
@@ -252,7 +253,16 @@ $i = 0;
             $(".burger__container:before").css("color", "red");
         } 
     </script>
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKK9ENWWWE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JKK9ENWWWE');
+    </script>
 
     
     <?php if(strpos($url,'coffee') !== false) {
