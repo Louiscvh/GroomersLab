@@ -62,9 +62,9 @@ $title = "Changer mot de passe";
 ?>
 <?php require_once('../../../public/includes/head.php')?>
     <div class="sepa__block">
-        <div style="left:25%;" class="sepa --sepa1"></div>
-        <div style="left:50%;" class="sepa --sepa2"></div>
-        <div style="left:75%;" class="sepa --sepa3"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
+        <div class="sepa"></div>
     </div>
     <div class="admin__container">
         <h1><?php echo $title?></h1>

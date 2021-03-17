@@ -16,7 +16,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
     <div class="coiffeurs" data-scroll data-scroll-speed="2">
         <?php foreach ($tImages as $value) : ?>
             <article class="coiffeur">
-                <div class="coiffeur__cube" alt="<?= $value['description'] ?>" style=" margin-bottom:20px;background-image: url(public/data/<?= $value['file'] ?>);">
+                <div class="coiffeur__cube" alt="<?= $value['description'] ?>" style="background-image: url(public/data/<?= $value['file'] ?>);">
                     <div class="coiffeur__title">
                         <h3 class="coiffeur__name"><?= $value['name'] ?></h3>
                         <h2 class="coiffeur__social"><a href="<?= $value['link'] ?>" target="_blank"><?= '@'.$value['pseudo'] ?></a></h2>
@@ -24,7 +24,7 @@ $tImages = $images->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <?php
                 if(isset($_SESSION['admin'])) : ?>
-                    <a style="font-family: avenirregular, arial, cursive;" href="<?php echo URL ?>groomers_Barber/back/admin/effectif/updateeffectif.php?teamid=<?php echo $value['id']; ?>">Modifier</a>
+                    <a href="<?php echo URL ?>groomers_Barber/back/admin/effectif/updateeffectif.php?teamid=<?php echo $value['id']; ?>">Modifier</a>
                 <?php endif; ?> 
             </article>
         <?php endforeach; ?> 

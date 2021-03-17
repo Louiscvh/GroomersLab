@@ -872,6 +872,7 @@ h1 {
     margin-right: 200px;
     transform: translateX(-50%);
     transition: filter 0.3s ease-out;
+    font-family: avenirregular, arial, cursive;
 }
 
 .coiffeur:hover {
@@ -890,6 +891,7 @@ h1 {
     z-index: 1;
     position: relative;
     transform-origin: bottom;
+    margin-bottom:20px;
 }
   
 .coiffeur__title {
