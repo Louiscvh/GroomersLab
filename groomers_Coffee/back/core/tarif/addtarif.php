@@ -4,7 +4,7 @@ require_once('../../../../config/settings.php');
 
 if(!isset($_SESSION['admin'])){
 
-	flash_in('error', 'Action impossible. Try again');
+	flash_in('error', 'Action impossible.');
     
 	header('Location: '.URL.'coffee.php');
 	exit();
