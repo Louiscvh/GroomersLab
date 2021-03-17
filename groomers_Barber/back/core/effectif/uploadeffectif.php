@@ -7,7 +7,7 @@ $_POST = array_map('trim', $_POST);
 
 if(!isset($_SESSION['admin'])){
 	
-	flash_in('error', 'Action impossible. Try again');
+	flash_in('error', 'Action impossible.');
 	
 	header('Location: '.URL);
 	exit();
