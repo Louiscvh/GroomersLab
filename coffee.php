@@ -58,9 +58,9 @@ $i = 0;
         <div class="container block" data-scroll-section>
             <section id="home">
                 <div  class="carouselData">
-                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel4.jpg" alt="Image carousel 1">
-                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="Image carousel 2">
-                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="Image carousel 3">
+                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel4.webp" alt="Image carousel 1">
+                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.webp" alt="Image carousel 2">
+                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.webp" alt="Image carousel 3">
                 </div>
 
                 <?php require_once('public/includes/header.php'); ?>
@@ -210,9 +210,8 @@ $i = 0;
                 </div>
             </footer>
             <div class="mentions">
-                <a href="mentions.php" class="lien">Politique de confidentialité</a>
                 <h4>© 2021 Groomers Lab</h4>
-                <a class="lien">Mentions légales</a>
+                <a href="mentions.php" class="lien">Mentions légales</a>
             </div>
         </section>
     </div>
@@ -242,7 +241,7 @@ $i = 0;
             document.querySelector(":root").classList.add("coffee");
             document.querySelector("#barber").style.display = "none";
             $(".burger__container").toggleClass("burger__container__coffee");
-            $(".logo").attr("src","groomers_ui/src/img/logo_black.png");
+            $(".logo").attr("src","groomers_ui/src/img/logo_black.webp");
             $(".logo").attr("alt","Logo Groomers");
             $(".simplybook-widget-button").css("display", "none");
             $(".slider__wrapper2 span").html("Nous retrouver");
@@ -263,6 +262,18 @@ $i = 0;
 
     gtag('config', 'G-JKK9ENWWWE');
     </script>
+    <!-- Hotjar Tracking Code for https://www.barbierlab.fr/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2303243,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
 
     
     <?php if(strpos($url,'coffee') !== false) {

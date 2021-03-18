@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Site dans le cadre du projet site dynamique - DIGITAL CAMPUS"> 
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
     <title>Groomers | <?php echo $title ?></title>
     <link rel="canonical" href="http://paged’exemple.fr/pageoriginelle.html" />
     <!-- AOS Transition -->
@@ -36,7 +37,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette4",Mode:"floating right",Theme:"classic",Message:"Ce site Web utilise des cookies, en poursuivant votre navigation, vous acceptez leur utilisations.",ButtonText:"Accepter",LinkText:"Lire plus",Time:"5",})</script>
+    <script src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette4",Mode:"floating right",Theme:"classic",Message:"Ce site Web utilise des cookies, en poursuivant votre navigation, vous acceptez leur utilisations.",ButtonText:"Accepter",LinkText:"Lire plus",Time:"5",})</script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>

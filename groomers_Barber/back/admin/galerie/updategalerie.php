@@ -23,7 +23,7 @@ $title = "Modifier : ".$data['title']
         <div class="sepa"></div>
         <div class="sepa"></div>
     </div>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
+    <a href="https://www.barbierlab.fr/"><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.webp" alt="Logo Groomers"></a>
 
     <div class="admin__container modif">
         <h1>Modifier : <?= $data['title'] ?></h1>
@@ -36,7 +36,7 @@ $title = "Modifier : ".$data['title']
             <div>
                 <br>
                 <label for="fichier"><img src="<?php
-                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.png') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
+                    echo (!empty($_POST['datapreview'])) ? $_POST['datapreview'] : ((isset($data['file'])) ? URL . 'public/data/' . $data['file'] : URL . 'groomers_ui/src/img/placeholder_barber.webp') ?>" alt="couverture" id="preview" class="img-fluid border"></label>
                 <br>
                 <label for="">Photo *</label>
                 <input type="file" id="fichier" name="fichier" class="form-control" accept="image/jpeg,image/png,image/webp">

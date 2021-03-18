@@ -1,7 +1,7 @@
 
 <header  data-aos="fade-down">
-    <a style="padding: 0px;" href="https://www.barbierlab.fr/">
-        <img class="logo" src="groomers_ui/src/img/logo_white.png" alt="Logo Groomers">
+    <a href="https://www.barbierlab.fr/">
+        <img class="logo" src="groomers_ui/src/img/logo_white.webp" alt="Logo Groomers">
     </a>
     <p>10AM_8PM</p>
     <nav>

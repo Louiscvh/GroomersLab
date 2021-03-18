@@ -41,7 +41,7 @@ $path = "admin";
 $title = "Modifier : ".$data['name']
 ?>
 <?php require_once('../../../../public/includes/head.php')?>
-    <a href=""><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.png" alt="Logo Groomers"></a>
+    <a href="https://www.barbierlab.fr/"><img class="logo" src="<?php echo URL ?>groomers_ui/src/img/logo_white.webp" alt="Logo Groomers"></a>
     <div class="admin__container modif">
         <form method="post" action="../../core/tarif/updatetarif.php">
             <h1>Modifier : <?= $data['name'] ?></h1>

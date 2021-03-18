@@ -42,7 +42,7 @@ $( document ).ready(function() {
   }).addTo(map);
 
   var greenIcon = L.icon({
-    iconUrl: 'groomers_ui/src/img/logo_white.png',
+    iconUrl: 'groomers_ui/src/img/logo_white.webp',
     iconSize:     [40, 40], // size of the icon
     iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
@@ -53,9 +53,6 @@ $( document ).ready(function() {
       icon: greenIcon,
   }).addTo(map).bindPopup("Groomers Lab");;
 
-
-  
-  
   // Déclaration du scroll de Locomotive Scroll
   const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
@@ -70,7 +67,22 @@ $( document ).ready(function() {
   scroll.init()
   }, 100);
 
+  function update() {
+    this.setScrollLimit();
+    this.addSections();
+    this.addElements();
+    this.detectElements();
+    this.updateScroll();
+    this.transformElements(true);
+    this.reinitScrollBar();
+  }
 
+  var tarifsController = document.querySelector(".tarifs__controller");
+  window.addEventListener("scroll",(event) => {
+    console.log("Scrolling...");
+});
+
+  //
   // Animation du Slider Tarifs
   let $tickerWrapper = $(".slider__wrapper");
   let $list = $tickerWrapper.find("ul");

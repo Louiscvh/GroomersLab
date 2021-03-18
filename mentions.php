@@ -86,7 +86,10 @@ $i = 0;
     <br>
     <h3>9. Droit applicable et attribution de juridiction.</h3>
     <br/>
-    <p>Tout litige en relation avec l’utilisation du site <a href="http://https://www.barbierlab.fr//">https://www.barbierlab.fr/</a> est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris.</p>
+    <p>Tout litige en relation avec l’utilisation du site 
+        <a href="http://https://www.barbierlab.fr//">https://www.barbierlab.fr/</a> 
+        est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris.
+    </p>
     <br>
     <h3>10. Les principales lois concernées.</h3>
     <br/>

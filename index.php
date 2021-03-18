@@ -59,9 +59,9 @@ $i = 0;
         <div class="container block" data-scroll-section>
             <section id="home">
                 <div class="carouselData">
-                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.jpeg" alt="Image carousel 1">
-                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.jpeg" alt="Image carousel 2">
-                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.jpeg" alt="Image carousel 3">
+                    <img class="carousel carousel1" src="groomers_ui/src/img/carousel1.webp" alt="Image carousel 1">
+                    <img class="carousel carousel2" src="groomers_ui/src/img/carousel2.webp" alt="Image carousel 2">
+                    <img class="carousel carousel3" src="groomers_ui/src/img/carousel3.webp" alt="Image carousel 3">
                 </div>
                 <?php require_once('public/includes/header.php'); ?>
                 <div  class="home__content">
@@ -210,9 +210,8 @@ $i = 0;
                 </div>
             </footer>
             <div class="mentions">
-                <h4 class="lien">Politique de confidentialité</h4>
-                <h4>© 2021 Groomers Lab</h4>
-                <h4 class="lien">Mentions légales</h4>
+                <a>© 2021 Groomers Lab</a>
+                <a href="mentions.php" class="lien">Mentions légales</a>
             </div>
         </section>
     </div>
@@ -249,6 +248,18 @@ $i = 0;
 
     gtag('config', 'G-JKK9ENWWWE');
     </script>
+    <!-- Hotjar Tracking Code for https://www.barbierlab.fr/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2303243,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
 
 
 </body>

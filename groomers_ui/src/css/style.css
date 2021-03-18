@@ -1,3 +1,5 @@
+/* Root pour le changement de thèmes */
+
 :root {
     --principale: black;
     --secondaire: #396F53;
@@ -5,7 +7,7 @@
 }
 
 .coffee {
-    --principale: #FAF7F1!important;
+    --principale: #FAF7F1;
     --secondaire: #C2A34F;
     --typo: black;
 }
@@ -27,18 +29,6 @@ body {
     background-color: var(--principale);
 }
 
-.alert-success{
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-}
-
-.alert-error{
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-}
-
 .container {
     width: 90%;
     margin: 0 auto;
@@ -58,13 +48,11 @@ section {
     padding-bottom: 210px;
 }
 
-.endSection {
-    padding-bottom: 30px!important;
-}
-
 .scroll {
     position: relative;
 }
+
+/* Alertes PHP */
 
 .alert {
     position: absolute;
@@ -80,13 +68,27 @@ section {
     z-index: 2;
 }
 
-#poper {
-    background-image: none!important;
-    background-color: #1d1d1d!important;
+.alert-success{
+    color: var(--secondaire);
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
 
 .hide {
     display: none;
+}
+
+/* Popup RGPD */
+
+#poper {
+    background-image: none!important;
+    background-color: #1d1d1d!important;
 }
 
 /* Typographies */
@@ -148,8 +150,7 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
     transform-origin: left;
 }
 
-/* Animations */
-
+/* Animations CSS */
 
 @keyframes scrollInfo {
     0% { 
@@ -175,18 +176,19 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
     }
 }
 
-/* Temporaires */
+/* Animation h1 */
 
 .header__1 .letter {
     display: inline-block;
     line-height: 1em;
-  }
-  .header__2 .letter {
+}
+
+.header__2 .letter {
     display: inline-block;
     line-height: 1em;
-  }
+}
 
- 
+/* Page Loading */
 
 .loading__page {
     background-color: var(--principale);
@@ -199,33 +201,33 @@ p, h1, h2, h3, h4, h5, h5, a, span, i, td, th {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .loading__page .counter {
+.loading__page .counter {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
-  .loading__page .counter p {
+.loading__page .counter p {
     color: white;
     font-size: 200px;
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 200;
     opacity: 0.2;
-  }
+}
 
-  .loading__page .counter {
+.loading__page .counter {
     position: relative;
-  }
+}
 
-  .loading__page .counter h2 {
+.loading__page .counter h2 {
     font-size: 5rem;
     font-family:quakiezdisplay, arial, cursive;
     font-weight: 200;
     margin-top: 30px;
-  }
+}
 
 /* Header */
 
@@ -371,9 +373,7 @@ h1 {
     font-weight: 300;
 }
 
-.home__content .simplybook-widget-button {
-    bottom:-0px!important;
-}
+/* Api réservation */
 
 .simplybook-widget-button {
     padding: 15px 40px!important;
@@ -384,7 +384,7 @@ h1 {
     border-radius: 0px!important;
     font-family: avenirregular, arial, cursive;
     box-shadow: none!important;
-    bottom: 20px!important;
+    bottom:-0px!important;
 }
 
 .simplybook-widget-button:hover {
@@ -400,7 +400,7 @@ h1 {
      margin-bottom: 0px!important;
 }
 
-
+/* Carousel home */
 
 .carousel {
     position: absolute;
@@ -412,16 +412,7 @@ h1 {
     height: 500px;
 }
 
-.reserve {
-    padding: 10px 30px;
-    border: 0.8px solid var(--secondaire);
-    background-color: var(--secondaire);
-    transition: all 0.3s ease-in;
-}
-
-.reserve:hover {
-    background-color: transparent!important;
-}
+/* Btn burger changement de pages */
 
 .burger__home {
     position: absolute;
@@ -474,10 +465,12 @@ h1 {
 .line {
     width: 30px;
     height: 1px;
-    background-color: var(--typo)!important;
+    background-color: var(--typo);
     margin-top: 5px;
     transition: all 0.3s ease;
-} 
+}
+
+/* Controles carousel */
 
 .controls {
     position: absolute;
@@ -501,6 +494,8 @@ h1 {
 .controls__container p:first-child {
     opacity: 20%;
 }
+
+/* Separateur du fond */
 
 .sepa__Block {
     z-index: 998;
@@ -529,11 +524,13 @@ h1 {
     left:85%;
 }
 
+/* Infos Scroll 1 */
+
 .scroll__info {
     position: absolute;
     top: 85vh;
     left: 50%;
-    transform: translateX(-50%)!important;
+    transform: translateX(-50%);
     z-index: 3;
 }
 
@@ -547,6 +544,8 @@ h1 {
 .scroll__container {
     align-items: center;
 }
+
+/* Infos Scroll 2 */
 
 .scroll2 {
     position: relative;
@@ -573,9 +572,11 @@ h1 {
 .scroll__sepa {
     height: 30px;
     width: 1px;
-    background-color: var(--typo)!important;
+    background-color: var(--typo);
     animation: 4s ease infinite scrollInfo;
 }
+
+/* Block social externes */
 
 .social {
     position: absolute;
@@ -590,8 +591,15 @@ h1 {
 
 .social__container p {
     margin-right: 50px;
-    
 }
+
+.social i {
+    color: white;
+    font-size: 1.4rem;
+    margin: 20px;
+}
+
+/* Compteur du carousel */
 
 .compteurSlide {
     margin-right: 30px;
@@ -604,7 +612,7 @@ h1 {
 
 .compteurSlide span:nth-child(1) {
     color: white;
-    opacity: 1!important;
+    opacity: 1;
 }
 
 .compteurNumber {
@@ -630,13 +638,6 @@ h1 {
     transform: translateY(-25px);
 }
 
-
-.social i {
-    color: white;
-    font-size: 1.4rem;
-    margin: 20px;
-}
-
 /* Section coiffure */
 
 .coif__container {
@@ -654,7 +655,8 @@ h1 {
 }
 
 .coif__block img {
-    transform-origin: bottom;
+    height: auto;
+    width: 100%;
 }
 
 .coif__block h4 {
@@ -692,7 +694,6 @@ h1 {
 /* Slider tarifs */
 
 .slider__wrapper, .slider__wrapper2 {
-    /* the outer div */
     position: relative;
     left:0%;
     background: none;
@@ -700,7 +701,6 @@ h1 {
     height: 130px;
     overflow: hidden;
     font-family:quakiezdisplay, arial, cursive;
-
 }
 
 .slider__list, .slider__list2 {
@@ -780,14 +780,11 @@ h1 {
     opacity: 0.5;
 }
 
-
-
 .table__header {
     padding-top: 50px;
 }
 
 .table__header h3 {
-    width: 250px!important;
     min-height: 30px;
     color: var(--secondaire)!important;
     text-transform: uppercase;
@@ -796,7 +793,6 @@ h1 {
 
 .table__header h3:first-child {
     margin-left: 50px;
- 
 }
 
 .table__ligne {
@@ -828,16 +824,11 @@ h1 {
 }
 
 .table__header h3:first-child, .table__ligne p:first-child {
-    text-align: left!important;
+    text-align: left;
 }
 
 /* Section équipe */
 
-.container__slider {
-    width: 100%!important;
-}
-
-  
 .coiffeur__container {
     position: relative;
     width: 100%;
@@ -863,10 +854,6 @@ h1 {
     scrollbar-width: none;
 }
 
-.coiffeurs .active {
-    transform: scale(1.05)!important;
-  }
-  
 .coiffeur {
     margin-left: 250px;
     margin-right: 200px;
@@ -930,31 +917,11 @@ h1 {
 .scroll2__container .scroll__sepa {
     height: 1px;
     width: 30px;
-    background-color: var(--typo)!important;
+    background-color: var(--typo);
     animation: 4s ease infinite scrollInfo2;
-    transform-origin: left!important;
+    transform-origin: left;
 }
 
-.slider {
-    position: relative;
-    width: 100%;
-    margin-bottom: 200px!important;
-
-}
-
-.bandeau {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.08);
-    white-space: nowrap;
-    padding: 50px;
-    padding-left: 40px!important;
-    font-size: 3rem;
-    text-align: center;
-    text-transform: uppercase;
-    width: 70%;
-    margin: 0 auto;
-    font-family:quakiezdisplay, arial, cursive;
-}
 
 /* Footer */
 
@@ -971,10 +938,6 @@ footer {
 .footer__right {
     width: 50%;
     position: relative;
-}
-
-#map {
-    height: 300px;
 }
 
 .footer__left h2 {
@@ -1009,6 +972,8 @@ footer {
 .footer__infosRight {
     margin-left: 20px;
 }
+
+/* Leaf map */
 
 #map {
     position: relative;
@@ -1071,10 +1036,11 @@ footer i {
     opacity: 0.3;
 }
 
-
 .mentions h4 {
     font-weight: 200;
 }
+
+/* Premier media query pour la section tarif */
 
 @media screen and (max-width: 1500px) {
     .tarifs__controller {
@@ -1086,6 +1052,8 @@ footer i {
         margin: 0px 20px;
     }
 }
+
+/* Tablette */
 
 @media screen and (max-width: 1100px) {
     h1 {
@@ -1124,14 +1092,17 @@ footer i {
 
     .burger__container::before {
         content: "";
-       
     }
+    
+    footer {
+        flex-direction: column;
+      }
 }
 
+/* Téléphone */
+
 @media screen and (max-width: 640px) {
-    footer {
-      flex-direction: column;
-    }
+    
 
     .footer__right {
         margin-top: 50px;
