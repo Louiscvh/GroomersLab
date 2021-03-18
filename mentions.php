@@ -3,9 +3,7 @@
 require_once('config/settings.php');
 
 $title = 'Page d\'accueil';
-$url = URL."index.php";
 $path = 'admin';
-$i = 0;
 ?>
 
 <?php require_once('public/includes/head.php')?>
@@ -17,9 +15,7 @@ $i = 0;
 </div>
 
 <div class="admin__container mentions__container">
-
     <a class="lien" href="https://www.barbierlab.fr/">< Retour</a>
-
     <h1>Informations légales</h1>
     <br>
     <h3>1. Présentation du site.</h3>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="description" content="Site dans le cadre du projet site dynamique - DIGITAL CAMPUS"> 
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <!-- Title dynamique -->
     <title>Groomers | <?php echo $title ?></title>
-    <link rel="canonical" href="http://paged’exemple.fr/pageoriginelle.html" />
+    <!-- Authenticité de la page -->
+    <link rel="canonical" href="https://www.barbierlab.fr/" />
     <!-- AOS Transition -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Font Awesome -->
@@ -34,10 +37,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo URL ?>groomers_ui/src/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo URL ?>groomers_ui/src/img/favicon/favicon-16x16.png">
     <link rel="manifest" href="<?php echo URL ?>groomers_ui/src/img/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <!-- RGPD -->
     <script src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette4",Mode:"floating right",Theme:"classic",Message:"Ce site Web utilise des cookies, en poursuivant votre navigation, vous acceptez leur utilisations.",ButtonText:"Accepter",LinkText:"Lire plus",Time:"5",})</script>
+    <!-- Leaflet Map -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
