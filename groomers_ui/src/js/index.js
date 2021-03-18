@@ -1,9 +1,10 @@
 'use strict';
 
+// Définition URL global
 const URL = '/groomers_Barber/';
 const URLCOFFEE = '/groomers_Coffee/';
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
    // Fonction pour déclarer les ancres
    let target;
@@ -41,16 +42,16 @@ $( document ).ready(function() {
       zoom: 13
   }).addTo(map);
 
-  var greenIcon = L.icon({
+  var barberIcon = L.icon({
     iconUrl: 'groomers_ui/src/img/logo_white.webp',
-    iconSize:     [40, 40], // size of the icon
-    iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+    iconSize:     [40, 40], 
+    iconAnchor:   [20, 40],
+    popupAnchor:  [0, -50]
   });
 
   var marker = L.marker([48.866350858938574, 2.3479970557850103], {
       title: 'GroomersLab',
-      icon: greenIcon,
+      icon: barberIcon,
   }).addTo(map).bindPopup("Groomers Lab");;
 
   // Déclaration du scroll de Locomotive Scroll
@@ -67,22 +68,6 @@ $( document ).ready(function() {
   scroll.init()
   }, 100);
 
-  function update() {
-    this.setScrollLimit();
-    this.addSections();
-    this.addElements();
-    this.detectElements();
-    this.updateScroll();
-    this.transformElements(true);
-    this.reinitScrollBar();
-  }
-
-  var tarifsController = document.querySelector(".tarifs__controller");
-  window.addEventListener("scroll",(event) => {
-    console.log("Scrolling...");
-});
-
-  //
   // Animation du Slider Tarifs
   let $tickerWrapper = $(".slider__wrapper");
   let $list = $tickerWrapper.find("ul");
@@ -146,25 +131,6 @@ $( document ).ready(function() {
   .to($list2, time2, {force3D:true, rotation:0.01, x: 0, ease: Linear.easeNone}, time2)
   .progress(1).progress(0)
   .play();
- 
-  // Sélecteur à puce des tarifs 
-  /*selecteur('.select1',['.select2','.select3','.select4']);
-  selecteur('.select2', ['.select1','.select3','.select4']);
-  selecteur('.select3', ['.select1','.select2','.select4']);
-  selecteur('.select4', ['.select1','.select2','.select3']);
-
-  function selecteur (el,...args){
-    $(el).click(function() {
-      for(let ind of args){
-        $(el).addClass("active");
-        ind.forEach(element =>        
-          $(element).removeClass("active")
-        );
-      }
-  });
-  }
-  selecteur();*/
-  
 
   // Slider équipe
   const slider = document.querySelector('.coiffeurs');
@@ -194,10 +160,6 @@ $( document ).ready(function() {
     const walk = (x - startX) * 1; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
   });
-
-  
-
-  //GSAP pour les anim lors du load de la page
  
 
   // Le Loader (bien mettre les variables en anglais pour éviter la corruption avec le carousel)
@@ -291,7 +253,6 @@ $( document ).ready(function() {
   
   // Bouton réservation
   $(".simplybook-widget-button").appendTo(".home__content");
-
 
   if(window.location.toString().includes("coffee.php")) {
     if ($('.tarifs__controller h3').length > 0) {
@@ -439,9 +400,7 @@ $( document ).ready(function() {
   }
 
 
-    // TEST GSAP
-
-    // TEST GSAP
+    //GSAP au chargement de la page
     var anim1 = document.querySelector('.header__1');
     anim1.innerHTML = anim1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
