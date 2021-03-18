@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "locomotive-scroll": "^4.1.0",
-    "three": "^0.124.0"
+    "three": "^0.126.1",
+    "webp-converter": "^2.3.3"
   },
   "devDependencies": {},
   "scripts": {

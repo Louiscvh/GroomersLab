@@ -463,5 +463,12 @@ $(document).ready(function() {
         duration: 1500,
         delay: 3000
     });
+
+   
       
 });
+
+const webp=require('webp-converter');
+
+// this will grant 755 permission to webp executables
+webp.grant_permission();
