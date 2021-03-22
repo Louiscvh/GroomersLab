@@ -20,21 +20,11 @@ Options -Indexes
 
 AddDefaultCharset UTF-8
 
-#Cache et compression 
+#CACHE ET COMPRESSION
 
 # Apache 2.0
 SetOutputFilter DEFLATE
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript
-
-# Compression pour fichiers CSS
-<IfModule mod_gzip.c>
-    mod_gzip_on       Yes
-    mod_gzip_dechunk  Yes
-    mod_gzip_minimum_file_size 1024
-    mod_gzip_maximum_file_size 100000
-    mod_gzip_item_include file \.css$
-    mod_gzip_item_include mime ^text/css$
-</IfModule>
 
 <IfModule mod_expires.c>
     ExpiresActive on
@@ -43,6 +33,14 @@ AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application
     ExpiresByType image/png "access plus 1 week"
     ExpiresByType image/gif "access plus 1 week"
     ExpiresByType image/jpeg "access plus 1 week"
+</IfModule>
+
+# Cache
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType application/x-javascript "access plus 2 month"
+    ExpiresByType application/javascript "access plus 2 month"
+    ExpiresByType text/javascript "access plus 2 month"
 </IfModule>
 
 # Compression pour fichiers JS
@@ -55,10 +53,12 @@ AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application
     mod_gzip_item_include mime ^application/x-javascript.*
 </IfModule>
 
-# Cache
-<IfModule mod_expires.c>
-    ExpiresActive on
-    ExpiresByType application/x-javascript "access plus 2 month"
-    ExpiresByType application/javascript "access plus 2 month"
-    ExpiresByType text/javascript "access plus 2 month"
+# Compression pour fichiers CSS
+<IfModule mod_gzip.c>
+    mod_gzip_on       Yes
+    mod_gzip_dechunk  Yes
+    mod_gzip_minimum_file_size 1024
+    mod_gzip_maximum_file_size 100000
+    mod_gzip_item_include file \.css$
+    mod_gzip_item_include mime ^text/css$
 </IfModule>

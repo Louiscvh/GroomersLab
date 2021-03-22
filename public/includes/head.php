@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="description" content="Site dans le cadre du projet site dynamique - DIGITAL CAMPUS"> 
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <meta name="robots" content="index">
+    <meta http-equiv="expires" content="43200"/>
     <!-- Title dynamique -->
     <title>Groomers | <?php echo $title ?></title>
     <!-- Authenticité de la page -->
